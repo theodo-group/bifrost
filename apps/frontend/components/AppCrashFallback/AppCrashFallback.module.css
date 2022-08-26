@@ -1,0 +1,16 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.pageContent {
+  padding: 6rem 3rem;
+}
+
+
+.helperList {
+  list-style: disc inside;
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,140 @@
+{
+  "private": true,
+  "name": "backend",
+  "description": "This a project doing cool stuff",
+  "author": "LeoAnesi",
+  "license": "MIT",
+  "engines": {
+    "node": "^16.13.0"
+  },
+  "scripts": {
+    "postinstall": "test -f .env.rc || cp .env.example.rc .env.rc",
+    "build": "nest build -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build:migrations": "nest build -p tsconfig.migration.json",
+    "premigration:generate": "pnpm build:migrations",
+    "migration:generate": ". ./.env.rc && typeorm  -d dist/datasource.js migration:generate",
+    "migration:revert": ". ./.env.rc && typeorm -d dist/datasource.js migration:revert",
+    "premigration:run": "pnpm build:migrations",
+    "migration:run": ". ./.env.rc && typeorm -d dist/datasource.js migration:run",
+    "migration:run:prod": "typeorm -d dist/datasource.js migration:run",
+    "schema:drop": ". ./.env.rc && typeorm -d dist/datasource.js schema:drop",
+    "test:schema:drop": ". ./.env.test.rc && ts-node -r tsconfig-paths/register node_modules/.bin/typeorm -d datasource.ts schema:drop",
+    "reset": "rm -rf node_modules && pnpm install",
+    "dev": ". ./.env.rc && nest start -p ./tsconfig.json src/main.ts --watch",
+    "explore": "pnpm start --entryFile repl",
+    "start:debug": "pnpm start --debug",
+    "start:prod": "node dist/src/main.js",
+    "lint": "eslint './**/*.{js,ts,tsx}' --max-warnings 0",
+    "lint:fix": "pnpm lint --fix",
+    "security": "audit-ci --config ./audit-ci.json",
+    "test": ". ./.env.test.rc && jest * --maxWorkers=2",
+    "test:watch": "pnpm test --watch",
+    "test:coverage": "pnpm test --coverage",
+    "test:debug": "NODE_OPTIONS='--inspect-brk' pnpm test",
+    "test:circular": "depcruise --validate .dependency-cruiser.js ."
+  },
+  "dependencies": {
+    "@nestjs/common": "9.0.1",
+    "@nestjs/config": "2.2.0",
+    "@nestjs/core": "9.0.1",
+    "@nestjs/jwt": "9.0.0",
+    "@nestjs/mapped-types": "1.1.0",
+    "@nestjs/passport": "9.0.0",
+    "@nestjs/platform-express": "9.0.1",
+    "@nestjs/swagger": "6.0.5",
+    "@nestjs/typeorm": "9.0.0",
+    "bcrypt": "5.0.1",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.13.2",
+    "cli-color": "2.0.3",
+    "cookie-parser": "1.4.6",
+    "express": "4.18.1",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "4.17.21",
+    "passport": "0.6.0",
+    "passport-jwt": "4.0.0",
+    "pg": "8.7.3",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "7.5.5",
+    "swagger-ui-express": "4.4.0",
+    "typeorm": "0.3.7",
+    "winston": "3.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "9.0.0",
+    "@nestjs/testing": "9.0.1",
+    "@types/bcrypt": "5.0.0",
+    "@types/cli-color": "2.0.2",
+    "@types/cookie-parser": "1.4.3",
+    "@types/express": "4.17.13",
+    "@types/faker": "5.5.9",
+    "@types/jest": "27.5.2",
+    "@types/jsonwebtoken": "8.5.8",
+    "@types/lodash": "4.14.182",
+    "@types/node": "16.11.43",
+    "@types/passport-jwt": "3.0.6",
+    "@types/supertest": "2.0.12",
+    "@types/validator": "13.7.4",
+    "@typescript-eslint/eslint-plugin": "5.30.5",
+    "@typescript-eslint/parser": "5.30.5",
+    "audit-ci": "6.3.0",
+    "dependency-cruiser": "11.11.0",
+    "eslint": "8.19.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "26.5.3",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "faker": "5.5.3",
+    "jest": "28.1.2",
+    "prettier": "2.7.1",
+    "supertest": "6.2.4",
+    "ts-jest": "28.0.5",
+    "ts-loader": "9.3.1",
+    "ts-node": "10.8.2",
+    "tsconfig-paths": "4.0.0",
+    "typescript": "4.7.4",
+    "webpack": "5.73.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "moduleNameMapper": {
+      "^helpers/(.*)": "<rootDir>/src/helpers/$1",
+      "^auth/(.*)": "<rootDir>/src/modules/auth/$1",
+      "^src/(.*)": "<rootDir>/src/$1",
+      "^modules/(.*)": "<rootDir>/src/modules/$1",
+      "^testUtils/(.*)": "<rootDir>/testUtils/$1",
+      "^decorators/(.*)": "<rootDir>/src/decorators/$1"
+    },
+    "setupFiles": [
+      "<rootDir>/testUtils/setup.ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "testTimeout": 10000,
+    "coverageThreshold": {
+      "global": {
+        "statements": 90,
+        "branches": 75
+      }
+    },
+    "collectCoverageFrom": [
+      "<rootDir>/**/*.ts",
+      "!<rootDir>/dist/**",
+      "!<rootDir>/migration/**",
+      "!<rootDir>/testUtils/**",
+      "!<rootDir>/src/main.ts",
+      "!<rootDir>/src/modules/logger/**"
+    ]
+  }
+}

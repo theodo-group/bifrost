@@ -1,0 +1,33 @@
+{
+  "login": {
+    "title": "Welcome!",
+    "error": "An error has occurred. Please try again.",
+    "warning": "Your username or password is invalid. Try again.",
+    "email": {
+      "label": "Email",
+      "placeholder": "max@forge.io",
+      "error": {
+        "required": "Please enter your email address",
+        "invalid": "Please enter a valid email address"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password",
+      "error": {
+        "required": "Please enter your password"
+      }
+    },
+    "submit": "Log In"
+  },
+  "profile": {
+    "name": {
+      "label":"Name",
+      "error": {
+        "required": "Please enter your name",
+        "invalid": "Please enter a valid name"
+      }
+    },
+    "submit": "Update"
+  }
+}

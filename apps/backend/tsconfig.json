@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "helpers/*": ["src/helpers/*"],
+      "auth/*": ["src/modules/auth/*"],
+      "modules/*": ["src/modules/*"],
+      "decorators/*": ["src/decorators/*"],
+      "testUtils/*": ["testUtils/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "migration",
+    "datasource.ts",
+    "**/*.entity.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@theodo-group/forge",
+  "version": "1.0.0",
+  "description": "Generate a Forge project",
+  "repository": "git@github.com:theodo-group/forge.git",
+  "license": "MIT"
+}
