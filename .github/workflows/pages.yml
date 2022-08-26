@@ -36,7 +36,7 @@ jobs:
         run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Build with Next.js
+      - name: Build Docusaurus App
         run: pnpm run --filter documentation build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
