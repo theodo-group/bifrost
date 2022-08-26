@@ -1,5 +1,5 @@
 {
   "high": true,
   "skip-dev": true,
-  "allowlist": ["async"]
+  "allowlist": ["*documentation>@docusaurus/core>@docusaurus/mdx-loader>@mdx-js/mdx>remark-parse>trim*"]
 }
