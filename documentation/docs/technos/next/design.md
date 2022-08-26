@@ -14,11 +14,11 @@ Follow the code principles when using styled-components
 
 ### 🌀 Reset
 
-There is a [`reset.css`](../public/reset.css) file that removes basic style attached to tags. The file is based on [meyerweb's example](https://meyerweb.com/eric/tools/css/reset/) and enriched by experience.
+There is a `reset.css` file that removes basic style attached to tags. The file is based on [meyerweb's example](https://meyerweb.com/eric/tools/css/reset/) and enriched by experience.
 
 ### 🌈 Stylesheet
 
-[`stylesheet.ts`](../src/stylesheet.ts) is where you should declare all style properties used on this app.
+`stylesheet.ts` is where you should declare all style properties used on this app.
 
 -   colors
 -   font properties (size, font-faimly, boldness, line height)
@@ -33,4 +33,4 @@ Import the style variables from the stylesheet to use them in your components.
 
 ### 🔍 Linter
 
-The [`style linter`](../stylelint.config.js) will help checking that you don't use hard-coded values in your components. Adapt the config to your needs.
+The `style linter` will help checking that you don't use hard-coded values in your components. Adapt the config to your needs.

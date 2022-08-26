@@ -27,7 +27,7 @@ These instructions will get you a copy of the latest version of forge on your lo
 Clone this repository:
 
 ```bash
-git clone git@github.com:theodo/forge.git
+git clone git@github.com:theodo-group/forge.git
 cd forge
 ```
 
@@ -56,10 +56,6 @@ You're done! 🎉
 ## 🏃‍Running the generated project
 
 **Follow the `README` of the generated project.** 😉
-
-## 📝 License
-
-[MIT](../../.docs/LICENSE)
 
 [poetry]: https://python-poetry.org/docs/
 [python3.10]: https://www.notion.so/m33/Install-Python-31f3c8495a5d43aebf7845fcb3b9ce79
