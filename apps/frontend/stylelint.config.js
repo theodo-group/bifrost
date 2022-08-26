@@ -47,5 +47,7 @@ module.exports = {
         ],
       },
     ],
+    'selector-class-pattern': null,
+    'custom-property-pattern': null,
   },
 };

@@ -11,8 +11,8 @@
     "start": "./gen_env.sh production && next start",
     "lint": "next lint",
     "lint:style": "stylelint './**/*.module.css'",
-    "test": "pnpm test:unit && pnpm test:circular",
-    "test:unit": "jest",
+    "test": "jest",
+    "test:coverage": "pnpm test -- --coverage",
     "test:circular": "pnpm depcruise --validate .dependency-cruiser.js pages --ignore-known"
   },
   "dependencies": {
