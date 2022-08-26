@@ -4,9 +4,7 @@ import { Repository } from 'typeorm';
 import { hash } from 'bcrypt';
 
 import { User } from './user.entity';
-import { CreateUserDto } from './interfaces/createUser.dto';
-import { AdminUpdateUserDto, UpdateUserDto } from './interfaces/updateUser.dto';
-import { GetUserDto } from './interfaces/getUser.dto';
+import { CreateUserDto, GetUserDto, AdminUpdateUserDto, UpdateUserDto } from '@forge/interfaces';
 
 const SALT_ROUNDS = 10;
 
