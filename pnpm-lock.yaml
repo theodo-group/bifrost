@@ -6,10 +6,12 @@ importers:
     specifiers:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
+      audit-ci: 6.3.0
       husky: 8.0.1
     devDependencies:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
+      audit-ci: 6.3.0
       husky: 8.0.1
 
   apps/backend:
@@ -39,7 +41,6 @@ importers:
       '@types/validator': 13.7.4
       '@typescript-eslint/eslint-plugin': 5.30.5
       '@typescript-eslint/parser': 5.30.5
-      audit-ci: 6.3.0
       bcrypt: 5.0.1
       class-transformer: 0.5.1
       class-validator: 0.13.2
@@ -116,7 +117,6 @@ importers:
       '@types/validator': 13.7.4
       '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
       '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
-      audit-ci: 6.3.0
       dependency-cruiser: 11.11.0
       eslint: 8.19.0
       eslint-config-prettier: 8.5.0_eslint@8.19.0

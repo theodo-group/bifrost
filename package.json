@@ -4,12 +4,15 @@
   "description": "Generate a Forge project",
   "repository": "git@github.com:theodo-group/forge.git",
   "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "security": "audit-ci --config ./audit-ci.json"
+
+  },
   "devDependencies": {
+    "audit-ci": "6.3.0",
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "husky": "8.0.1"
-  },
-  "scripts": {
-    "prepare": "husky install"
   }
 }

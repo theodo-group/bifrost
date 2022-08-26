@@ -1,6 +1,0 @@
-{
-    "high": true,
-    "skip-dev": true,
-    "allowlist": ["async"]
-  }
-  
