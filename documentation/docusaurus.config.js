@@ -9,7 +9,7 @@ const config = {
   title: 'Forge',
   tagline: 'Start your project in the best conditions',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/forge/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
