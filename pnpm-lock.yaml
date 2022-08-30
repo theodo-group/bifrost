@@ -148,7 +148,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.30.5
       '@typescript-eslint/parser': 5.30.5
       axios: 0.27.2
-      axios-auth-refresh: 3.3.1
+      axios-auth-refresh: 3.3.3
       dependency-cruiser: 11.11.0
       eslint: 8.19.0
       eslint-config-next: 12.2.0
@@ -179,7 +179,7 @@ importers:
       typescript: 4.7.4
     dependencies:
       axios: 0.27.2
-      axios-auth-refresh: 3.3.1_axios@0.27.2
+      axios-auth-refresh: 3.3.3_axios@0.27.2
       jwt-decode: 3.1.2
       next: 12.2.4_twoewwu6sg7cdf3ao6njtbftne
       react: 18.2.0
@@ -4987,8 +4987,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios-auth-refresh/3.3.1_axios@0.27.2:
-    resolution: {integrity: sha512-OSQocChF+SHtl2Erp35LxsWtapvmeJH2K+kHDyslZJbuzhzbgnanROwflNN0m6dBoLEQWL5V2KsmRGamkWd9JA==}
+  /axios-auth-refresh/3.3.3_axios@0.27.2:
+    resolution: {integrity: sha512-2IbDhJ/h6ddNBBnnzn1VFK/qx17pE9aVqiafB8rx5LVHsJ1HtFpUGkbXY7PzTG+8P9HJWcyA3fNZl9BikSuilg==}
     peerDependencies:
       axios: '>= 0.18 < 0.19.0 || >= 0.19.1'
     dependencies:
