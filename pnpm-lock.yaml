@@ -60,7 +60,7 @@ importers:
       lodash: 4.17.21
       passport: 0.6.0
       passport-jwt: 4.0.0
-      pg: 8.7.3
+      pg: 8.8.0
       prettier: 2.7.1
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
@@ -94,11 +94,11 @@ importers:
       lodash: 4.17.21
       passport: 0.6.0
       passport-jwt: 4.0.0
-      pg: 8.7.3
+      pg: 8.8.0
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
       swagger-ui-express: 4.4.0_express@4.18.1
-      typeorm: 0.3.7_pg@8.7.3+ts-node@10.8.2
+      typeorm: 0.3.7_pg@8.8.0+ts-node@10.8.2
       winston: 3.8.1
     devDependencies:
       '@nestjs/cli': 9.0.0
@@ -3333,7 +3333,7 @@ packages:
       '@nestjs/core': 9.0.1_c6aqfk5vuwz24upjh36s442kfq
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
-      typeorm: 0.3.7_pg@8.7.3+ts-node@10.8.2
+      typeorm: 0.3.7_pg@8.8.0+ts-node@10.8.2
       uuid: 8.3.2
     dev: false
 
@@ -11035,12 +11035,12 @@ packages:
     engines: {node: '>=4.0.0'}
     dev: false
 
-  /pg-pool/3.5.1_pg@8.7.3:
-    resolution: {integrity: sha512-6iCR0wVrro6OOHFsyavV+i6KYL4lVNyYAB9RD18w66xSzN+d8b66HiwuP30Gp1SH5O9T82fckkzsRjlrhD0ioQ==}
+  /pg-pool/3.5.2_pg@8.8.0:
+    resolution: {integrity: sha512-His3Fh17Z4eg7oANLob6ZvH8xIVen3phEZh2QuyrIl4dQSDVEabNducv6ysROKpDNPSD+12tONZVWfSgMvDD9w==}
     peerDependencies:
       pg: '>=8.0'
     dependencies:
-      pg: 8.7.3
+      pg: 8.8.0
     dev: false
 
   /pg-protocol/1.5.0:
@@ -11058,11 +11058,11 @@ packages:
       postgres-interval: 1.2.0
     dev: false
 
-  /pg/8.7.3:
-    resolution: {integrity: sha512-HPmH4GH4H3AOprDJOazoIcpI49XFsHCe8xlrjHkWiapdbHK+HLtbm/GQzXYAZwmPju/kzKhjaSfMACG+8cgJcw==}
+  /pg/8.8.0:
+    resolution: {integrity: sha512-UXYN0ziKj+AeNNP7VDMwrehpACThH7LUl/p8TDFpEUuSejCUIwGSfxpHsPvtM6/WXFy6SU4E5RG4IJV/TZAGjw==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
-      pg-native: '>=2.0.0'
+      pg-native: '>=3.0.1'
     peerDependenciesMeta:
       pg-native:
         optional: true
@@ -11070,7 +11070,7 @@ packages:
       buffer-writer: 2.0.0
       packet-reader: 1.0.0
       pg-connection-string: 2.5.0
-      pg-pool: 3.5.1_pg@8.7.3
+      pg-pool: 3.5.2_pg@8.8.0
       pg-protocol: 1.5.0
       pg-types: 2.2.0
       pgpass: 1.0.5
@@ -13664,7 +13664,7 @@ packages:
   /typedarray/0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm/0.3.7_pg@8.7.3+ts-node@10.8.2:
+  /typeorm/0.3.7_pg@8.8.0+ts-node@10.8.2:
     resolution: {integrity: sha512-MsPJeP6Zuwfe64c++l80+VRqpGEGxf0CkztIEnehQ+CMmQPSHjOnFbFxwBuZ2jiLqZTjLk2ZqQdVF0RmvxNF3Q==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
@@ -13733,7 +13733,7 @@ packages:
       glob: 7.2.3
       js-yaml: 4.1.0
       mkdirp: 1.0.4
-      pg: 8.7.3
+      pg: 8.8.0
       reflect-metadata: 0.1.13
       sha.js: 2.4.11
       ts-node: 10.8.2_5qlmdbhxrylc4rhzh7wamif4di
