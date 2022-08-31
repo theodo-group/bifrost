@@ -66,7 +66,7 @@ importers:
       rxjs: 7.5.6
       supertest: 6.2.4
       swagger-ui-express: 4.5.0
-      ts-jest: 28.0.5
+      ts-jest: 28.0.8
       ts-loader: 9.3.1
       ts-node: 10.8.2
       tsconfig-paths: 4.0.0
@@ -128,7 +128,7 @@ importers:
       jest: 28.1.2_nh7abbhkyfl6ibpoomcowfezci
       prettier: 2.7.1
       supertest: 6.2.4
-      ts-jest: 28.0.5_l5maidpovftag4mvreloq2cjwa
+      ts-jest: 28.0.8_l5maidpovftag4mvreloq2cjwa
       ts-loader: 9.3.1_3o2jfq6vfqxns3sz6wn2nnc3ei
       ts-node: 10.8.2_ypnpvmnuyavxame5pmlxyxjpce
       tsconfig-paths: 4.0.0
@@ -13481,18 +13481,21 @@ packages:
     resolution: {integrity: sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==}
     dev: false
 
-  /ts-jest/28.0.5_l5maidpovftag4mvreloq2cjwa:
-    resolution: {integrity: sha512-Sx9FyP9pCY7pUzQpy4FgRZf2bhHY3za576HMKJFs+OnQ9jS96Du5vNsDKkyedQkik+sEabbKAnCliv9BEsHZgQ==}
+  /ts-jest/28.0.8_l5maidpovftag4mvreloq2cjwa:
+    resolution: {integrity: sha512-5FaG0lXmRPzApix8oFG8RKjAz4ehtm8yMKOTy5HX3fY6W8kmvOrmcY0hKDElW52FJov+clhUbrKAqofnj4mXTg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
       '@babel/core': '>=7.0.0-beta.0 <8'
+      '@jest/types': ^28.0.0
       babel-jest: ^28.0.0
       esbuild: '*'
       jest: ^28.0.0
       typescript: '>=4.3'
     peerDependenciesMeta:
       '@babel/core':
+        optional: true
+      '@jest/types':
         optional: true
       babel-jest:
         optional: true
