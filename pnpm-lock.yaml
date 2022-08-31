@@ -69,7 +69,7 @@ importers:
       ts-jest: 28.0.8
       ts-loader: 9.3.1
       ts-node: 10.8.2
-      tsconfig-paths: 4.0.0
+      tsconfig-paths: 4.1.0
       typeorm: 0.3.7
       typescript: 4.7.4
       webpack: 5.73.0
@@ -131,7 +131,7 @@ importers:
       ts-jest: 28.0.8_m5noci3hdgjcbp5i3skppiufvq
       ts-loader: 9.3.1_3o2jfq6vfqxns3sz6wn2nnc3ei
       ts-node: 10.8.2_ypnpvmnuyavxame5pmlxyxjpce
-      tsconfig-paths: 4.0.0
+      tsconfig-paths: 4.1.0
       typescript: 4.7.4
       webpack: 5.73.0
 
@@ -13611,14 +13611,6 @@ packages:
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.1
-      minimist: 1.2.6
-      strip-bom: 3.0.0
-    dev: true
-
-  /tsconfig-paths/4.0.0:
-    resolution: {integrity: sha512-SLBg2GBKlR6bVtMgJJlud/o3waplKtL7skmLkExomIiaAtLGtVsoXIqP3SYdjbcH9lq/KVv7pMZeCBpLYOit6Q==}
-    dependencies:
-      json5: 2.2.1
       minimist: 1.2.6
       strip-bom: 3.0.0
     dev: true
