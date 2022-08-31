@@ -26,7 +26,7 @@ importers:
       '@nestjs/platform-express': 9.0.11
       '@nestjs/swagger': 6.1.0
       '@nestjs/testing': 9.0.11
-      '@nestjs/typeorm': 9.0.0
+      '@nestjs/typeorm': 9.0.1
       '@types/bcrypt': 5.0.0
       '@types/cli-color': 2.0.2
       '@types/cookie-parser': 1.4.3
@@ -83,7 +83,7 @@ importers:
       '@nestjs/passport': 9.0.0_qmmxbt2dwte7f4tgsyyoa7ob5i
       '@nestjs/platform-express': 9.0.11_khr6mt6ojlxbw7bo55fknouh34
       '@nestjs/swagger': 6.1.0_ivnm4e5qsl7bn6kf5k4o57kelu
-      '@nestjs/typeorm': 9.0.0_sp4gtzkbiyh24r2ydcb6yqstha
+      '@nestjs/typeorm': 9.0.1_sp4gtzkbiyh24r2ydcb6yqstha
       bcrypt: 5.0.1
       class-transformer: 0.5.1
       class-validator: 0.13.2
@@ -3359,8 +3359,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@nestjs/typeorm/9.0.0_sp4gtzkbiyh24r2ydcb6yqstha:
-    resolution: {integrity: sha512-pTH9ZlngObaPlt7//CY2lSb+3ouFczUQJln1ctXIpGwZdY3QBrwsxF3hnJXsCYNa+IPfz27qJUeoAQmp65kGZw==}
+  /@nestjs/typeorm/9.0.1_sp4gtzkbiyh24r2ydcb6yqstha:
+    resolution: {integrity: sha512-A2BgLIPsMtmMI0bPKEf4bmzgFPsnvHqNBx3KkvaJ7hJrBQy0OqYOb+Rr06ifblKWDWS2tUPNrAFQbZjtk3PI+g==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
       '@nestjs/core': ^8.0.0 || ^9.0.0
