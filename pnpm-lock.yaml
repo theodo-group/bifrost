@@ -173,7 +173,7 @@ importers:
       stylelint: 14.11.0
       stylelint-config-prettier: 9.0.3
       stylelint-config-standard: 25.0.0
-      stylelint-declaration-strict-value: 1.8.0
+      stylelint-declaration-strict-value: 1.9.0
       swr: 1.3.0
       ts-node: 10.8.2
       typescript: 4.7.4
@@ -216,7 +216,7 @@ importers:
       stylelint: 14.11.0
       stylelint-config-prettier: 9.0.3_stylelint@14.11.0
       stylelint-config-standard: 25.0.0_stylelint@14.11.0
-      stylelint-declaration-strict-value: 1.8.0_stylelint@14.11.0
+      stylelint-declaration-strict-value: 1.9.0_stylelint@14.11.0
       ts-node: 10.8.2_4zkqkmwaqmenafsiley2nr7i64
       typescript: 4.7.4
 
@@ -13098,8 +13098,8 @@ packages:
       stylelint-config-recommended: 7.0.0_stylelint@14.11.0
     dev: true
 
-  /stylelint-declaration-strict-value/1.8.0_stylelint@14.11.0:
-    resolution: {integrity: sha512-0+DbPQMgqomlBG+uycI3PZ1BzjJ7mJA065Lx+iTg9tlmjBD36f3ZaIq1ggRZQitE0w+KcbXGzFt6axR1LIP2hw==}
+  /stylelint-declaration-strict-value/1.9.0_stylelint@14.11.0:
+    resolution: {integrity: sha512-L8jKpPWr/rvnYtzAAG11dKtiw76+ce3GXMkZeY4lfjpwHrVc8zvIPl5hcs2HX8RtnMidOFNB9T87G/rFs6x2IQ==}
     peerDependencies:
       stylelint: '>=7 <=14'
     dependencies:
