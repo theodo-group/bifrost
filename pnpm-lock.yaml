@@ -38,7 +38,7 @@ importers:
       '@types/node': 16.11.56
       '@types/passport-jwt': 3.0.6
       '@types/supertest': 2.0.12
-      '@types/validator': 13.7.4
+      '@types/validator': 13.7.6
       '@typescript-eslint/eslint-plugin': 5.30.5
       '@typescript-eslint/parser': 5.30.5
       bcrypt: 5.0.1
@@ -114,7 +114,7 @@ importers:
       '@types/node': 16.11.56
       '@types/passport-jwt': 3.0.6
       '@types/supertest': 2.0.12
-      '@types/validator': 13.7.4
+      '@types/validator': 13.7.6
       '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
       '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
       dependency-cruiser: 11.15.0
@@ -2524,7 +2524,7 @@ packages:
       '@docusaurus/plugin-content-pages': 2.0.0-rc.1_3tgeifm2vmwrlpqlopppsnjtcu
       '@docusaurus/utils': 2.0.0-rc.1_fh5bds7ccduypwmpulad3xjppm
       '@types/history': 4.7.11
-      '@types/react': 18.0.14
+      '@types/react': 18.0.17
       '@types/react-router-config': 5.0.6
       clsx: 1.2.1
       parse-numeric-range: 1.3.0
@@ -4206,8 +4206,8 @@ packages:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
 
-  /@types/validator/13.7.4:
-    resolution: {integrity: sha512-uAaSWegu2lymY18l+s5nmcXu3sFeeTOl1zhSGoYzcr6T3wz1M+3OcW4UjfPhIhHGd13tIMRDsEpR+d8w/MexwQ==}
+  /@types/validator/13.7.6:
+    resolution: {integrity: sha512-uBsnWETsUagQ0n6G2wcXNIufpTNJir0zqzG4p62fhnwzs48d/iuOWEEo0d3iUxN7D+9R/8CSvWGKS+KmaD0mWA==}
     dev: true
 
   /@types/ws/8.5.3:
