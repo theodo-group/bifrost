@@ -88,6 +88,22 @@ describe('AppController', () => {
           expect(response.headers['set-cookie'][0].includes('Secure')).toBe(true);
         });
     });
+
+    it('should match email case insensitve', async () => {
+      const password = faker.random.word();
+      const email = faker.internet.email();
+
+      await userService.createUser({
+        name: faker.name.lastName(),
+        email: email.toLocaleLowerCase(),
+        password,
+      });
+
+      return request(app.getHttpServer())
+        .post('/auth/jwt/create')
+        .send({ email: email.toUpperCase(), password })
+        .expect(201);
+    });
   });
 
   describe('POST - jwt/refresh', () => {

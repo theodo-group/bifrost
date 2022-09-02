@@ -30,7 +30,7 @@ export class AuthService {
     const user = await this.userRepository
       .createQueryBuilder('user')
       .addSelect('user.password')
-      .where('user.email = :email', { email: credentials.email })
+      .where('user.email ILIKE :email', { email: credentials.email })
       .getOne();
 
     if (!user) {
