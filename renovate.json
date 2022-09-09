@@ -22,6 +22,10 @@
     {
       "matchPackageNames": ["typescript"],
       "allowedVersions": "<4.8.0"
+    },
+    {
+      "matchPackageNames": ["@mdx-js/react"],
+      "allowedVersions": "<2.0.0"
     }
   ],
   "lockFileMaintenance": { "enabled": true, "automerge": true }
