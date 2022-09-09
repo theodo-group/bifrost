@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 😺 NestJs
+# Quick start
 
 ## Installation
 
@@ -20,28 +20,28 @@ $ cp .env.example.rc .env.rc
 $ docker-compose up -d
 
 # Execute migrations
-$ yarn migration:run
+$ pnpm migration:run
 
 # Start dev server
-$ yarn start
+$ pnpm start
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ yarn test
+$ pnpm test
 
 # test coverage
-$ yarn test:coverage
+$ pnpm test:coverage
 ```
 
 ## Migrations
 
 ```bash
 # Generate a migration
-$ yarn migration:generate migration/YourMigrationName
+$ pnpm migration:generate migration/YourMigrationName
 
 # Run all pending migrations
-$ yarn migration:run
+$ pnpm migration:run
 ```

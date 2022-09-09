@@ -3,7 +3,7 @@ sidebar_position: 1
 title: "Introduction"
 ---
 
-<p align="center"><img src='/img/bifrost.png' width="320"/></p>
+<p align="center"><img src='/bifrost/img/bifrost.png' width="320"/></p>
 <p align="center">Generate a full stack application by running one command</p>
 <p align="center">Boost your developer experience</p>
 <p align="center">
@@ -16,9 +16,8 @@ title: "Introduction"
 ## Our stack
 
 <p align="center">
-  <img src='/img/next_logo.png' width="130" style={{ margin: '20px' }}/>
-  <img src='/img/django_logo.png' width="180" style={{ margin: '20px' }}/>
-  <img src='/img/nest_logo.png' width="160" style={{ margin: '20px' }}/>
+  <img src='/bifrost/img/next_logo.png' width="130" style={{ margin: '20px' }}/>
+  <img src='/bifrost/img/nest_logo.png' width="160" style={{ margin: '20px' }}/>
 </p>
 
 ## Philosophy
