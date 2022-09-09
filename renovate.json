@@ -18,6 +18,10 @@
     {
       "matchPackageNames": ["@types/faker"],
       "allowedVersions": "<6.0.0"
+    },
+    {
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<4.8.0"
     }
   ],
   "lockFileMaintenance": { "enabled": true, "automerge": true }
