@@ -24,7 +24,7 @@ importers:
       '@nestjs/mapped-types': 1.1.0
       '@nestjs/passport': 9.0.0
       '@nestjs/platform-express': 9.0.11
-      '@nestjs/swagger': 6.1.0
+      '@nestjs/swagger': 6.1.2
       '@nestjs/testing': 9.0.11
       '@nestjs/typeorm': 9.0.1
       '@types/bcrypt': 5.0.0
@@ -82,7 +82,7 @@ importers:
       '@nestjs/mapped-types': 1.1.0_f7n2wnftp7gwcja4o2nbkzq5xi
       '@nestjs/passport': 9.0.0_qmmxbt2dwte7f4tgsyyoa7ob5i
       '@nestjs/platform-express': 9.0.11_khr6mt6ojlxbw7bo55fknouh34
-      '@nestjs/swagger': 6.1.0_ivnm4e5qsl7bn6kf5k4o57kelu
+      '@nestjs/swagger': 6.1.2_ivnm4e5qsl7bn6kf5k4o57kelu
       '@nestjs/typeorm': 9.0.1_tq7xycdignr3g27t42km5o6vju
       bcrypt: 5.0.1
       class-transformer: 0.5.1
@@ -3343,8 +3343,8 @@ packages:
       - chokidar
     dev: true
 
-  /@nestjs/swagger/6.1.0_ivnm4e5qsl7bn6kf5k4o57kelu:
-    resolution: {integrity: sha512-Lflplv216nXkH6By/jMggQjpuH1V67M07tgHXUAZujAwG3LAJ1CfSvzuFckK4MAb54xQTYvFgfVPWkXqvKXzdA==}
+  /@nestjs/swagger/6.1.2_ivnm4e5qsl7bn6kf5k4o57kelu:
+    resolution: {integrity: sha512-RU1DeTDyuN/lRXKFWaf7I9LYF34/ale3IIGeY3romAcXL/N9W0+50Ek3ou+Ajd5FqpLqzt7saYhnaQegVuU4UQ==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@nestjs/common': ^9.0.0
