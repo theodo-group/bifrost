@@ -34,7 +34,7 @@ importers:
       '@types/faker': 5.5.9
       '@types/jest': 29.0.0
       '@types/jsonwebtoken': 8.5.9
-      '@types/lodash': 4.14.184
+      '@types/lodash': 4.14.185
       '@types/node': 16.11.58
       '@types/passport-jwt': 3.0.6
       '@types/supertest': 2.0.12
@@ -110,7 +110,7 @@ importers:
       '@types/faker': 5.5.9
       '@types/jest': 29.0.0
       '@types/jsonwebtoken': 8.5.9
-      '@types/lodash': 4.14.184
+      '@types/lodash': 4.14.185
       '@types/node': 16.11.58
       '@types/passport-jwt': 3.0.6
       '@types/supertest': 2.0.12
@@ -4032,8 +4032,8 @@ packages:
       '@types/node': 18.7.16
     dev: false
 
-  /@types/lodash/4.14.184:
-    resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==}
+  /@types/lodash/4.14.185:
+    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
     dev: true
 
   /@types/mdast/3.0.10:
