@@ -5,6 +5,7 @@
     "build": "next build",
     "dev": "./gen_env.sh local && next dev -p 3000",
     "lint": "next lint",
+    "lint:fix": "pnpm lint --fix",
     "lint:style": "stylelint './**/*.module.css'",
     "postinstall": "test -f .env.local || cp .env.sample .env.local",
     "start": "./gen_env.sh production && next start",

@@ -7,7 +7,8 @@
   "scripts": {
     "postinstall": "husky install && syncpack format",
     "prepare": "husky install",
-    "security": "audit-ci --config ./audit-ci.json"
+    "security": "audit-ci --config ./audit-ci.json",
+    "lint-fix-all": "nx run-many --target=lint:fix --all --parallel=4"
   },
   "devDependencies": {
     "@commitlint/cli": "17.1.2",

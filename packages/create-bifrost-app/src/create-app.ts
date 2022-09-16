@@ -27,7 +27,7 @@ export const createApp = async ({
   const repoInfo: RepoInfo = {
     username: 'theodo-group',
     name: 'bifrost',
-    branch: `create-mono-repo-from-swarmion`,
+    branch: `main`,
     filePath: 'examples/bifrost-starter',
   };
 
@@ -65,7 +65,7 @@ export const createApp = async ({
   console.log(`Creating a new Bifrost app in ${chalk.green(root)}.`);
   console.log();
 
-  // const originalDirectory = process.cwd();
+  const originalDirectory = process.cwd();
 
   process.chdir(root);
   /**
@@ -96,51 +96,33 @@ export const createApp = async ({
     );
   }
 
+  console.log('Initializing a git repository...');
+  if (tryGitInit(root)) {
+    console.log();
+  }
+
   console.log('Installing packages. This might take a couple of minutes.');
   console.log();
 
   await install(root);
 
   console.log();
-  console.log('Packaging your app.');
-  execSync(`yarn package`, { stdio: [0, 1, 2], cwd: root });
   console.log();
   console.log('Linting your project...');
   console.log();
-  execSync(`yarn lint-fix-all`, { stdio: 'ignore', cwd: root });
+  execSync(`pnpm lint-fix-all`, { stdio: 'ignore', cwd: root });
 
   console.log();
-  console.log('Initializing a git repository...');
-  if (tryGitInit(root)) {
-    console.log();
-  }
 
   console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
-  console.log('Inside that directory, you can run several commands:');
   console.log();
+  console.log();
+  console.log('Inside that directory, you can run several commands:');
 
-  // TODO: decide what log to show
-  //
-  //
-  // let cdpath: string;
-  // if (path.join(originalDirectory, appName) === appPath) {
-  //   cdpath = appName;
-  // } else {
-  //   cdpath = appPath;
-  // }
-  //
-  // console.log(chalk.cyan(`  yarn dev`));
-  // console.log('    Starts the development server.');
-  // console.log();
-  // console.log(chalk.cyan(`  yarn build`));
-  // console.log('    Builds the app for production.');
-  // console.log();
-  // console.log(chalk.cyan(`  yarn start`));
-  // console.log('    Runs the built app in production mode.');
-  // console.log();
-  // console.log('We suggest that you begin by typing:');
-  // console.log();
-  // console.log(chalk.cyan('  cd'), cdpath);
-  // console.log(`  ${chalk.cyan(`yarn dev`)}`);
-  // console.log();
+  const cdpath =
+    path.join(originalDirectory, appName) === appPath ? appName : appPath;
+
+  console.log(chalk.cyan('  cd'), cdpath);
+  console.log(`  ${chalk.cyan(`pnpm dev`)}`);
+  console.log('    Starts the development servers for backend and frontend.');
 };
