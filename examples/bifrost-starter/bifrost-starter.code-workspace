@@ -6,10 +6,7 @@
       "source.fixAll.eslint": true,
       "source.fixAll.stylelint": true
     },
-    "stylelint.validate": [
-      "typescript",
-      "typescriptreact"
-    ],
+    "stylelint.validate": ["typescript", "typescriptreact"],
     "stylelint.customSyntax": "@stylelint/postcss-css-in-js",
     "search.exclude": {
       "**/coverage": true,
@@ -31,50 +28,50 @@
     "[markdown][mdx]": {
       "editor.wordWrap": "on"
     },
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "vitest.commandLine": "yarn vitest",
-    "vitest.disabledWorkspaceFolders": [
-      "bifrost root"
-    ],
-    "cSpell.words": [
-      "clsx",
-      "esbuild",
-      "horiz",
-      "microservices",
-      "middlewares",
-      "swarmion",
-      "ulid"
-    ]
+    "typescript.tsdk": "node_modules/typescript/lib"
   },
   "extensions": {
     "recommendations": [
-      "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "styled-components.vscode-styled-components",
+      "Orta.vscode-jest",
+      "stylelint.vscode-stylelint",
+      "ms-vsliveshare.vsliveshare",
       "editorconfig.editorconfig",
       "foxundermoon.shell-format",
-      "ZixuanChen.vitest-explorer",
-      "streetsidesoftware.code-spell-checker",
-      "streetsidesoftware.code-spell-checker-french",
-      "stylelint.vscode-stylelint",
-      "styled-components.vscode-styled-components"
+      "streetsidesoftware.code-spell-checker"
+    ]
+  },
+  "launch": {
+    "configurations": [
+      {
+        "type": "node",
+        "request": "attach",
+        "name": "Debug: nest",
+        "protocol": "inspector",
+        "port": 9229,
+        "restart": true,
+        "skipFiles": ["<node_internals>/**"]
+      }
     ]
   },
   "folders": [
     {
-      "path": "packages/nx-plugin",
-      "name": "nx plugin [library]"
+      "path": "apps/backend",
+      "name": "backend [Nest.js] 😺"
     },
     {
-      "path": "documentation",
-      "name": "documentation [library]"
+      "path": "apps/frontend",
+      "name": "frontend [Next.js] 🔼"
     },
     {
-      "path": "packages/create-bifrost-app",
-      "name": "create bifrost app [library]"
+      "path": "packages/interfaces",
+      "name": "interfaces 🤝"
     },
     {
       "path": ".",
-      "name": "bifrost root"
+      "name": "bifrost starter root 🌈"
     }
   ]
 }

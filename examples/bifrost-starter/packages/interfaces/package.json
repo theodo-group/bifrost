@@ -1,12 +1,12 @@
 {
-  "private": true,
-  "name": "interfaces",
+  "name": "@bifrost-starter/interfaces",
   "description": "shared frontend-backend interfaces",
-  "scripts": {},
-  "keywords": [],
+  "private": true,
   "author": "",
   "license": "ISC",
+  "scripts": {},
   "devDependencies": {
     "typescript": "4.7.4"
-  }
+  },
+  "keywords": []
 }
