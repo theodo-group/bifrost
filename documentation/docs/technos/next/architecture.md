@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Frontend Architecture
+# Architecture
 
 After creating an app, it should look something like:
 

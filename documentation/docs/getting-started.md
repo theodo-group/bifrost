@@ -11,16 +11,7 @@ These instructions will get you a copy of the latest version of bifrost on your 
 
 -   [Install fnm](https://github.com/Schniz/fnm#installation) (node version manager)
 -   [Node 16+](https://nodejs.org/en/) `fnm install lts/gallium`
--   [Yarn](https://yarnpkg.com/fr/) (`npm install -g yarn`)
-
-**For Django**
-
--   [`poetry`][poetry]
--   [`python3.10`][python3.10]
-
-**For Elastic Beanstalk**
-
--   [`terraform`][terraform]
+-   [Pnpm](https://pnpm.io) (`npm install -g pnpm`)
 
 ### Installing
 
@@ -35,18 +26,12 @@ You're done! 🎉
 
 ## 🔧 Generating a new project
 
-Navigate to your copy of seed and make sure it is up to date:
+Navigate to your copy of Bifrost and make sure it is up to date:
 
 ```bash
 cd /path/to/bifrost
-yarn install
 git pull
-```
-
-Run:
-
-```bash
-make generate
+pnpm install
 ```
 
 > Do you encounter _any_ problem? Check the [troubleshooting section](#troubleshooting)
@@ -57,7 +42,4 @@ You're done! 🎉
 
 **Follow the `README` of the generated project.** 😉
 
-[poetry]: https://python-poetry.org/docs/
-[python3.10]: https://www.notion.so/m33/Install-Python-31f3c8495a5d43aebf7845fcb3b9ce79
-[terraform]: https://www.terraform.io/downloads.html
-[yarn]: https://yarnpkg.com/en/docs/install#mac-stable
+[pnpm]: https://pnpm.io/installation
