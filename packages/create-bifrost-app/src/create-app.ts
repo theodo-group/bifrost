@@ -20,15 +20,14 @@ export class DownloadError extends Error {}
 
 export const createApp = async ({
   appPath,
-  packageVersion,
 }: {
   appPath: string;
   packageVersion: string;
 }): Promise<void> => {
   const repoInfo: RepoInfo = {
-    username: 'bifrost',
+    username: 'theodo-group',
     name: 'bifrost',
-    branch: `v${packageVersion}`,
+    branch: `create-mono-repo-from-swarmion`,
     filePath: 'examples/bifrost-starter',
   };
 
