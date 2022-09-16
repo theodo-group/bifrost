@@ -1,21 +1,9 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
-    "curly": [
-      "error",
-      "all"
-    ],
-    "eqeqeq": [
-      "error",
-      "smart"
-    ],
-    "complexity": [
-      "error",
-      8
-    ],
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "smart"],
+    "complexity": ["error", 8],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -35,18 +23,7 @@
     "import/order": [
       "error",
       {
-        "groups": [
-          [
-            "external",
-            "builtin"
-          ],
-          "internal",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
-        ]
+        "groups": [["external", "builtin"], "internal", ["parent", "sibling", "index"]]
       }
     ],
     "sort-imports": [
@@ -55,12 +32,7 @@
         "ignoreCase": true,
         "ignoreDeclarationSort": true,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": [
-          "none",
-          "all",
-          "multiple",
-          "single"
-        ]
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
       }
     ],
     "padding-line-between-statements": [
@@ -85,10 +57,7 @@
     ]
   },
   "root": true,
-  "plugins": [
-    "import",
-    "unused-imports"
-  ],
+  "plugins": ["import", "unused-imports"],
   "env": {
     "browser": true,
     "es6": true,
@@ -97,13 +66,8 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.ts?(x)"
-      ],
-      "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
-      ],
+      "files": ["**/*.ts?(x)"],
+      "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": "tsconfig.json"

@@ -1,6 +1,6 @@
 # Contributing
 
-> Found a bug in Forge?
+> Found a bug in Bifrost?
 > Have an idea for a new feature?
 > Great!
 >
