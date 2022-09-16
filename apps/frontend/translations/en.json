@@ -5,7 +5,7 @@
     "warning": "Your username or password is invalid. Try again.",
     "email": {
       "label": "Email",
-      "placeholder": "max@forge.io",
+      "placeholder": "max@bifrost.io",
       "error": {
         "required": "Please enter your email address",
         "invalid": "Please enter a valid email address"
@@ -22,7 +22,7 @@
   },
   "profile": {
     "name": {
-      "label":"Name",
+      "label": "Name",
       "error": {
         "required": "Please enter your name",
         "invalid": "Please enter a valid name"

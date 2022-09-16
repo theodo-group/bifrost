@@ -9,8 +9,8 @@ export const Home = (): JSX.Element => {
   return (
     <div>
       <Head>
-        <title>Forge</title>
-        <meta name="description" content="Generated with forge" />
+        <title>Bifrost</title>
+        <meta name="description" content="Generated with bifrost" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

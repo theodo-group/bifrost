@@ -4,7 +4,7 @@
 
 The recommendation is to use a single css system, now we recommend:
 
--   css module, the default css integration of nextjs (forge ship with this)
+-   css module, the default css integration of nextjs (bifrost ship with this)
     -   Even if using simple css, it's highly recommended to use a stylesheet with css vars.
     -   If you have complex style ahead of you you might want the flexibility of using a css in js lib.
 -   styled-component is a simple css in js lib, used a lot at theodo it's fast and powerful:

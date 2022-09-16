@@ -1,6 +1,6 @@
-# Forge
+# Bifrost
 
-Forge is a monorepo starter for fullstack application using Nextjs and Nestjs.
+Bifrost is a monorepo starter for fullstack application using Nextjs and Nestjs.
 
 ## Getting started
 

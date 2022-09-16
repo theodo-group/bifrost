@@ -25,7 +25,7 @@ export const Login: NextPage = () => {
     <main>
       <Head>
         <meta name="description" content="login" />
-        <title>Login | Forge</title>
+        <title>Login | Bifrost</title>
       </Head>
       <div className={style.container}>
         <h1>

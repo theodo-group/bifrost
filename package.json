@@ -1,8 +1,8 @@
 {
-  "name": "@theodo-group/forge",
+  "name": "@theodo-group/bifrost",
   "version": "1.0.0",
-  "description": "Generate a Forge project",
-  "repository": "git@github.com:theodo-group/forge.git",
+  "description": "Generate a Bifrost project",
+  "repository": "git@github.com:theodo-group/bifrost.git",
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
