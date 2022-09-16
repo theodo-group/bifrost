@@ -8,8 +8,8 @@
   "bugs": "https://github.com/theodo-group/bifrost/issues",
   "keywords": [
     "Monorepo",
-    "Next",
     "Nest",
+    "Next",
     "Typescript",
     "app",
     "create"

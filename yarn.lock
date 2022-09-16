@@ -7370,16 +7370,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-require@npm:^1.1.0":
-  version: 1.1.1
-  resolution: "create-require@npm:1.1.1"
-  checksum: a9a1503d4390d8b59ad86f4607de7870b39cad43d929813599a23714831e81c520bddf61bcdd1f8e30f05fd3a2b71ae8538e946eb2786dc65c2bbc520f692eff
-  languageName: node
-  linkType: hard
-
-"create-swarmion-app@workspace:packages/create-bifrost-app":
+"create-bifrost-app@workspace:packages/create-bifrost-app":
   version: 0.0.0-use.local
-  resolution: "create-swarmion-app@workspace:packages/create-bifrost-app"
+  resolution: "create-bifrost-app@workspace:packages/create-bifrost-app"
   dependencies:
     "@types/async-retry": ^1.4.4
     "@types/cross-spawn": ^6.0.2
@@ -7410,9 +7403,16 @@ __metadata:
     vite-tsconfig-paths: ^3.5.0
     vitest: ^0.23.1
   bin:
-    create-swarmion-app: ./dist/index.js
+    create-bifrost-app: ./dist/index.js
   languageName: unknown
   linkType: soft
+
+"create-require@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "create-require@npm:1.1.1"
+  checksum: a9a1503d4390d8b59ad86f4607de7870b39cad43d929813599a23714831e81c520bddf61bcdd1f8e30f05fd3a2b71ae8538e946eb2786dc65c2bbc520f692eff
+  languageName: node
+  linkType: hard
 
 "cross-fetch@npm:^3.1.5":
   version: 3.1.5
