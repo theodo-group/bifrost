@@ -1,20 +1,20 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Forge',
+  title: 'Bifrost',
   tagline: 'Start your project in the best conditions',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/forge/',
+  baseUrl: '/bifrost/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'theodo', // Usually your GitHub org/user name.
-  projectName: 'forge', // Usually your repo name.
+  projectName: 'bifrost', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -28,7 +28,7 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -46,18 +46,18 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       navbar: {
-        title: 'Forge',
+        title: 'Bifrost',
         logo: {
-          alt: 'Forge Logo',
-          src: 'img/forge.png',
+          alt: 'Bifrost Logo',
+          src: 'img/bifrost.png',
         },
         items: [
           {
@@ -66,9 +66,9 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/theodo/forge',
+            href: 'https://github.com/theodo-group/bifrost',
             label: 'GitHub',
             position: 'right',
           },
@@ -95,7 +95,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/theodo/forge',
+                href: 'https://github.com/theodo-group/bifrost',
               },
             ],
           },
@@ -106,6 +106,10 @@ const config = {
                 label: 'Icons created by Freepik - Flaticon',
                 href: 'https://www.flaticon.com',
               },
+              {
+                label: 'Bifrost icons created by Flat Icons - Flaticon',
+                href: 'https://www.flaticon.com/free-icons/bifrost',
+              },
             ],
           },
         ],
@@ -115,7 +119,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
-};
+    },
+}
 
-module.exports = config;
+module.exports = config

@@ -5,7 +5,7 @@ title: "Getting Started"
 
 ## 📦 Installing
 
-These instructions will get you a copy of the latest version of forge on your local machine.
+These instructions will get you a copy of the latest version of bifrost on your local machine.
 
 ### Prerequisites
 
@@ -27,8 +27,8 @@ These instructions will get you a copy of the latest version of forge on your lo
 Clone this repository:
 
 ```bash
-git clone git@github.com:theodo-group/forge.git
-cd forge
+git clone git@github.com:theodo-group/bifrost.git
+cd bifrost
 ```
 
 You're done! 🎉
@@ -38,7 +38,7 @@ You're done! 🎉
 Navigate to your copy of seed and make sure it is up to date:
 
 ```bash
-cd /path/to/forge
+cd /path/to/bifrost
 yarn install
 git pull
 ```

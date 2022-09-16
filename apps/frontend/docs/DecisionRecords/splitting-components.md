@@ -55,7 +55,7 @@ export const Logo: FunctionComponent = () => {
         <Link href={routes.HOME}>
             <a style={{ height: logoHeight }}>
                 <Image
-                    alt="Forge logo"
+                    alt="Bifrost logo"
                     src="/logo.png"
                     height={logoHeight}
                     width={logoWidth}
@@ -123,7 +123,7 @@ export const Header: FunctionComponent = () => {
             <Link href={routes.HOME}>
                 <a style={{ height: logoHeight }}>
                     <Image
-                        alt="Forge logo"
+                        alt="Bifrost logo"
                         src="/logo.png"
                         height={logoHeight}
                         width={logoWidth}

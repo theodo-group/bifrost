@@ -7,14 +7,8 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "curly": [
-      "error",
-      "all"
-    ],
-    "eqeqeq": [
-      "error",
-      "smart"
-    ],
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "smart"],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -34,16 +28,9 @@
       "error",
       {
         "groups": [
-          [
-            "external",
-            "builtin"
-          ],
+          ["external", "builtin"],
           "internal",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
+          ["parent", "sibling", "index"]
         ]
       }
     ],
@@ -53,12 +40,7 @@
         "ignoreCase": true,
         "ignoreDeclarationSort": true,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": [
-          "none",
-          "all",
-          "multiple",
-          "single"
-        ]
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
       }
     ],
     "padding-line-between-statements": [
@@ -90,9 +72,7 @@
     "jsx-a11y/alt-text": [
       2,
       {
-        "img": [
-          "Image"
-        ]
+        "img": ["Image"]
       }
     ],
     "unused-imports/no-unused-imports-ts": "error",
@@ -109,12 +89,7 @@
     "node": true,
     "jest": true
   },
-  "plugins": [
-    "import",
-    "jsx-a11y",
-    "risxss",
-    "unused-imports"
-  ],
+  "plugins": ["import", "jsx-a11y", "risxss", "unused-imports"],
   "settings": {
     "react": {
       "version": "detect"
@@ -122,9 +97,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.ts?(x)"
-      ],
+      "files": ["**/*.ts?(x)"],
       "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",

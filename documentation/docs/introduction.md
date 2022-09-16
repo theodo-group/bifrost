@@ -3,7 +3,7 @@ sidebar_position: 1
 title: "Introduction"
 ---
 
-<p align="center"><img src='/img/forge.png' width="320"/></p>
+<p align="center"><img src='/img/bifrost.png' width="320"/></p>
 <p align="center">Generate a full stack application by running one command</p>
 <p align="center">Boost your developer experience</p>
 <p align="center">
@@ -23,7 +23,7 @@ title: "Introduction"
 
 ## Philosophy
 
-Forge is a project generator that aims to provide you the tools to implement 3S quality on your project without slowing down development.
+BIfrost is a project generator that aims to provide you the tools to implement 3S quality on your project without slowing down development.
 
 It provides quality and clarity at scale for all stakeholders in a sharp, wise and helpful way.
 

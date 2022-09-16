@@ -15,11 +15,13 @@ const config = {
   testRegex: TEST_REGEX,
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/**/*.{js,jsx,ts,tsx}'],
-  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/cypress/'],
-
-  coveragePathIgnorePatterns: [
-    '<rootDir>/src/.next/'
+  testPathIgnorePatterns: [
+    '<rootDir>/.next/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/cypress/',
   ],
+
+  coveragePathIgnorePatterns: ['<rootDir>/src/.next/'],
   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   moduleDirectories: ['node_modules', '<rootDir>'],
   testEnvironment: 'jest-environment-jsdom',

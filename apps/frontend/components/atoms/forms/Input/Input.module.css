@@ -32,8 +32,8 @@
 }
 
 .input:disabled {
-    color: var(--color_primary_2);
-    border-color: var(--color_primary_2);
-    box-shadow: none;
-    background-color: var(--color_primary_2);
-  }
+  color: var(--color_primary_2);
+  border-color: var(--color_primary_2);
+  box-shadow: none;
+  background-color: var(--color_primary_2);
+}

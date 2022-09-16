@@ -1,11 +1,11 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from 'react'
+import clsx from 'clsx'
+import styles from './styles.module.css'
 
 type FeatureItem = {
-  title: string;
-  imgSrc: string;
-};
+  title: string,
+  imgSrc: string,
+}
 
 const FeatureList: FeatureItem[] = [
   {
@@ -20,19 +20,19 @@ const FeatureList: FeatureItem[] = [
     title: 'Fixes the learnings of all the teams',
     imgSrc: require('@site/static/img/brain.png').default,
   },
-];
+]
 
-function Feature({title, imgSrc}: FeatureItem) {
+function Feature({ title, imgSrc }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-      <img className={styles.featureImg} src={imgSrc} role="img" />
+        <img className={styles.featureImg} src={imgSrc} role="img" />
       </div>
       <div className="text--center">
         <h3>{title}</h3>
       </div>
     </div>
-  );
+  )
 }
 
 export default function HomepageFeatures(): JSX.Element {
@@ -46,5 +46,5 @@ export default function HomepageFeatures(): JSX.Element {
         </div>
       </div>
     </section>
-  );
+  )
 }
