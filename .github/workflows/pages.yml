@@ -3,7 +3,7 @@ name: Deploy Docusaurus site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
     paths:
       - 'documentation/**'
 
@@ -32,12 +32,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install pnpm
-        run: npm install -g pnpm
       - name: Install dependencies
-        run: pnpm install
+        run: yarn install
       - name: Build Docusaurus App
-        run: pnpm run --filter documentation build
+        run: yarn build:documentation
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

@@ -18,9 +18,10 @@
     "documentation"
   ],
   "scripts": {
-    "build": "nx run-many --target=build --all --parallel=4",
+    "build": "nx run-many --target=build --parallel=4 --exclude=documentation",
+    "build:documentation": "nx run documentation:build",
     "check-audit": "check-audit --yarn",
-    "deploy": "nx run-many --target=deploy --all --parallel=4",
+    "deploy": "nx run-many --target=deploy --parallel=4",
     "deploy-affected": "nx affected --target=deploy",
     "graph": "nx dep-graph",
     "info": "nx run-many --target=sls-info --all --parallel=4",
