@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "emitDeclarationOnly": false,
+    "composite": true,
+    "resolveJsonModule": true,
+    "target": "ES3"
+  },
+  "exclude": ["./dist"],
+  "include": ["./**/*.ts", "./package.json"]
+}
