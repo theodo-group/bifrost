@@ -6,7 +6,7 @@ sidebar_position: 8
 
 `pnpm audit` to see if your application has any dependencies with known vulnerabilities
 
-In most situations, upgrading the dependencies will be enough to ensure you have no vulnerabilities. If you're not sure how to do that, see the [Upgrading Dependencies](./docs/upgrading-dependencies) docs.
+In most situations, upgrading the dependencies will be enough to ensure you have no vulnerabilities. If you're not sure how to do that, see the [Upgrading Dependencies](./upgrading-dependencies) docs.
 
 > "But what if that's not enough? My dependency's dependency has a high vulnerability and they're not patching it, what can I do?!"
 
