@@ -6,15 +6,15 @@ TLDR:
 
 1. separation of concerns - **each component does 1 functional thing**
 2. may-need-to-be-split indicators
-    1. 100+ lines
-    2. 10+ imports
+   1. 100+ lines
+   2. 10+ imports
 
 ---
 
 ## Aim: improve dev experience by
 
--   making it easier to find the relevant code for your feature
--   reducing lines of code you need to understand when adding/editing a feature
+- making it easier to find the relevant code for your feature
+- reducing lines of code you need to understand when adding/editing a feature
 
 ## 1. Separation Of Concerns (SOC)
 
@@ -30,20 +30,20 @@ import { Logo } from './Logo';
 import { AuthButtons } from './AuthButtons';
 
 const HeaderContainer = styled.header`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: ${getSpacing(13)};
-    padding: 0 ${getSpacing(4)};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: ${getSpacing(13)};
+  padding: 0 ${getSpacing(4)};
 `;
 
 export const Header: FunctionComponent = () => {
-    return (
-        <HeaderContainer>
-            <Logo />
-            <AuthButtons />
-        </HeaderContainer>
-    );
+  return (
+    <HeaderContainer>
+      <Logo />
+      <AuthButtons />
+    </HeaderContainer>
+  );
 };
 
 // Logo.tsx
@@ -51,48 +51,45 @@ const logoHeight = getSpacing(11);
 const logoWidth = getSpacing(23);
 
 export const Logo: FunctionComponent = () => {
-    return (
-        <Link href={routes.HOME}>
-            <a style={{ height: logoHeight }}>
-                <Image
-                    alt="Bifrost logo"
-                    src="/logo.png"
-                    height={logoHeight}
-                    width={logoWidth}
-                />
-            </a>
-        </Link>
-    );
+  return (
+    <Link href={routes.HOME}>
+      <a style={{ height: logoHeight }}>
+        <Image
+          alt="Bifrost logo"
+          src="/logo.png"
+          height={logoHeight}
+          width={logoWidth}
+        />
+      </a>
+    </Link>
+  );
 };
 
 // AuthButtons
 export const AuthButtons: FunctionComponent = () => {
-    const dispatch = useDispatch();
-    const logout = useCallback(
-        () => dispatch(logoutUser.request()),
-        [dispatch],
-    );
-    const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
+  const dispatch = useDispatch();
+  const logout = useCallback(() => dispatch(logoutUser.request()), [dispatch]);
+  const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
 
-    return isUserLoggedIn ? (
-        <Button onClick={logout}>
-            <FormattedMessage id="header.logout" />
+  return isUserLoggedIn ? (
+    <Button onClick={logout}>
+      <FormattedMessage id="header.logout" />
+    </Button>
+  ) : (
+    <Link href={routes.LOGIN}>
+      <a>
+        <Button>
+          <FormattedMessage id="header.login" />
         </Button>
-    ) : (
-        <Link href={routes.LOGIN}>
-            <a>
-                <Button>
-                    <FormattedMessage id="header.login" />
-                </Button>
-            </a>
-        </Link>
-    );
+      </a>
+    </Link>
+  );
 };
 ```
 
--   The `Header.tsx` component defines the header layout
--   The `Logo.tsx` component defines the logo image
--   The `AuthButtons.tsx` component defines the login/logout buttons
+- The `Header.tsx` component defines the header layout
+- The `Logo.tsx` component defines the logo image
+- The `AuthButtons.tsx` component defines the login/logout buttons
 
 Each component does 1 functional thing. This means that when our developer comes to edit/add a feature they will have less code to read and understand.
 
@@ -103,48 +100,45 @@ Let's look at when it would look like if there was no splitting:
 ```typescript
 // Header.tsx
 const HeaderContainer = styled.header`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: ${getSpacing(13)};
-    padding: 0 ${getSpacing(4)};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: ${getSpacing(13)};
+  padding: 0 ${getSpacing(4)};
 `;
 
 export const Header: FunctionComponent = () => {
-    const dispatch = useDispatch();
-    const logout = useCallback(
-        () => dispatch(logoutUser.request()),
-        [dispatch],
-    );
-    const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
+  const dispatch = useDispatch();
+  const logout = useCallback(() => dispatch(logoutUser.request()), [dispatch]);
+  const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
 
-    return (
-        <HeaderContainer>
-            <Link href={routes.HOME}>
-                <a style={{ height: logoHeight }}>
-                    <Image
-                        alt="Bifrost logo"
-                        src="/logo.png"
-                        height={logoHeight}
-                        width={logoWidth}
-                    />
-                </a>
-            </Link>
-            {isUserLoggedIn ? (
-                <Button onClick={logout}>
-                    <FormattedMessage id="header.logout" />
-                </Button>
-            ) : (
-                <Link href={routes.LOGIN}>
-                    <a>
-                        <Button>
-                            <FormattedMessage id="header.login" />
-                        </Button>
-                    </a>
-                </Link>
-            )}
-        </HeaderContainer>
-    );
+  return (
+    <HeaderContainer>
+      <Link href={routes.HOME}>
+        <a style={{ height: logoHeight }}>
+          <Image
+            alt="Bifrost logo"
+            src="/logo.png"
+            height={logoHeight}
+            width={logoWidth}
+          />
+        </a>
+      </Link>
+      {isUserLoggedIn ? (
+        <Button onClick={logout}>
+          <FormattedMessage id="header.logout" />
+        </Button>
+      ) : (
+        <Link href={routes.LOGIN}>
+          <a>
+            <Button>
+              <FormattedMessage id="header.login" />
+            </Button>
+          </a>
+        </Link>
+      )}
+    </HeaderContainer>
+  );
 };
 ```
 

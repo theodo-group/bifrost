@@ -18,7 +18,6 @@
     "documentation"
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "nx run-many --target=build --parallel=4 --exclude=documentation",
     "build:documentation": "nx run documentation:build",
     "deploy": "nx run-many --target=deploy --parallel=4",
@@ -30,6 +29,7 @@
     "linter-base-config": "eslint --ext=js,ts",
     "package": "nx run-many --target=package --all --parallel=4",
     "postinstall": "husky install && syncpack format",
+    "preinstall": "npx only-allow pnpm",
     "release": "./release.sh",
     "test": "nx run-many --target=test --all --parallel=4",
     "test-affected": "nx affected --target=test",
