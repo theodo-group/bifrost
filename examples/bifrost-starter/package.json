@@ -5,10 +5,12 @@
   "license": "MIT",
   "repository": "git@github.com:theodo-group/bifrost.git",
   "scripts": {
+    "dev": "nx run-many --target=dev --all --nx-bail",
+    "lint-fix-all": "nx run-many --target=lint:fix --all --parallel=4",
     "postinstall": "husky install && syncpack format",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "security": "audit-ci --config ./audit-ci.json",
-    "lint-fix-all": "nx run-many --target=lint:fix --all --parallel=4"
+    "security": "audit-ci --config ./audit-ci.json"
   },
   "devDependencies": {
     "@commitlint/cli": "17.1.2",

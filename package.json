@@ -18,6 +18,7 @@
     "documentation"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "nx run-many --target=build --parallel=4 --exclude=documentation",
     "build:documentation": "nx run documentation:build",
     "deploy": "nx run-many --target=deploy --parallel=4",
