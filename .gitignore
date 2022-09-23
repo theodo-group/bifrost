@@ -1,4 +1,47 @@
-/.env
-.idea
+# package directories
 node_modules
-.dockerignore
+.npm
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
+
+# Esbuild directories
+.esbuild
+
+# Ignore stack.json files
+**/stack.json
+
+# production
+/build
+**/dist
+
+# testing
+coverage
+
+# Ignore Jetbrains folder settings
+.idea
+
+# local env
+.env
+.env.dev
+.env.development
+.env.local
+
+# misc
+.DS_Store
+npm-debug.log*
+pnpm-debug.log*
+pnpm-error.log*
+lerna-debug.log*
+
+# If people use virtualenvs for python scripts
+.venv
+
+# remove files to invoke lambdas locally
+event.json
+
+# Nx caching
+nx-cache

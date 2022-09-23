@@ -1,0 +1,6 @@
+{
+  "root": "packages/interfaces",
+  "projectType": "library",
+  "tags": [],
+  "implicitDependencies": []
+}

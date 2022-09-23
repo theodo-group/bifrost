@@ -8,7 +8,7 @@
 
 ## Stack owners
 
-| Stack               | Owner                              |
-| ------------------- | ---------------------------------- |
-| `backend`              | @LeoAnesi    |
-| `frontend`              | @jeremiec   |
+| Stack      | Owner     |
+| ---------- | --------- |
+| `backend`  | @LeoAnesi |
+| `frontend` | @jeremiec |

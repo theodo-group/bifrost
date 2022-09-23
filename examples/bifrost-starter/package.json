@@ -1,0 +1,27 @@
+{
+  "name": "@bifrost-starter/root",
+  "description": "Generate a Bifrost project",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "git@github.com:theodo-group/bifrost.git",
+  "scripts": {
+    "dev": "nx run-many --target=dev --all --nx-bail",
+    "lint-fix-all": "nx run-many --target=lint:fix --all --parallel=4",
+    "postinstall": "husky install && syncpack format",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "security": "audit-ci --config ./audit-ci.json"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@nrwl/tao": "^14.5.1",
+    "@nrwl/workspace": "^14.5.1",
+    "audit-ci": "6.3.0",
+    "husky": "8.0.1",
+    "lint-staged": "^13.0.3",
+    "nx": "^14.5.1",
+    "prettier": "^2.7.1",
+    "syncpack": "^8.2.4"
+  }
+}

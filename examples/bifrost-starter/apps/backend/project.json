@@ -1,0 +1,6 @@
+{
+  "root": "apps/backend",
+  "projectType": "app",
+  "tags": [],
+  "implicitDependencies": []
+}

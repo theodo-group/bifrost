@@ -1,0 +1,6 @@
+{
+  "root": "packages/create-bifrost-app",
+  "projectType": "library",
+  "tags": [],
+  "implicitDependencies": []
+}

@@ -1,18 +1,68 @@
 {
-  "name": "@theodo-group/bifrost",
-  "version": "1.0.0",
-  "description": "Generate a Bifrost project",
-  "repository": "git@github.com:theodo-group/bifrost.git",
+  "name": "@bifrost/root",
+  "description": "Start your project in the best conditions",
+  "private": true,
+  "version": "0.0.0",
+  "author": "theodo-group",
   "license": "MIT",
+  "homepage": "https://theodo-group.github.io/bifrost/",
+  "bugs": "https://github.com/theodo-group/bifrost/issues",
+  "keywords": [
+    "Monorepo",
+    "Nest",
+    "Next",
+    "Typescript"
+  ],
+  "workspaces": [
+    "packages/*",
+    "documentation"
+  ],
   "scripts": {
-    "prepare": "husky install",
-    "security": "audit-ci --config ./audit-ci.json"
-
+    "preinstall": "npx only-allow pnpm",
+    "build": "nx run-many --target=build --parallel=4 --exclude=documentation",
+    "build:documentation": "nx run documentation:build",
+    "deploy": "nx run-many --target=deploy --parallel=4",
+    "deploy-affected": "nx affected --target=deploy",
+    "graph": "nx dep-graph",
+    "info": "nx run-many --target=sls-info --all --parallel=4",
+    "lint-fix": "pnpm linter-base-config --fix",
+    "lint-fix-all": "nx run-many --target=lint-fix-all --all --parallel=4",
+    "linter-base-config": "eslint --ext=js,ts",
+    "package": "nx run-many --target=package --all --parallel=4",
+    "postinstall": "husky install && syncpack format",
+    "release": "./release.sh",
+    "test": "nx run-many --target=test --all --parallel=4",
+    "test-affected": "nx affected --target=test",
+    "test-circular": "nx run-many --target=test-circular --all --parallel=4",
+    "test-linter": "nx run-many --target=test-linter --all --parallel=4",
+    "test-type": "nx run-many --target=test-type --all --parallel=4",
+    "test-unit": "nx run-many --target=test-unit --all --parallel=4",
+    "version": "pnpm install"
   },
   "devDependencies": {
-    "audit-ci": "6.3.0",
-    "@commitlint/cli": "17.1.2",
-    "@commitlint/config-conventional": "17.1.0",
-    "husky": "8.0.1"
-  }
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@nrwl/tao": "^14.5.1",
+    "@nrwl/workspace": "^14.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.3.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lerna": "^5.3.0",
+    "lint-staged": "^13.0.3",
+    "lodash": "^4.17.21",
+    "nx": "^14.5.1",
+    "prettier": "^2.7.1",
+    "syncpack": "^8.2.4",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "^16.17.0"
+  },
+  "packageManager": "pnpm@7.9.3"
 }
