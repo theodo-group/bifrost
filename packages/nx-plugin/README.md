@@ -7,7 +7,7 @@ This package is part of the [Swarmion](https://www.swarmion.dev) project. See it
 ## Installation
 
 ```bash
-yarn add -D @swarmion/nx-plugin
+pnpm add -D @swarmion/nx-plugin
 ```
 
 or if using npm

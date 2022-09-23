@@ -83,8 +83,8 @@ const run = async (): Promise<void> => {
   }
 
   const packageManager = getPkgManager();
-  if (packageManager !== 'yarn') {
-    console.error('Please use yarn as package manager with Bifrost.');
+  if (packageManager !== 'pnpm') {
+    console.error('Please use pnpm as package manager with Bifrost.');
     process.exit(1);
   }
 
@@ -135,8 +135,8 @@ const notifyUpdate = async (): Promise<void> => {
       console.log(
         'You can update by running: ' +
           chalk.cyan(
-            pkgManager === 'yarn'
-              ? 'yarn global add create-bifrost-app'
+            pkgManager === 'pnpm'
+              ? 'pnpm global add create-bifrost-app'
               : `${pkgManager} install --global create-bifrost-app`,
           ),
       );

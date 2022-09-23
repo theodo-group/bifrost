@@ -12,6 +12,7 @@ name: ⛷ PR tests
 env:
   CI: true
   NODE_VERSION: 16
+  HUSKY: 0
 
 defaults:
   run:
@@ -34,7 +35,7 @@ jobs:
         with:
           node-version: '16'
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: corepack enable && corepack prepare pnpm@7.12.2 --activate
       - name: Install dependencies
         run: pnpm install
       - name: eslint
@@ -58,7 +59,7 @@ jobs:
         with:
           node-version: '16'
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: corepack enable && corepack prepare pnpm@7.12.2 --activate
       - name: Install dependencies
         run: pnpm install
       - name: Check for vulnerable dependencies

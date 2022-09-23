@@ -26,37 +26,34 @@ fi
 # set the new version
 if [[ "$TARGET_VERSION" == "" ]]; then
     echo 'Using lerna version generation target'
-    yarn lerna version $RELEASE_TYPE --no-git-tag-version --no-push --force-publish --yes
+    pnpm lerna version $RELEASE_TYPE --no-git-tag-version --no-push --force-publish --yes
 else
     echo "Using target version"
-    yarn lerna version $TARGET_VERSION --no-git-tag-version --no-push --force-publish --yes
+    pnpm lerna version $TARGET_VERSION --no-git-tag-version --no-push --force-publish --yes
 fi
 
 # ensuring all packages are up-to-date
-yarn && yarn package --skip-nx-cache && yarn build --skip-nx-cache
+pnpm && pnpm package --skip-nx-cache && pnpm build --skip-nx-cache
 
 NEW_VERSION=$(cat lerna.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[", ]//g')
 
 # create release commit
-git add yarn.lock lerna.json **/package.json
+git add pnpm-lock.yaml lerna.json **/package.json
 git commit -S -m "v${NEW_VERSION}"
 
 # publish new version to npm
 if $IS_ALPHA; then
-    yarn lerna publish from-package --force-publish --dist-tag alpha --yes
+    pnpm lerna publish from-package --force-publish --dist-tag alpha --yes
 else
-    yarn lerna publish from-package --force-publish --yes
+    pnpm lerna publish from-package --force-publish --yes
 fi
 
 # we need to wait for the version to be available on npm
 echo "Waiting for changes to be available on npm, please do not stop"
 sleep 90 # 90 seconds
 
-# clean yarn cache. See https://yarnpkg.com/features/offline-cache
-yarn cache clean
-
 # upgrade packages in the starter
-HUSKY=0 yarn --cwd examples/bifrost-starter up "@bifrost/*@^${NEW_VERSION}"
+HUSKY=0 pnpm --cwd examples/bifrost-starter up "@bifrost/*@^${NEW_VERSION}"
 
 # commit changes in the starter
 git add examples/bifrost-starter

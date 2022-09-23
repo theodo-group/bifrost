@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ```bash
 # Install dependencies
-$ yarn
+$ pnpm
 # Create local env file
 $ cp .env.example.rc .env.rc
 ```

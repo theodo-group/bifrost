@@ -9,7 +9,7 @@ This package is part of the [Bifrost](https://theodo-group.github.io/bifrost/) p
 Run the following command
 
 ```bash
-yarn create bifrost-app
+pnpx create bifrost-app
 ```
 
 TODO

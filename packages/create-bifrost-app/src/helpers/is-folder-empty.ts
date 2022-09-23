@@ -20,8 +20,8 @@ export const isFolderEmpty = (root: string, name: string): boolean => {
     'docs',
     'mkdocs.yml',
     'npm-debug.log',
-    'yarn-debug.log',
-    'yarn-error.log',
+    'pnpm-debug.log',
+    'pnpm-error.log',
   ];
 
   const conflicts = fs

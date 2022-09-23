@@ -7,13 +7,13 @@ sidebar_position: 1
 First install the packages:
 
 ```bash
-yarn
+pnpm
 ```
 
 then to launch a dev server run
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 go to localhost:3000, you should be redirected to the login page.

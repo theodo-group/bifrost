@@ -10,6 +10,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  CI: true
+  NODE_VERSION: 16
+  HUSKY: 0
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -18,7 +23,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -32,10 +37,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: Install pnpm
+        run: corepack enable && corepack prepare pnpm@7.12.2 --activate
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install --filter documentation
       - name: Build Docusaurus App
-        run: yarn build:documentation
+        run: pnpm build:documentation
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
