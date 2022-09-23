@@ -20,11 +20,11 @@ The recommendation is to use a single css system, now we recommend:
 
 ### 🌀 Reset
 
-There is a [`css reset file`](../styles/global.css) file that removes basic style attached to tags. The file is based on [josh Comeau's example](https://www.joshwcomeau.com/css/custom-css-reset/).
+There is a [`css reset file`](../../../../examples/bifrost-starter/apps/frontend/styles/global.css) file that removes basic style attached to tags. The file is based on [josh Comeau's example](https://www.joshwcomeau.com/css/custom-css-reset/).
 
 ### 🌈 Stylesheet
 
-[`stylesheet.css`](../styles/stylesheet.css) is where you should declare all style properties used on this app.
+[`stylesheet.css`](../../../../examples/bifrost-starter/apps/frontend/styles/stylesheet.css) is where you should declare all style properties used on this app.
 
 - colors
 - font properties (size, font-faimly, boldness, line height)
@@ -37,4 +37,4 @@ This way, you can manage the app look and feel from one file instead of several,
 
 ### 🔍 Linter
 
-The [`style linter`](../stylelint.config.js) will help checking that you don't use hard-coded values in your components. Adapt the config to your needs.
+The [`style linter`](../../../../examples/bifrost-starter/apps/frontend/stylelint.config.js) will help checking that you don't use hard-coded values in your components. Adapt the config to your needs.
