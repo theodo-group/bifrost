@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 4
 ---
 
 # Linter
@@ -10,26 +10,26 @@ The generated project is packed with [ESLINT](https://eslint.org/) for linting, 
 
 There are three configuration files: .eslintrc, .prettierrc and .editorconfig.
 
--   To be able to use ESLINT on TypeScript code, we use the **@typescript-eslint/parser** and the **@typescript-eslint/eslint-plugin** in our .eslintrc file.
--   The Prettier configuration is in and only in the .prettierrc file
--   In order to use both Prettier and ESLINT without generating any conflicts, we use the [**eslint-config-prettier**](https://github.com/prettier/eslint-config-prettier) package and we extend prettier in our .eslintrc file. This allows us to disable any ESLINT rules potentially conflicting with Prettier.
--   To avoid conflicts between prettier and the react and TypeScript ESLINT rules, we extend the ESLINT configuration with the **prettier/@typescript-eslint** and **prettier/react** configurations.
+- To be able to use ESLINT on TypeScript code, we use the **@typescript-eslint/parser** and the **@typescript-eslint/eslint-plugin** in our .eslintrc file.
+- The Prettier configuration is in and only in the .prettierrc file
+- To use both Prettier and ESLINT without generating any conflicts, we use the [**eslint-config-prettier**](https://github.com/prettier/eslint-config-prettier) package and we extend prettier in our .eslintrc file. This allows us to disable any ESLINT rules potentially conflicting with Prettier.
+- To avoid conflicts between prettier and React and TypeScript ESLINT rules, we extend the ESLINT configuration with the **prettier/@typescript-eslint** and **prettier/react** configurations.
 
 ```JSON
 
   "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "react-app",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:jsx-a11y/strict",
+    "plugin:prettier/recommended"
   ],
 
 ```
 
 **IMPORTANT !** If you want to add a ESLINT plugin, extend it before all the prettier configurations in the extends array. The order has its importance here.
 
--   In the rules array, we add this line:
+- In the rules array, we add this line:
 
 ```JSON
 "prettier/prettier": "error"
@@ -42,6 +42,8 @@ eslint --fix
 ```
 
 both ESLINT and Prettier will run.
+
+If you want to lean more, you can find a [dedicated article on setting up prettier with ESLINT](https://blog.theodo.com/2019/08/empower-your-dev-environment-with-eslint-prettier-and-editorconfig-with-no-conflicts/)
 
 ## EditorConfig
 
@@ -71,5 +73,5 @@ If you wish to change the configuration, the rule is to check whether it is a ed
 
 ## Some recommendations
 
--   Do not adopt a setup once and forget approach for your linting and formatting experience. If you wish to modify the configuration, it is highly recommended to follow the conventions of this documentation.
--   If you have both format on save and lint on save (auto fix on save) capabilities on your editor, it is possible to turn the lint on save on and the format on save off for the project. Indeed, since ESLINT is bundled together with prettier, running a ESLINT fix will also format your code using the prettier configuration.
+- Do not adopt a setup once and forget approach for your linting and formatting experience. If you wish to modify the configuration, it is highly recommended to follow the conventions of this documentation.
+- If you have both format on save and lint on save (auto fix on save) capabilities on your editor, it is possible to turn the lint on save and the format on save for the project. Indeed, since ESLINT is bundled together with prettier, running a ESLINT fix will also format your code using the prettier configuration.
