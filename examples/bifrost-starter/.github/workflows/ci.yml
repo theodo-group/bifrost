@@ -1,9 +1,16 @@
-name: CI
+name: ⛷ PR tests
+
+env:
+  CI: true
+  NODE_VERSION: 16
+
+defaults:
+  run:
+    shell: bash
 
 on:
   pull_request:
-    branches:
-      - 'main'
+    types: [opened, synchronize, reopened]
 
 jobs:
   test:
