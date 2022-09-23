@@ -67,7 +67,7 @@ importers:
       supertest: 6.2.4
       swagger-ui-express: 4.5.0
       ts-jest: 28.0.8
-      ts-loader: 9.3.1
+      ts-loader: 9.4.1
       ts-node: 10.9.1
       tsconfig-paths: 4.1.0
       typeorm: 0.3.9
@@ -129,7 +129,7 @@ importers:
       prettier: 2.7.1
       supertest: 6.2.4
       ts-jest: 28.0.8_r2p657zon3w3qfcvv6hc332cqy
-      ts-loader: 9.3.1_xnp4kzegbjokq62cajex2ovgkm
+      ts-loader: 9.4.1_xnp4kzegbjokq62cajex2ovgkm
       ts-node: 10.9.1_hjximzan7wcxvjcbhhc47yzr2e
       tsconfig-paths: 4.1.0
       typescript: 4.7.4
@@ -9642,7 +9642,7 @@ packages:
     resolution: {integrity: sha512-m0NvkX55LDt9T4mctTEgnZk3fmEg3NRYutvMPWM/0iPnkFj2wIeF45O1718cMSOFO1vINkqmxqD8vE37uTEbqw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       diff-sequences: 27.5.1
       jest-get-type: 27.5.1
       pretty-format: 27.5.1
@@ -9748,7 +9748,7 @@ packages:
     resolution: {integrity: sha512-Qczi5xnTNjkhcIB0Yy75Txt+Ez51xdhOxsukN7awzq2auZQGPHcQrJ623PZj0ECDEMOk2soxWx05EXdXGd1CbA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-diff: 27.5.1
       jest-get-type: 27.5.1
       pretty-format: 27.5.1
@@ -13783,8 +13783,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /ts-loader/9.3.1_xnp4kzegbjokq62cajex2ovgkm:
-    resolution: {integrity: sha512-OkyShkcZTsTwyS3Kt7a4rsT/t2qvEVQuKCTg4LJmpj9fhFR7ukGdZwV6Qq3tRUkqcXtfGpPR7+hFKHCG/0d3Lw==}
+  /ts-loader/9.4.1_xnp4kzegbjokq62cajex2ovgkm:
+    resolution: {integrity: sha512-384TYAqGs70rn9F0VBnh6BPTfhga7yFNdC5gXbQpDrBj9/KsT4iRkGqKXhziofHOlE2j6YEaiTYVGKKvPhGWvw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
