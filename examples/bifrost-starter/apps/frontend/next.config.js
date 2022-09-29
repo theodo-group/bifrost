@@ -1,5 +1,31 @@
 const path = require('path');
 
+const securityHeaders = [
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload',
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN',
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff',
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'origin-when-cross-origin',
+  },
+  {
+    // This header will prevent any use of user's plugins on your website
+    // If you need some permissions, change the parameter of the right permission
+    key: 'Permissions-Policy',
+    value:
+      'accelerometer=(), geolocation=(), fullscreen =(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=()',
+  },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /**
@@ -18,6 +44,15 @@ const nextConfig = {
   experimental: {
     // this includes files from the monorepo base two directories up, required for docker build
     outputFileTracingRoot: path.join(__dirname, '../../'),
+  },
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+    ];
   },
 };
 
