@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: "Introduction"
+title: 'Introduction'
 ---
 
 <p align="center"><img src='/bifrost/img/bifrost.png' width="320"/></p>
@@ -32,9 +32,9 @@ Generates a fresh project - 1h between project generation and production.
 
 ## Examples of implemented features
 
--   🔒 Functional authentification with JWT
--   💅 Stylized page in case of uncatched error
--   💅 Customizable application theme with material-ui
--   ✉️ Form handling with input validation + error displays
--   🌍 Translation system
--   🏪 Data persistence in the client browser
+- 🔒 Functional authentification with JWT
+- 💅 Stylized page in case of uncatched error
+- 💅 Customizable application theme with material-ui
+- ✉️ Form handling with input validation + error displays
+- 🌍 Translation system
+- 🏪 Data persistence in the client browser
