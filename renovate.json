@@ -1,0 +1,33 @@
+{
+    "extends": [
+      "config:base"
+    ],
+    "packageRules": [
+      {
+        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true
+      },
+      {
+        "matchDatasources": ["npm"],
+        "stabilityDays": 3
+      },
+      {
+        "matchPackageNames": ["faker"],
+        "allowedVersions": "<6.0.0"
+      },
+      {
+        "matchPackageNames": ["@types/faker"],
+        "allowedVersions": "<6.0.0"
+      },
+      {
+        "matchPackageNames": ["typescript"],
+        "allowedVersions": "<4.8.0"
+      },
+      {
+        "matchPackageNames": ["@mdx-js/react"],
+        "allowedVersions": "<2.0.0"
+      }
+    ],
+    "lockFileMaintenance": { "enabled": true, "automerge": true }
+  }
+  
