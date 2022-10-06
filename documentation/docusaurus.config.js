@@ -9,13 +9,14 @@ const config = {
   title: 'Bifrost',
   tagline: 'Start your project in the best conditions',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/bifrost/',
+  baseUrl: '/',
+  baseUrlIssueBanner: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
+  trailingSlash: false,
   favicon: 'img/favicon.ico',
   organizationName: 'theodo', // Usually your GitHub org/user name.
   projectName: 'bifrost', // Usually your repo name.
-  blog: false,
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -53,6 +54,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+      respectPrefersColorScheme: true,
       navbar: {
         title: 'Bifrost',
         logo: {
@@ -64,9 +66,8 @@ const config = {
             type: 'doc',
             docId: 'introduction',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/theodo-group/bifrost',
             label: 'GitHub',
@@ -81,18 +82,18 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/introduction',
+                label: 'Introduction',
+                to: '/docs',
+              },
+              {
+                label: 'Getting started',
+                to: '/docs/getting-started',
               },
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/theodo-group/bifrost',
