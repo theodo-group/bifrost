@@ -4,7 +4,7 @@ title: 'Introduction'
 slug: '/'
 ---
 
-<p align="center"><img src='/img/bifrost.png' width="320" alt="A large version of the bifrost logo, a rainbow path leading to a flying castle"/></p>
+<p align="center"><img src='/bifrost/img/bifrost.png' width="320" alt="A large version of the bifrost logo, a rainbow path leading to a flying castle"/></p>
 <p align="center">Generate a full stack application by running one command</p>
 <p align="center">Boost your developer experience</p>
 <p align="center">
