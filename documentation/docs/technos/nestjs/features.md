@@ -8,12 +8,14 @@ sidebar_position: 3
 
 The configuration for the connection to the database is stored in `datasource.options.ts`.
 For the connection itself it is done in two different places depending on the context :
+
 - in `src/app.module.ts` for the app connection
 - in `datasource.ts` for the typeorm cli
 
 ## JWT authentication with 2 tokens: access and refresh
 
 In the app you will find a JWT authentication based on 2 tokens :
+
 - `accessToken` (short life)
 - `refreshToken` (long life)
 

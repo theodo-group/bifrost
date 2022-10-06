@@ -22,6 +22,7 @@
     "build:documentation": "nx run documentation:build",
     "deploy": "nx run-many --target=deploy --parallel=4",
     "deploy-affected": "nx affected --target=deploy",
+    "dev:documentation": "nx run documentation:dev",
     "graph": "nx dep-graph",
     "info": "nx run-many --target=sls-info --all --parallel=4",
     "lint-fix": "pnpm linter-base-config --fix",
