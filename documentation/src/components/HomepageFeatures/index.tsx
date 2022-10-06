@@ -44,6 +44,13 @@ export default function HomepageFeatures(): JSX.Element {
             <Feature key={idx} {...props} />
           ))}
         </div>
+        <div>
+          <a href="/docs" className={styles.documentationLink}>
+            <span className={styles.documentationLinkText}>
+              Documentation for Bifrost
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   );

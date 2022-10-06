@@ -10,3 +10,60 @@
   height: 200px;
   width: 200px;
 }
+
+.documentationLink {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.documentationLink:hover > .documentationLinkText {
+  border-color: var(--ifm-color-highlight);
+}
+
+.documentationLinkText {
+  text-decoration: var(--ifm-color-primary-contrast-foreground);
+  padding: 2rem;
+  color: var(--ifm-color-primary-contrast-foreground);
+  border: solid var(--ifm-color-primary) 5px;
+  border-radius: 6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  animation: scale-easeOutElastic infinite 1s;
+  animation-delay: 2s;
+  transition: border-color 0.2s ease-in-out;
+}
+
+@keyframes scale-easeOutElastic {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  16% {
+    transform: rotateZ(4deg);
+  }
+
+  28% {
+    transform: rotateZ(1.75deg);
+  }
+
+  44% {
+    transform: rotateZ(-0.625deg);
+  }
+
+  59% {
+    transform: rotateZ(0.25deg);
+  }
+
+  73% {
+    transform: rotateZ(-0.125deg);
+  }
+
+  88% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
