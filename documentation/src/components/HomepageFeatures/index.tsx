@@ -45,7 +45,7 @@ export default function HomepageFeatures(): JSX.Element {
           ))}
         </div>
         <div>
-          <a href="/docs" className={styles.documentationLink}>
+          <a href="/bifrost/docs" className={styles.documentationLink}>
             <span className={styles.documentationLinkText}>
               Documentation for Bifrost
             </span>
