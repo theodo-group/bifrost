@@ -9,7 +9,7 @@ const config = {
   title: 'Bifrost',
   tagline: 'Start your project in the best conditions',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/bifrost/',
   baseUrlIssueBanner: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
