@@ -15,13 +15,14 @@
   "devDependencies": {
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
-    "@nrwl/tao": "^14.5.1",
-    "@nrwl/workspace": "^14.5.1",
+    "@nrwl/tao": "14.8.3",
+    "@nrwl/workspace": "14.8.3",
     "audit-ci": "6.3.0",
     "husky": "8.0.1",
-    "lint-staged": "^13.0.3",
-    "nx": "^14.5.1",
-    "prettier": "^2.7.1",
-    "syncpack": "^8.2.4"
-  }
+    "lint-staged": "13.0.3",
+    "nx": "14.8.3",
+    "prettier": "2.7.1",
+    "syncpack": "8.2.4"
+  },
+  "packageManager": "pnpm@7.13.2"
 }

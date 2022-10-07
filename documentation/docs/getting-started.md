@@ -11,7 +11,7 @@ These instructions will get you a copy of the latest version of bifrost on your 
 
 - [Install fnm](https://github.com/Schniz/fnm#installation) (node version manager)
 - [Node 16+](https://nodejs.org/en/) `fnm install lts/gallium && fnm use lts/gallium`
-- [Pnpm](https://pnpm.io/installation) (`corepack enable && corepack prepare pnpm@7.9.3 --activate`)
+- [Pnpm](https://pnpm.io/installation) (`corepack enable && corepack prepare pnpm@7.13.2 --activate`)
 
 ### Installing
 
