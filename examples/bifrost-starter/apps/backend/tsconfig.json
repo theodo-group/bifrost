@@ -13,23 +13,25 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./src",
-    "rootDir": "./src",
+    "baseUrl": "./",
     "paths": {
       "helpers/*": [
-        "helpers/*"
+        "src/helpers/*"
       ],
       "auth/*": [
-        "modules/auth/*"
+        "src/modules/auth/*"
       ],
       "modules/*": [
-        "modules/*"
+        "src/modules/*"
       ],
       "decorators/*": [
-        "decorators/*"
+        "src/decorators/*"
       ],
       "testUtils/*": [
-        "testUtils/*"
+        "src/testUtils/*"
+      ],
+      "@bifrost-starter/interfaces": [
+        "../../packages/interfaces/dist"
       ]
     }
   },
@@ -37,6 +39,7 @@
     "node_modules",
     "dist",
     "src/migration",
-    "src/datasource.ts""src/datasource.options.ts"
+    "src/datasource.ts",
+    "src/datasource.options.ts"
   ]
 }

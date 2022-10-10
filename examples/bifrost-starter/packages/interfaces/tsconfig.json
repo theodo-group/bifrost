@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "composite": false,
-    "module": "ES2020",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "declaration": true,
     "removeComments": true,
