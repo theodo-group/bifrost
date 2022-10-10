@@ -4,9 +4,12 @@ import { Repository } from 'typeorm';
 import { hash } from 'bcrypt';
 
 import { User } from './user.entity';
-import { CreateUserDto } from './interfaces/createUser.dto';
-import { AdminUpdateUserDto, UpdateUserDto } from './interfaces/updateUser.dto';
-import { GetUserDto } from './interfaces/getUser.dto';
+import {
+  GetUserDto,
+  CreateUserDto,
+  AdminUpdateUserDto,
+  UpdateUserDto,
+} from '@bifrost-starter/interfaces';
 
 const SALT_ROUNDS = 10;
 

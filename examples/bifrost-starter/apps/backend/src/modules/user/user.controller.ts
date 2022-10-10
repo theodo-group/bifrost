@@ -6,9 +6,12 @@ import { RolesGuard } from 'auth/role.guard';
 import { UseUser } from 'auth/user.decorator';
 import { Controller } from 'decorators/controller';
 import { Get, Patch, Post } from 'decorators/httpDecorators';
-import { GetUserDto } from './interfaces/getUser.dto';
-import { CreateUserDto } from './interfaces/createUser.dto';
-import { AdminUpdateUserDto, UpdateUserDto } from './interfaces/updateUser.dto';
+import {
+  GetUserDto,
+  CreateUserDto,
+  AdminUpdateUserDto,
+  UpdateUserDto,
+} from '@bifrost-starter/interfaces';
 import { User } from './user.entity';
 import { UserService } from './user.service';
 

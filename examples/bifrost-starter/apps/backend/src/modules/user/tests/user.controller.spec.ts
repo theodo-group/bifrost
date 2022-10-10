@@ -9,7 +9,7 @@ import { INestApplication } from '@nestjs/common';
 import { AuthService } from 'auth/auth.service';
 import { User } from '../user.entity';
 import { UserFactory } from '../user.factory';
-import { GetUserDto } from '../interfaces/getUser.dto';
+import { GetUserDto } from '@bifrost-starter/interfaces';
 
 const generateUserDto = () => ({
   name: faker.name.lastName(),
