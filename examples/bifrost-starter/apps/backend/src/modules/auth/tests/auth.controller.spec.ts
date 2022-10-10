@@ -2,7 +2,7 @@ import * as request from 'supertest';
 import * as faker from 'faker';
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppModule } from 'src/app.module';
+import { AppModule } from '../../../app.module';
 import { UserService } from 'modules/user/user.service';
 import { UserFactory } from 'modules/user/user.factory';
 import { Repository } from 'typeorm';

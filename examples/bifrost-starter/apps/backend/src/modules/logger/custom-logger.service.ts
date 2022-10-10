@@ -1,7 +1,7 @@
 import * as clc from 'cli-color';
 import { ConsoleLogger, Injectable, Scope } from '@nestjs/common';
 import * as winston from 'winston';
-import { Environment } from 'src/env.validation';
+import { Environment } from '../../env.validation';
 import { nodeStorage } from './async-local-storage';
 
 interface TransformableInfo {

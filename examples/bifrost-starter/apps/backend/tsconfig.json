@@ -1,23 +1,42 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "declaration": true,
     "removeComments": true,
     "noImplicitAny": true,
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "moduleResolution": "node",
+    "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src",
+    "rootDir": "./src",
     "paths": {
-      "helpers/*": ["src/helpers/*"],
-      "auth/*": ["src/modules/auth/*"],
-      "modules/*": ["src/modules/*"],
-      "decorators/*": ["src/decorators/*"],
-      "testUtils/*": ["testUtils/*"]
+      "helpers/*": [
+        "helpers/*"
+      ],
+      "auth/*": [
+        "modules/auth/*"
+      ],
+      "modules/*": [
+        "modules/*"
+      ],
+      "decorators/*": [
+        "decorators/*"
+      ],
+      "testUtils/*": [
+        "testUtils/*"
+      ]
     }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/migration",
+    "src/datasource.ts""src/datasource.options.ts"
+  ]
 }

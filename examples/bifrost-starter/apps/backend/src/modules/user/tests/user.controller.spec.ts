@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import * as faker from 'faker';
 import * as request from 'supertest';
 
-import { AppModule } from 'src/app.module';
+import { AppModule } from '../../../app.module';
 import { INestApplication } from '@nestjs/common';
 import { AuthService } from 'auth/auth.service';
 import { User } from '../user.entity';

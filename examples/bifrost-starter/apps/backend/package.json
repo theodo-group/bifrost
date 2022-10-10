@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nest build -p tsconfig.build.json",
     "build:migrations": "nest build -p tsconfig.migration.json",
-    "dev": ". ./.env.rc && docker-compose up -d && nest start -p ./tsconfig.json src/main.ts --watch --preserveWatchOutput",
+    "dev": ". ./.env.rc && docker-compose up -d && rm -rf dist && nest start -p ./tsconfig.json src/main.ts --watch --preserveWatchOutput",
     "explore": "pnpm start --entryFile repl",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint './**/*.{js,ts,tsx}' --max-warnings 0",
@@ -105,7 +105,7 @@
       "^auth/(.*)": "<rootDir>/src/modules/auth/$1",
       "^src/(.*)": "<rootDir>/src/$1",
       "^modules/(.*)": "<rootDir>/src/modules/$1",
-      "^testUtils/(.*)": "<rootDir>/testUtils/$1",
+      "^testUtils/(.*)": "<rootDir>/src/testUtils/$1",
       "^decorators/(.*)": "<rootDir>/src/decorators/$1"
     },
     "setupFiles": [
@@ -128,8 +128,8 @@
     "collectCoverageFrom": [
       "<rootDir>/**/*.ts",
       "!<rootDir>/dist/**",
-      "!<rootDir>/migration/**",
-      "!<rootDir>/testUtils/**",
+      "!<rootDir>/src/migration/**",
+      "!<rootDir>/src/testUtils/**",
       "!<rootDir>/src/main.ts",
       "!<rootDir>/src/modules/logger/**"
     ]
