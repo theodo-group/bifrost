@@ -9,7 +9,6 @@
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
@@ -30,9 +29,6 @@
       "testUtils/*": [
         "src/testUtils/*"
       ],
-      "@bifrost-starter/interfaces": [
-        "../../packages/interfaces/dist"
-      ]
     }
   },
   "exclude": [
