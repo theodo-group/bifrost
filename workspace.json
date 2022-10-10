@@ -2,7 +2,6 @@
   "version": 2,
   "projects": {
     "documentation": "documentation",
-    "nx-plugin": "packages/nx-plugin",
     "create-bifrost-app": "packages/create-bifrost-app"
   }
 }
