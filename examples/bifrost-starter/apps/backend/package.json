@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nest build -p tsconfig.build.json",
     "build:migrations": "nest build -p tsconfig.migration.json",
-    "dev": ". ./.env.rc && docker-compose up -d && nest start -p ./tsconfig.json src/main.ts --watch",
+    "dev": ". ./.env.rc && docker-compose up -d && nest start -p ./tsconfig.json src/main.ts --watch --preserveWatchOutput",
     "explore": "pnpm start --entryFile repl",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint './**/*.{js,ts,tsx}' --max-warnings 0",
