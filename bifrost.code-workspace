@@ -51,10 +51,6 @@
   },
   "folders": [
     {
-      "path": "packages/nx-plugin",
-      "name": "nx plugin [library]"
-    },
-    {
       "path": "documentation",
       "name": "documentation [library]"
     },
