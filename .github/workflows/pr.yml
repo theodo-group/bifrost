@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: '16'
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@7.13.2 --activate
+        run: corepack enable && corepack prepare pnpm@7.13.4 --activate
       - name: Install dependencies
         run: pnpm install
       - name: eslint
@@ -59,7 +59,7 @@ jobs:
         with:
           node-version: '16'
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@7.13.2 --activate
+        run: corepack enable && corepack prepare pnpm@7.13.4 --activate
       - name: Install dependencies
         run: pnpm install
       - name: Check for vulnerable dependencies
