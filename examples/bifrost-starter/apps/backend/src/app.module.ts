@@ -12,7 +12,7 @@ import { LoggerMiddleware } from './modules/logger/logger.middleware';
 import { QueryFailedFilter } from './exception/query-failed.filter';
 import { EntityNotFoundFilter } from './exception/entity-not-found.filter';
 import { validate } from './env.validation';
-import { dataSourceOptions } from '../datasource.options';
+import { dataSourceOptions } from './datasource.options';
 
 @Module({
   imports: [

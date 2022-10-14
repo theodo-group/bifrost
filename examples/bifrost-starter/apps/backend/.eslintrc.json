@@ -93,5 +93,8 @@
         ]
       }
     }
-  ]
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022
+  }
 }

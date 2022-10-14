@@ -11,6 +11,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "allowJs": true,
     "paths": {
       "helpers/*": ["src/helpers/*"],
       "auth/*": ["src/modules/auth/*"],
