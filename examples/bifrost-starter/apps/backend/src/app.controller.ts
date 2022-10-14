@@ -1,6 +1,6 @@
-import { Public } from 'auth/public.decorator';
-import { Controller } from 'decorators/controller';
-import { Get } from 'decorators/httpDecorators';
+import { Public } from '@auth/public.decorator';
+import { Controller } from '@decorators/controller';
+import { Get } from '@decorators/httpDecorators';
 import { AppService } from './app.service';
 
 @Controller()

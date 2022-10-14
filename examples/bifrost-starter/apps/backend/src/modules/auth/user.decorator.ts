@@ -3,7 +3,7 @@ import {
   ExecutionContext,
   InternalServerErrorException,
 } from '@nestjs/common';
-import { User } from 'modules/user/user.entity';
+import { User } from '@modules/user/user.entity';
 
 export const UseUser = createParamDecorator((data: unknown, ctx: ExecutionContext): User => {
   const request = ctx.switchToHttp().getRequest();

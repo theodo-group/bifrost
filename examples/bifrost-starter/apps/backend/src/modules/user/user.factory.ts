@@ -1,6 +1,6 @@
 import * as faker from 'faker';
 
-import { Factory } from 'testUtils/factory';
+import { Factory } from '@testUtils/factory';
 import { User } from './user.entity';
 
 export class UserFactory extends Factory<User> {

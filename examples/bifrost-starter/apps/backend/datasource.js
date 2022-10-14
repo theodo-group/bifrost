@@ -1,5 +1,5 @@
-import { dataSourceOptions } from 'datasource.options';
-import { DataSource } from 'typeorm';
+const { DataSource } = require('typeorm');
+const { dataSourceOptions } = require('./src/datasource.options.js');
 
 const AppDataSource = new DataSource(dataSourceOptions);
 
@@ -7,4 +7,6 @@ AppDataSource.initialize().catch((err) => {
   console.error('Error during Data Source initialization', err);
 });
 
-export default AppDataSource;
+module.exports = {
+  AppDataSource,
+};

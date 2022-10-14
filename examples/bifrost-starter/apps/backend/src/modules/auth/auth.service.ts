@@ -6,7 +6,7 @@ import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 
 import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
 import { compare } from 'bcrypt';
-import { CustomLogger } from 'modules/logger/custom-logger.service';
+import { CustomLogger } from '@modules/logger/custom-logger.service';
 import { Credentials } from './interfaces/credentials.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { User } from '../user/user.entity';

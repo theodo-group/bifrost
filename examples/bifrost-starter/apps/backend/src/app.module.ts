@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module, RequestMethod, ValidationPipe } from '@nest
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
-import { AuthModule } from 'auth/auth.module';
+import { AuthModule } from '@auth/auth.module';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -12,7 +12,7 @@ import { LoggerMiddleware } from './modules/logger/logger.middleware';
 import { QueryFailedFilter } from './exception/query-failed.filter';
 import { EntityNotFoundFilter } from './exception/entity-not-found.filter';
 import { validate } from './env.validation';
-import { dataSourceOptions } from '../datasource.options';
+import { dataSourceOptions } from './datasource.options';
 
 @Module({
   imports: [

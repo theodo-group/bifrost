@@ -10,7 +10,7 @@ import {
   /* eslint-enable no-restricted-imports */
 } from '@nestjs/common';
 import { ApiBearerAuth } from '@nestjs/swagger';
-import { Public } from 'auth/public.decorator';
+import { Public } from '@auth/public.decorator';
 
 interface Config {
   isPublic: boolean;
