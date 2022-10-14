@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module, RequestMethod, ValidationPipe } from '@nest
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
-import { AuthModule } from 'auth/auth.module';
+import { AuthModule } from '@auth/auth.module';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';

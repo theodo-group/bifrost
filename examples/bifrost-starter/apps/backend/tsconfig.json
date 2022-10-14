@@ -10,15 +10,17 @@
     "target": "es6",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "allowJs": true,
+    "rootDir": "./src",
     "paths": {
-      "helpers/*": ["src/helpers/*"],
-      "auth/*": ["src/modules/auth/*"],
-      "modules/*": ["src/modules/*"],
-      "decorators/*": ["src/decorators/*"],
-      "testUtils/*": ["testUtils/*"]
+      "@helpers/*": ["helpers/*"],
+      "@auth/*": ["modules/auth/*"],
+      "@modules/*": ["modules/*"],
+      "@decorators/*": ["decorators/*"],
+      "@testUtils/*": ["testUtils/*"],
+      "@root/*": ["./*"]
     }
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
 }

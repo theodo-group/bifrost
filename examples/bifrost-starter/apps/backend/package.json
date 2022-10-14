@@ -19,7 +19,7 @@
     "reset": "rm -rf node_modules && pnpm install",
     "schema:drop": ". ./.env.rc && typeorm -d datasource.js schema:drop",
     "start:debug": "pnpm start --debug",
-    "start:prod": "node dist/src/main.js",
+    "start:prod": "node dist/main.js",
     "test": ". ./.env.test.rc && jest * --maxWorkers=2",
     "test:circular": "depcruise --validate .dependency-cruiser.js .",
     "test:coverage": "docker-compose up -d db-test && pnpm test -- --coverage",
@@ -97,17 +97,17 @@
       "ts"
     ],
     "moduleNameMapper": {
-      "^helpers/(.*)": "<rootDir>/src/helpers/$1",
-      "^auth/(.*)": "<rootDir>/src/modules/auth/$1",
-      "^src/(.*)": "<rootDir>/src/$1",
-      "^modules/(.*)": "<rootDir>/src/modules/$1",
-      "^testUtils/(.*)": "<rootDir>/testUtils/$1",
-      "^decorators/(.*)": "<rootDir>/src/decorators/$1"
+      "^@helpers/(.*)": "<rootDir>/helpers/$1",
+      "^@auth/(.*)": "<rootDir>/modules/auth/$1",
+      "^@modules/(.*)": "<rootDir>/modules/$1",
+      "^@testUtils/(.*)": "<rootDir>/testUtils/$1",
+      "^@decorators/(.*)": "<rootDir>/decorators/$1",
+      "^@root/(.*)": "<rootDir>/$1"
     },
     "setupFiles": [
       "<rootDir>/testUtils/setup.ts"
     ],
-    "rootDir": ".",
+    "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -123,11 +123,9 @@
     },
     "collectCoverageFrom": [
       "<rootDir>/**/*.ts",
-      "!<rootDir>/dist/**",
-      "!<rootDir>/migration/**",
       "!<rootDir>/testUtils/**",
-      "!<rootDir>/src/main.ts",
-      "!<rootDir>/src/modules/logger/**"
+      "!<rootDir>/main.ts",
+      "!<rootDir>/modules/logger/**"
     ]
   }
 }

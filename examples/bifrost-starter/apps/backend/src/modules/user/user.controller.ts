@@ -2,10 +2,10 @@ import { Body, Param, UseGuards } from '@nestjs/common';
 
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { RolesGuard } from 'auth/role.guard';
-import { UseUser } from 'auth/user.decorator';
-import { Controller } from 'decorators/controller';
-import { Get, Patch, Post } from 'decorators/httpDecorators';
+import { RolesGuard } from '@auth/role.guard';
+import { UseUser } from '@auth/user.decorator';
+import { Controller } from '@decorators/controller';
+import { Get, Patch, Post } from '@decorators/httpDecorators';
 import { GetUserDto } from './interfaces/getUser.dto';
 import { CreateUserDto } from './interfaces/createUser.dto';
 import { AdminUpdateUserDto, UpdateUserDto } from './interfaces/updateUser.dto';
