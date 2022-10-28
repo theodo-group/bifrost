@@ -4,6 +4,7 @@
     "declaration": true,
     "removeComments": true,
     "noImplicitAny": true,
+    "skipLibCheck": true,
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,13 +15,27 @@
     "allowJs": true,
     "rootDir": "./src",
     "paths": {
-      "@helpers/*": ["helpers/*"],
-      "@auth/*": ["modules/auth/*"],
-      "@modules/*": ["modules/*"],
-      "@decorators/*": ["decorators/*"],
-      "@testUtils/*": ["testUtils/*"],
-      "@root/*": ["./*"]
+      "@helpers/*": [
+        "helpers/*"
+      ],
+      "@auth/*": [
+        "modules/auth/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@decorators/*": [
+        "decorators/*"
+      ],
+      "@testUtils/*": [
+        "testUtils/*"
+      ],
+      "@root/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
 }
