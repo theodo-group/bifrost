@@ -8,7 +8,7 @@
     "dev": ". ./.env.rc && docker-compose up -d && nest start -p ./tsconfig.json src/main.ts --watch",
     "explore": "pnpm start --entryFile repl",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint './**/*.{js,ts,tsx}' --max-warnings 0",
+    "lint": "eslint --cache './**/*.{js,ts,tsx}' --max-warnings 0",
     "lint:fix": "pnpm lint --fix",
     "migration:generate": ". ./.env.rc && typeorm --outputJs -d datasource.js migration:generate",
     "migration:revert": ". ./.env.rc && typeorm -d datasource.js migration:revert",

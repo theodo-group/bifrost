@@ -1,5 +1,5 @@
 FROM node:gallium-alpine3.14 AS pnpm-installed
-ARG PNPM_VERSION=7.7.0
+ARG PNPM_VERSION=7.14.0
 RUN corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
 WORKDIR /app
 
