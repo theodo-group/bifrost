@@ -4,3 +4,4 @@ node_modules
 .dockerignore
 # Nx caching
 nx-cache
+.eslintcache

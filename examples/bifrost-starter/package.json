@@ -6,7 +6,8 @@
   "repository": "git@github.com:theodo-group/bifrost.git",
   "scripts": {
     "dev": "nx run-many --target=dev --all --nx-bail",
-    "lint-fix-all": "nx run-many --target=lint:fix --all --parallel=4",
+    "lint:fix": "eslint --cache --ext=js,ts --fix",
+    "lint:fix:all": "nx run-many --target=lint:fix --all --parallel=4",
     "postinstall": "husky install && syncpack format",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
@@ -17,12 +18,23 @@
     "@commitlint/config-conventional": "17.1.0",
     "@nrwl/tao": "14.8.3",
     "@nrwl/workspace": "14.8.3",
+    "@typescript-eslint/eslint-plugin": "5.40.0",
+    "@typescript-eslint/parser": "5.40.0",
     "audit-ci": "6.3.0",
+    "dependency-cruiser": "11.18.0",
+    "eslint": "8.26.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
+    "npm-audit-resolver": "3.0.0-7",
     "nx": "14.8.3",
     "prettier": "2.7.1",
-    "syncpack": "8.2.4"
+    "syncpack": "8.2.4",
+    "typescript": "4.8.4"
   },
-  "packageManager": "pnpm@7.13.2"
+  "packageManager": "pnpm@7.14.0"
 }
