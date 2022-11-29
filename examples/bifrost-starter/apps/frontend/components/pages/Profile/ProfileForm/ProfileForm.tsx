@@ -1,14 +1,16 @@
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useForm } from 'react-hook-form';
 import router from 'next/router';
+import { GetUserDto } from '@bifrost-starter/interfaces';
 import { Input } from 'components/atoms';
-import { updateMe, User } from 'services/api/user/useUser';
+import { updateMe } from 'services/api/user/useUser';
 import { Pages } from 'constant';
 import style from './ProfileForm.module.css';
 
 type ProfileProps = {
-  user: User;
+  user: GetUserDto;
 };
+
 export type UserData = {
   name: string;
 };

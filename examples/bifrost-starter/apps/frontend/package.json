@@ -14,6 +14,7 @@
     "test:coverage": "pnpm test -- --coverage"
   },
   "dependencies": {
+    "@bifrost-starter/interfaces": "workspace:*",
     "axios": "0.27.2",
     "axios-auth-refresh": "3.3.3",
     "jwt-decode": "3.1.2",
