@@ -7,9 +7,9 @@ import * as request from 'supertest';
 import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
 import { AuthService } from '@auth/auth.service';
+import { GetUserDto } from '@bifrost-starter/interfaces';
 import { User } from '../user.entity';
 import { UserFactory } from '../user.factory';
-import { GetUserDto } from '../interfaces/getUser.dto';
 
 const generateUserDto = () => ({
   name: faker.name.lastName(),

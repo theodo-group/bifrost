@@ -2,6 +2,9 @@
 .idea
 node_modules
 .dockerignore
-# Nx caching
-nx-cache
+
+# turbo caching
+.turbo
 .eslintcache
+# build
+dist

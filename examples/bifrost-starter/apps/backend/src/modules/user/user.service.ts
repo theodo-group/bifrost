@@ -3,10 +3,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { hash } from 'bcrypt';
 
+import {
+  AdminUpdateUserDto,
+  CreateUserDto,
+  GetUserDto,
+  UpdateUserDto,
+} from '@bifrost-starter/interfaces';
 import { User } from './user.entity';
-import { CreateUserDto } from './interfaces/createUser.dto';
-import { AdminUpdateUserDto, UpdateUserDto } from './interfaces/updateUser.dto';
-import { GetUserDto } from './interfaces/getUser.dto';
 
 const SALT_ROUNDS = 10;
 

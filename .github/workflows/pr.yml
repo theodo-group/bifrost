@@ -20,32 +20,68 @@ defaults:
 
 jobs:
   test:
-    strategy:
-      matrix:
-        package: ['backend', 'frontend', 'interfaces']
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.14.1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Tests
+        run: pnpm test
+  test-examples:
+    runs-on: ubuntu-latest
+    services:
+      # Postgres image for backend integration tests
+      postgres:
+        image: postgres:14-alpine
+        env:
+          POSTGRES_DB: seed
+          POSTGRES_USER: seed
+          POSTGRES_PASSWORD: Ge0rgesMoustaki
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5434:5432
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     defaults:
       run:
         working-directory: ./examples/bifrost-starter
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.14.1
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@7.13.4 --activate
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: eslint
-        run: pnpm run --if-present --filter ${{ matrix.package }} lint
-      - name: Stylelint
-        run: pnpm run --if-present --filter ${{ matrix.package }} lint:style
+      - name: build
+        run: pnpm build
+      - name: linters
+        run: pnpm test:lint
       - name: Tests
-        run: pnpm run --if-present --filter ${{ matrix.package }} test:coverage
-      - name: dependency cruiser
-        run: pnpm run --if-present --filter ${{ matrix.package }} test:circular
+        run: pnpm test
+      - name: Dependency Cruiser
+        run: pnpm test:circular
+
   security-check:
     runs-on: ubuntu-latest
     defaults:
@@ -54,12 +90,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.14.1
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@7.13.4 --activate
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
       - name: Check for vulnerable dependencies
