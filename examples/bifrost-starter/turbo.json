@@ -1,0 +1,73 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "dev": {
+      "cache": false,
+      // A package's `build` script depends on that package's
+      // dependencies and devDependencies
+      // `build` tasks  being completed first
+      // (the `^` symbol signifies `upstream`).
+      "dependsOn": [
+        "^build"
+      ],
+      // note: output globs are relative to each package's `package.json`
+      // (and not the monorepo root)
+      "outputs": []
+    },
+    "lint:fix": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint:style:fix": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "outputs": [
+        "coverage/**"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test:circular": {
+      "outputs": []
+    },
+    "lint": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint:style": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test:type": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build": {
+      // A package's `build` script depends on that package's
+      // dependencies and devDependencies
+      // `build` tasks  being completed first
+      // (the `^` symbol signifies `upstream`).
+      "dependsOn": [
+        "^build"
+      ],
+      // note: output globs are relative to each package's `package.json`
+      // (and not the monorepo root)
+      "outputs": [
+        "dist/**"
+      ]
+    }
+  }
+}

@@ -5,19 +5,22 @@
   "license": "MIT",
   "repository": "git@github.com:theodo-group/bifrost.git",
   "scripts": {
-    "dev": "nx run-many --target=dev --all --nx-bail",
+    "dev": "turbo dev",
     "lint:fix": "eslint --cache --ext=js,ts --fix",
-    "lint:fix:all": "nx run-many --target=lint:fix --all --parallel=4",
+    "lint:fix:all": "turbo lint:fix lint:style:fix",
     "postinstall": "husky install && syncpack format",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "security": "audit-ci --config ./audit-ci.json"
+    "security": "audit-ci --config ./audit-ci.json",
+    "test": "turbo test",
+    "test:unit": "turbo test:unit",
+    "test:circular": "turbo test:circular",
+    "test:lint": "turbo lint lint:style",
+    "test:type": "turbo test:type"
   },
   "devDependencies": {
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
-    "@nrwl/tao": "14.8.3",
-    "@nrwl/workspace": "14.8.3",
     "@typescript-eslint/eslint-plugin": "5.40.0",
     "@typescript-eslint/parser": "5.40.0",
     "audit-ci": "6.3.0",
@@ -31,9 +34,9 @@
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "npm-audit-resolver": "3.0.0-7",
-    "nx": "14.8.3",
     "prettier": "2.7.1",
     "syncpack": "8.2.4",
+    "turbo": "1.6.3",
     "typescript": "4.7.4"
   },
   "packageManager": "pnpm@7.14.0"

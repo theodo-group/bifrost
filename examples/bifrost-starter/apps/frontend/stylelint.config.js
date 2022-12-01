@@ -45,6 +45,7 @@ module.exports = {
           'none',
           'currentColor',
         ],
+        disableFix: true, // disable the warning about no auto fix available
       },
     ],
     'selector-class-pattern': null,

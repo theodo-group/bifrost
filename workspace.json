@@ -1,7 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "documentation": "documentation",
-    "create-bifrost-app": "packages/create-bifrost-app"
-  }
-}

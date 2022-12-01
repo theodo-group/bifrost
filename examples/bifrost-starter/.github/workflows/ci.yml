@@ -29,14 +29,14 @@ jobs:
         run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: eslint
-        run: pnpm run --if-present --filter ${{ matrix.package }} lint
-      - name: Stylelint
-        run: pnpm run --if-present --filter ${{ matrix.package }} lint:style
+      - name: build
+        run: pnpm build
+      - name: linters
+        run: pnpm lint
       - name: Tests
-        run: pnpm run --if-present --filter ${{ matrix.package }} test:coverage
-      - name: dependency cruiser
-        run: pnpm run --if-present --filter ${{ matrix.package }} test:circular
+        run: pnpm test
+      - name: Dependency Cruiser
+        run: pnpm test:circular
   security-check:
     runs-on: ubuntu-latest
     steps:
