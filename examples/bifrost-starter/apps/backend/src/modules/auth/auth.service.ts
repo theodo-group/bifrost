@@ -1,4 +1,4 @@
-import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -7,6 +7,7 @@ import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
 import { compare } from 'bcrypt';
 import { CustomLogger } from '@modules/logger/custom-logger.service';
+import { TokenType } from '@auth/interfaces/token-type.enum';
 import { Credentials } from './interfaces/credentials.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { User } from '../user/user.entity';
@@ -45,8 +46,8 @@ export class AuthService {
     }
 
     return {
-      access: this.createJwt(user, ACCESS_TOKEN_MINUTES_TO_LIVE),
-      refresh: this.createJwt(user, REFRESH_TOKEN_MINUTES_TO_LIVE),
+      access: this.createAccessToken(user, ACCESS_TOKEN_MINUTES_TO_LIVE),
+      refresh: this.createRefreshToken(user, REFRESH_TOKEN_MINUTES_TO_LIVE),
     };
   }
 
@@ -54,9 +55,13 @@ export class AuthService {
     try {
       const refreshToken: JwtPayload = this.jwtService.verify(stringToken);
 
-      const user = await this.userRepository.findOneByOrFail({ id: refreshToken.user_id });
+      if (refreshToken.type !== TokenType.REFRESH) {
+        throw new BadRequestException("This type of token can't be used for refresh");
+      }
 
-      return this.createJwt(user, ACCESS_TOKEN_MINUTES_TO_LIVE);
+      const user = await this.userRepository.findOneByOrFail({ id: refreshToken.userId });
+
+      return this.createJwt(user, ACCESS_TOKEN_MINUTES_TO_LIVE, TokenType.ACCESS);
     } catch (error) {
       if (error instanceof EntityNotFoundError) {
         this.logger.warn('Refresh token for unknown user received');
@@ -76,19 +81,34 @@ export class AuthService {
     }
   }
 
-  createJwt(user: User, minutesToLive: number): string {
-    return this.jwtService.sign({ user_id: user.id }, { expiresIn: minutesToLive * 60 });
+  createAccessToken(user: User, minutesToLive: number) {
+    return this.createJwt(user, minutesToLive, TokenType.ACCESS);
   }
 
-  async validateUser(payload: JwtPayload): Promise<User> {
+  createRefreshToken(user: User, minutesToLive: number) {
+    return this.createJwt(user, minutesToLive, TokenType.REFRESH);
+  }
+
+  private createJwt(user: User, minutesToLive: number, type: TokenType): string {
+    const token = this.jwtService.sign(
+      { userId: user.id, type },
+      { expiresIn: minutesToLive * 60 },
+    );
+
+    this.logger.log(`token created, type ${type}, value ${token}`);
+
+    return token;
+  }
+
+  async validateUser(userId: string): Promise<User | null> {
     try {
-      return await this.userRepository.findOneByOrFail({ id: payload.user_id });
+      return await this.userRepository.findOneByOrFail({ id: userId });
     } catch (error) {
       if (error instanceof EntityNotFoundError) {
         this.logger.warn('Access token for unknown user received');
-        throw new UnauthorizedException();
       }
-      throw error;
+
+      return null;
     }
   }
 }
