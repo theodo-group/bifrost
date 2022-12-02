@@ -80,7 +80,7 @@ describe('UserController', () => {
   describe('PATCH - /users', () => {
     it('should return 403 http code if user is not an admin', async () => {
       const [user, existingUser] = await userFactory.createMany([{ roles: [] }, {}]);
-      const accessToken = authService.createJwt(user, 10000);
+      const accessToken = authService.createAccessToken(user, 10000);
       const userDto = generateUserWithRolesDto();
 
       await request(app.getHttpServer())
@@ -96,7 +96,7 @@ describe('UserController', () => {
 
     it('should update a given user and hash the password', async () => {
       const [adminUser, existingUser] = await userFactory.createMany([{ roles: ['admin'] }, {}]);
-      const accessToken = authService.createJwt(adminUser, 10000);
+      const accessToken = authService.createAccessToken(adminUser, 10000);
       const userDto = generateUserWithRolesDto();
 
       const response = await request(app.getHttpServer())
@@ -116,7 +116,7 @@ describe('UserController', () => {
   describe('PATCH - /users', () => {
     it('should update the user calling the endpoint', async () => {
       const existingUser = await userFactory.createOne();
-      const accessToken = authService.createJwt(existingUser, 10000);
+      const accessToken = authService.createAccessToken(existingUser, 10000);
       const userDto = generateUserDto();
 
       const response = await request(app.getHttpServer())

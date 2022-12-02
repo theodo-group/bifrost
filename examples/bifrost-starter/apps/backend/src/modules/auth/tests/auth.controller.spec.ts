@@ -109,7 +109,7 @@ describe('AppController', () => {
   describe('POST - jwt/refresh', () => {
     it('should return 401 http code if refresh token has expired', async () => {
       const user = await userFactory.createOne();
-      const refreshToken = authService.createJwt(user, 0);
+      const refreshToken = authService.createRefreshToken(user, 0);
 
       return request(app.getHttpServer())
         .post('/auth/jwt/refresh')
@@ -126,7 +126,7 @@ describe('AppController', () => {
 
     it('should return 401 http code if refresh token is valid but user does not exist', async () => {
       const user = await userFactory.createOne();
-      const refreshToken = authService.createJwt(user, 10000); // arbitrary value for ttl just to ensure token is still valid
+      const refreshToken = authService.createRefreshToken(user, 10000); // arbitrary value for ttl just to ensure token is still valid
       await userRepository.delete(user.id);
 
       return request(app.getHttpServer())
@@ -135,9 +135,19 @@ describe('AppController', () => {
         .expect(401);
     });
 
+    it('should return 400 http code if refresh token is does not have the correct token type', async () => {
+      const user = await userFactory.createOne();
+      const refreshToken = authService.createAccessToken(user, 10000); // arbitrary value for ttl just to ensure token is still valid
+
+      return request(app.getHttpServer())
+        .post('/auth/jwt/refresh')
+        .set('Cookie', `${REFRESH_TOKEN}=${refreshToken}`)
+        .expect(400);
+    });
+
     it('should return an access token if refresh token is valid and user exist', async () => {
       const user = await userFactory.createOne();
-      const refreshToken = authService.createJwt(user, 10000); // arbitrary value for ttl just to ensure token is still valid
+      const refreshToken = authService.createRefreshToken(user, 10000); // arbitrary value for ttl just to ensure token is still valid
 
       return request(app.getHttpServer())
         .post('/auth/jwt/refresh')

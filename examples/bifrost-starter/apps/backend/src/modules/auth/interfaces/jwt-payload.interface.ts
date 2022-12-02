@@ -1,4 +1,7 @@
+import { TokenType } from '@auth/interfaces/token-type.enum';
+
 export interface JwtPayload {
-  user_id: string;
+  userId: string;
   exp: number;
+  type: TokenType;
 }
