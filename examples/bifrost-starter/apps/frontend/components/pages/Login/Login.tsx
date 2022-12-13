@@ -31,6 +31,10 @@ export const Login: NextPage = () => {
         <h1>
           <FormattedMessage id="login.title" />
         </h1>
+        <img
+          src="https://www.google.com/search/static/gs/animal/cover_images/m07bgp_cover.png"
+          alt="sheep"
+        />
         <form
           className={style.form}
           method="post"
