@@ -53,7 +53,7 @@
     "cross-spawn": "7.0.3",
     "dependency-cruiser": "11.16.1",
     "dependency-cruiser-config-custom": "workspace:*",
-    "eslint": "8.25.0",
+    "eslint-config-custom": "workspace:*",
     "got": "12.5.1",
     "prettier": "2.7.1",
     "prompts": "2.4.2",
