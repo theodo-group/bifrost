@@ -78,6 +78,7 @@ importers:
       cli-color: 2.0.3
       cookie-parser: 1.4.6
       dependency-cruiser: 11.15.0
+      dependency-cruiser-config-custom: workspace:*
       eslint: 8.23.1
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0
@@ -148,6 +149,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.37.0_7yuior3nseb5pya2lwpwzaadte
       '@typescript-eslint/parser': 5.37.0_4brgkhw6cq4me3drk3kxrpb2mm
       dependency-cruiser: 11.15.0
+      dependency-cruiser-config-custom: link:../../packages/dependency-cruiser-config-custom
       eslint: 8.23.1
       eslint-config-prettier: 8.5.0_eslint@8.23.1
       eslint-plugin-import: 2.26.0_uzffwd2kxyy6gwinwkcp25zmz4
@@ -179,6 +181,7 @@ importers:
       axios: 0.27.2
       axios-auth-refresh: 3.3.3
       dependency-cruiser: 11.15.0
+      dependency-cruiser-config-custom: workspace:*
       eslint: 8.23.1
       eslint-config-next: 12.3.4
       eslint-config-prettier: 8.5.0
@@ -229,6 +232,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.37.0_7yuior3nseb5pya2lwpwzaadte
       '@typescript-eslint/parser': 5.37.0_4brgkhw6cq4me3drk3kxrpb2mm
       dependency-cruiser: 11.15.0
+      dependency-cruiser-config-custom: link:../../packages/dependency-cruiser-config-custom
       eslint: 8.23.1
       eslint-config-next: 12.3.4_4brgkhw6cq4me3drk3kxrpb2mm
       eslint-config-prettier: 8.5.0_eslint@8.23.1
@@ -249,6 +253,9 @@ importers:
       stylelint-declaration-strict-value: 1.9.0_stylelint@14.11.0
       ts-node: 10.9.1_4zkqkmwaqmenafsiley2nr7i64
       typescript: 4.7.4
+
+  packages/dependency-cruiser-config-custom:
+    specifiers: {}
 
   packages/interfaces:
     specifiers:

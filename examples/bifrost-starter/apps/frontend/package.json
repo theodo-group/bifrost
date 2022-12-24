@@ -38,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
     "dependency-cruiser": "11.15.0",
+    "dependency-cruiser-config-custom": "workspace:*",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.4",
     "eslint-config-prettier": "8.5.0",

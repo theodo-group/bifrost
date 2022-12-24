@@ -35,7 +35,14 @@
       ]
     },
     "test:circular": {
-      "outputs": []
+      "outputs": [],
+      "inputs": [
+        "**/*.tsx",
+        "**/*.ts",
+        "**/*.js",
+        "package.json",
+        "../dependency-cruiser-config-custom/**"
+      ]
     },
     "lint": {
       "outputs": [],
