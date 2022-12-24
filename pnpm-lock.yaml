@@ -89,6 +89,7 @@ importers:
       concurrently: 7.4.0
       cross-spawn: 7.0.3
       dependency-cruiser: 11.16.1
+      dependency-cruiser-config-custom: workspace:*
       eslint: 8.25.0
       got: 12.5.1
       prettier: 2.7.1
@@ -119,6 +120,7 @@ importers:
       concurrently: 7.4.0
       cross-spawn: 7.0.3
       dependency-cruiser: 11.16.1
+      dependency-cruiser-config-custom: link:../dependency-cruiser-config-custom
       eslint: 8.25.0
       got: 12.5.1
       prettier: 2.7.1
@@ -132,6 +134,9 @@ importers:
       vite: 3.2.4_@types+node@18.8.3
       vite-tsconfig-paths: 3.5.1_vite@3.2.4
       vitest: 0.24.0
+
+  packages/dependency-cruiser-config-custom:
+    specifiers: {}
 
 packages:
 
@@ -4536,7 +4541,7 @@ packages:
     dev: false
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
 
   /concurrently/7.4.0:
     resolution: {integrity: sha512-M6AfrueDt/GEna/Vg9BqQ+93yuvzkSKmoTixnwEJkH0LlcGrRC2eCmjeG1tLLHIYfpYJABokqSGyMcXjm96AFA==}
@@ -5659,7 +5664,7 @@ packages:
       eslint-import-resolver-node: 0.3.6
       eslint-module-utils: 2.7.3_owmdenaxfv5vuzuk4jnrvv2zs4
       has: 1.0.3
-      is-core-module: 2.9.0
+      is-core-module: 2.10.0
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.values: 1.1.5
@@ -6984,12 +6989,6 @@ packages:
     resolution: {integrity: sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==}
     dependencies:
       has: 1.0.3
-
-  /is-core-module/2.9.0:
-    resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
-    dependencies:
-      has: 1.0.3
-    dev: true
 
   /is-date-object/1.0.5:
     resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==}

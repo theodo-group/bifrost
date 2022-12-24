@@ -1,3 +1,1 @@
-const commonDependencyCruiserConfig = require('../../commonConfiguration/dependency-cruiser.config');
-
-module.exports = commonDependencyCruiserConfig({ path: './src' });
+module.exports = require('dependency-cruiser-config-custom');
