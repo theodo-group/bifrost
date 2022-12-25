@@ -140,6 +140,14 @@ module.exports = {
             minimumDescriptionLength: 10,
           },
         ],
+        '@typescript-eslint/no-misused-promises': [
+          'error',
+          {
+            checksVoidReturn: {
+              attributes: false,
+            },
+          },
+        ],
         '@typescript-eslint/explicit-function-return-type': 0,
         '@typescript-eslint/explicit-member-accessibility': 0,
         '@typescript-eslint/camelcase': 0,
