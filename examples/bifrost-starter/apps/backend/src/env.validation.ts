@@ -34,7 +34,7 @@ class EnvironmentVariables {
   ALLOWED_HOST!: string;
 }
 
-export function validate(config: Record<string, unknown>): EnvironmentVariables {
+export const validate = (config: Record<string, unknown>): EnvironmentVariables => {
   const validatedConfig = plainToClass(EnvironmentVariables, config, {
     enableImplicitConversion: true,
   });
@@ -45,4 +45,4 @@ export function validate(config: Record<string, unknown>): EnvironmentVariables 
   }
 
   return validatedConfig;
-}
+};

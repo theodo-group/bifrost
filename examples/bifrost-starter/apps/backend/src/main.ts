@@ -6,7 +6,7 @@ import { AppModule } from './app.module';
 import { Environment } from './env.validation';
 import { CustomLogger } from './modules/logger/custom-logger.service';
 
-async function bootstrap() {
+const bootstrap = async () => {
   const logger = new CustomLogger();
   const app = await NestFactory.create(AppModule, { logger });
 
@@ -29,6 +29,6 @@ async function bootstrap() {
   }
 
   await app.listen(process.env.SERVER_PORT ?? 8000);
-}
+};
 
 void bootstrap();

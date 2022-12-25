@@ -6,11 +6,17 @@ import {
 
 import { User } from '@modules/user/user.entity';
 
-export const UseUser = createParamDecorator((data: unknown, ctx: ExecutionContext): User => {
-  const request = ctx.switchToHttp().getRequest();
+type RequestWithUser = {
+  user: User;
+};
 
-  const user: User | undefined = request.user;
-  if (!user) {
+const isRequestWithUser = (request: unknown): request is RequestWithUser =>
+  request !== null && typeof request === 'object' && 'user' in request;
+
+export const UseUser = createParamDecorator((data: unknown, ctx: ExecutionContext): User => {
+  const request = ctx.switchToHttp().getRequest<unknown>();
+
+  if (!isRequestWithUser(request)) {
     throw new InternalServerErrorException();
   }
 

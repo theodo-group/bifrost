@@ -6,7 +6,7 @@ import { capitalize } from 'lodash';
 
 const formatApiRouteName = (route: string) => route.split('-').map(capitalize).join(' ');
 
-export const Controller = (route?: string) => {
+export const Controller = (route?: string): ReturnType<typeof NestJsCoreController> => {
   if (route === undefined) {
     return applyDecorators(NestJsCoreController());
   }

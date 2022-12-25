@@ -82,11 +82,11 @@ export class AuthService {
     }
   }
 
-  createAccessToken(user: User, minutesToLive: number) {
+  createAccessToken(user: User, minutesToLive: number): string {
     return this.createJwt(user, minutesToLive, TokenType.ACCESS);
   }
 
-  createRefreshToken(user: User, minutesToLive: number) {
+  createRefreshToken(user: User, minutesToLive: number): string {
     return this.createJwt(user, minutesToLive, TokenType.REFRESH);
   }
 

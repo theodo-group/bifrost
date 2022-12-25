@@ -9,6 +9,7 @@ export abstract class Factory<T> {
   protected abstract createBase(entity?: Partial<T>): T;
 
   createMany = (entities: Array<Partial<T>>): Promise<T[]> | T[] => {
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     const createdEntities = entities.map(this.createBase);
 
     if (this.repository === undefined) {
