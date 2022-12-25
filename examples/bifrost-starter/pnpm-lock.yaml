@@ -274,6 +274,7 @@ importers:
       class-validator: 0.13.2
       dependency-cruiser: 11.15.0
       dependency-cruiser-config-custom: workspace:*
+      eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: 4.7.4
     dependencies:
@@ -283,6 +284,7 @@ importers:
     devDependencies:
       dependency-cruiser: 11.15.0
       dependency-cruiser-config-custom: link:../dependency-cruiser-config-custom
+      eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.7.4
 
