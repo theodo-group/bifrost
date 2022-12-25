@@ -1,8 +1,10 @@
 import { Body, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { Environment } from '@root/env.validation';
+
 import { Controller } from '@decorators/controller';
 import { Post } from '@decorators/httpDecorators';
+import { Environment } from '@root/env.validation';
+
 import { AuthService } from './auth.service';
 import { Credentials } from './interfaces/credentials.dto';
 

@@ -1,9 +1,11 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { Request, Response } from 'express';
 import { randomBytes } from 'crypto';
+import { Request, Response } from 'express';
+
 import { Environment } from '@root/env.validation';
-import { CustomLogger } from './custom-logger.service';
+
 import { nodeStorage } from './async-local-storage';
+import { CustomLogger } from './custom-logger.service';
 
 const generateId = () => {
   return randomBytes(16).toString('hex');

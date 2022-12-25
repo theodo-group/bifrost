@@ -1,9 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as cookieParser from 'cookie-parser';
+
 import { AppModule } from './app.module';
-import { CustomLogger } from './modules/logger/custom-logger.service';
 import { Environment } from './env.validation';
+import { CustomLogger } from './modules/logger/custom-logger.service';
 
 async function bootstrap() {
   const logger = new CustomLogger();

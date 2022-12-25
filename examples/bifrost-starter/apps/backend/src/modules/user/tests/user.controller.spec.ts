@@ -1,13 +1,14 @@
-import { getRepositoryToken } from '@nestjs/typeorm';
+import { GetUserDto } from '@bifrost-starter/interfaces';
+import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { Repository } from 'typeorm';
+import { getRepositoryToken } from '@nestjs/typeorm';
 import * as faker from 'faker';
 import * as request from 'supertest';
+import { Repository } from 'typeorm';
 
-import { AppModule } from '@root/app.module';
-import { INestApplication } from '@nestjs/common';
 import { AuthService } from '@auth/auth.service';
-import { GetUserDto } from '@bifrost-starter/interfaces';
+import { AppModule } from '@root/app.module';
+
 import { User } from '../user.entity';
 import { UserFactory } from '../user.factory';
 

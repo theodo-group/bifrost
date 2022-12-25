@@ -1,14 +1,14 @@
-import { ConflictException, Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { hash } from 'bcrypt';
-
 import {
   AdminUpdateUserDto,
   CreateUserDto,
   GetUserDto,
   UpdateUserDto,
 } from '@bifrost-starter/interfaces';
+import { ConflictException, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { hash } from 'bcrypt';
+import { Repository } from 'typeorm';
+
 import { User } from './user.entity';
 
 const SALT_ROUNDS = 10;

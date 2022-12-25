@@ -3,12 +3,11 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 
+import { UserModule } from '../user/user.module';
 import { AuthController } from './auth.controller';
 import { CustomAuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
-
-import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [

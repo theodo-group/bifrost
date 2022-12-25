@@ -1,5 +1,6 @@
-import BaseEntity from '@helpers/BaseEntity';
 import { Column, Entity } from 'typeorm';
+
+import BaseEntity from '@helpers/BaseEntity';
 
 @Entity('users')
 export class User extends BaseEntity {
