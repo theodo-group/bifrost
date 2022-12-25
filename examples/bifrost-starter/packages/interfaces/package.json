@@ -11,7 +11,8 @@
     "dev": "rm -rf dist && tsc -p tsconfig.json --watch",
     "lint": "eslint --cache './**/*.{js,ts}' --max-warnings 0",
     "lint:fix": "pnpm lint --fix",
-    "test:circular": "depcruise --validate .dependency-cruiser.js src"
+    "test:circular": "depcruise --validate .dependency-cruiser.js src",
+    "test:type": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
     "@nestjs/common": "9.0.11",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "dependency-cruiser": "11.15.0",
     "dependency-cruiser-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "typescript": "4.7.4"
   },
   "keywords": [],

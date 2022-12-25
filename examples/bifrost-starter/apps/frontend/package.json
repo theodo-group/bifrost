@@ -12,7 +12,8 @@
     "start": "./gen_env.sh production && next start",
     "test": "jest",
     "test:circular": "pnpm depcruise --validate .dependency-cruiser.js pages --ignore-known",
-    "test:coverage": "pnpm test -- --coverage"
+    "test:coverage": "pnpm test -- --coverage",
+    "test:type": "pnpm build"
   },
   "dependencies": {
     "@bifrost-starter/interfaces": "workspace:*",
@@ -58,6 +59,7 @@
     "stylelint-config-standard": "28.0.0",
     "stylelint-declaration-strict-value": "1.9.0",
     "ts-node": "10.9.1",
+    "tsconfig": "workspace:*",
     "typescript": "4.7.4"
   },
   "engines": {

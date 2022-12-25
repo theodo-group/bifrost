@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "composite": false,
+    "module": "CommonJS",
+    "declaration": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "preserveWatchOutput": true,
+    "preserveSymlinks": true,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "sourceMap": true,
+    "emitDeclarationOnly": false,
+  },
+}

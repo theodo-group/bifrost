@@ -25,6 +25,7 @@
     "test:coverage": "docker-compose up -d db-test && pnpm test -- --coverage",
     "test:debug": "NODE_OPTIONS='--inspect-brk' pnpm test",
     "test:schema:drop": ". ./.env.test.rc && TYPEORM_ENTITIES='' typeorm -d datasource.js schema:drop",
+    "test:type": "pnpm build",
     "test:watch": "pnpm test --watch"
   },
   "dependencies": {
@@ -86,6 +87,7 @@
     "supertest": "6.2.4",
     "ts-jest": "28.0.8",
     "ts-loader": "9.3.1",
+    "tsconfig": "workspace:*",
     "typescript": "4.7.4",
     "webpack": "5.74.0"
   },
