@@ -19,7 +19,8 @@
       "**/build": true,
       "**/bundles": true,
       "**/dist": true,
-      "pnpm-lock.yaml": true
+      "pnpm-lock.yaml": true,
+      "**/.turbo": true
     },
     "[dotenv][ignore][properties][shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format"
