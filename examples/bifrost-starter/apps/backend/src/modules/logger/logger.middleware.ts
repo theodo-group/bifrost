@@ -1,8 +1,7 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Environment } from '@root/env.validation';
 import { randomBytes } from 'crypto';
 import { Request, Response } from 'express';
-
-import { Environment } from '@root/env.validation';
 
 import { nodeStorage } from './async-local-storage';
 import { CustomLogger } from './custom-logger.service';

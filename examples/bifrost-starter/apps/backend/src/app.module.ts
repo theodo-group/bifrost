@@ -1,9 +1,8 @@
+import { AuthModule } from '@auth/auth.module';
 import { MiddlewareConsumer, Module, RequestMethod, ValidationPipe } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
-import { AuthModule } from '@auth/auth.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';

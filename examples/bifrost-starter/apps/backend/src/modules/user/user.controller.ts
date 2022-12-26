@@ -1,17 +1,16 @@
+import { RolesGuard } from '@auth/role.guard';
+import { UseUser } from '@auth/user.decorator';
 import {
   AdminUpdateUserDto,
   CreateUserDto,
   GetUserDto,
   UpdateUserDto,
 } from '@bifrost-starter/interfaces';
+import { Controller } from '@decorators/controller';
+import { Get, Patch, Post } from '@decorators/httpDecorators';
 import { Body, Param, UseGuards } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-
-import { RolesGuard } from '@auth/role.guard';
-import { UseUser } from '@auth/user.decorator';
-import { Controller } from '@decorators/controller';
-import { Get, Patch, Post } from '@decorators/httpDecorators';
 
 import { User } from './user.entity';
 import { UserService } from './user.service';

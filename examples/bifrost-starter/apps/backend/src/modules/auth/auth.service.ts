@@ -1,3 +1,5 @@
+import { TokenType } from '@auth/interfaces/token-type.enum';
+import { CustomLogger } from '@modules/logger/custom-logger.service';
 import { BadRequestException, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -5,9 +7,6 @@ import { compare } from 'bcrypt';
 import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 import { Repository } from 'typeorm';
 import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
-
-import { TokenType } from '@auth/interfaces/token-type.enum';
-import { CustomLogger } from '@modules/logger/custom-logger.service';
 
 import { User } from '../user/user.entity';
 import { Credentials } from './interfaces/credentials.dto';

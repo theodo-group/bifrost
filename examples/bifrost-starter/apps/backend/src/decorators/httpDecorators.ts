@@ -1,3 +1,4 @@
+import { Public } from '@auth/public.decorator';
 import {
   applyDecorators,
   // This is where we define the custom decorators, we want to import the real ones here
@@ -10,8 +11,6 @@ import {
   /* eslint-enable no-restricted-imports */
 } from '@nestjs/common';
 import { ApiBearerAuth } from '@nestjs/swagger';
-
-import { Public } from '@auth/public.decorator';
 
 interface Config {
   isPublic: boolean;

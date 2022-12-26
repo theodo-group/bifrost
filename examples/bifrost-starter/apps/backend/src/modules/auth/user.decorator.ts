@@ -1,10 +1,9 @@
+import { User } from '@modules/user/user.entity';
 import {
   createParamDecorator,
   ExecutionContext,
   InternalServerErrorException,
 } from '@nestjs/common';
-
-import { User } from '@modules/user/user.entity';
 
 type RequestWithUser = {
   user: User;
