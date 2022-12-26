@@ -12,15 +12,19 @@
     ],
     "stylelint.customSyntax": "@stylelint/postcss-css-in-js",
     "search.exclude": {
+      "pnpm-lock.yaml": true,
+    },
+    "files.exclude": {
       "**/coverage": true,
       "**/node_modules": true,
-      "**/.serverless": true,
       "**/.docusaurus": true,
       "**/build": true,
-      "**/bundles": true,
       "**/dist": true,
-      "pnpm-lock.yaml": true,
-      "**/.turbo": true
+      "**/.turbo": true,
+      "**/.next": true,
+      "**/.swc": true,
+      "**/.eslintcache": true,
+      "**/tsconfig.tsbuildinfo": true
     },
     "[dotenv][ignore][properties][shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format"
