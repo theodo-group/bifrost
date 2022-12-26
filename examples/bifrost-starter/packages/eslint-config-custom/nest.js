@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['custom/base'],
+  extends: ['./base'],
   rules: {
     'no-restricted-imports': [
       'error',

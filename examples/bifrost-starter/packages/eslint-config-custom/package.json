@@ -1,6 +1,10 @@
 {
   "name": "eslint-config-custom",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint --cache './**/*.{js,ts}' --max-warnings 0",
+    "lint:fix": "pnpm lint --fix"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",
@@ -9,6 +13,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "27.1.7",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-unused-imports": "2.0.0"
+    "eslint-plugin-unused-imports": "2.0.0",
+    "prettier": "2.7.1"
   }
 }
