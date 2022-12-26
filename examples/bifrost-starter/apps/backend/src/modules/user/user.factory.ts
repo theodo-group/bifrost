@@ -1,5 +1,5 @@
 import { Factory } from '@testUtils/factory';
-import * as faker from 'faker';
+import faker from 'faker';
 
 import { User } from './user.entity';
 

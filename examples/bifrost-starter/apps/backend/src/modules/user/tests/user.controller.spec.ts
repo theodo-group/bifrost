@@ -4,8 +4,8 @@ import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { AppModule } from '@root/app.module';
-import * as faker from 'faker';
-import * as request from 'supertest';
+import faker from 'faker';
+import request from 'supertest';
 import { Repository } from 'typeorm';
 
 import { User } from '../user.entity';

@@ -1,7 +1,7 @@
 import { ConsoleLogger, Injectable, Scope } from '@nestjs/common';
 import { Environment } from '@root/env.validation';
-import * as clc from 'cli-color';
-import * as winston from 'winston';
+import clc from 'cli-color';
+import winston from 'winston';
 
 import { nodeStorage } from './async-local-storage';
 
