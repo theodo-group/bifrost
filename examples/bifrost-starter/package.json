@@ -7,6 +7,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "lint": "turbo lint lint:style",
     "lint:fix": "eslint --cache --ext=js,ts --fix",
     "lint:fix:all": "turbo lint:fix lint:style:fix",
     "postinstall": "husky install && syncpack format",
@@ -15,7 +16,6 @@
     "security": "audit-ci --config ./audit-ci.json",
     "test": "turbo test",
     "test:circular": "turbo test:circular",
-    "test:lint": "turbo lint lint:style",
     "test:type": "turbo test:type",
     "test:unit": "turbo test:unit"
   },

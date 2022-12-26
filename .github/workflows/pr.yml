@@ -76,7 +76,7 @@ jobs:
       - name: build
         run: pnpm build
       - name: linters
-        run: pnpm test:lint
+        run: pnpm lint
       - name: Tests
         run: pnpm test
       - name: Dependency Cruiser
