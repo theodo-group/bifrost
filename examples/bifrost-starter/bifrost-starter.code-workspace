@@ -35,7 +35,13 @@
     "[markdown][mdx]": {
       "editor.wordWrap": "on"
     },
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "jest.disabledWorkspaceFolders": [
+      "tsconfig 🔧",
+      "dependency cruiser 🔧",
+      "eslint 🔧",
+      "bifrost starter root 🌈"
+    ]
   },
   "extensions": {
     "recommendations": [
@@ -77,6 +83,18 @@
     {
       "path": "packages/interfaces",
       "name": "interfaces 🤝"
+    },
+    {
+      "path": "packages/tsconfig",
+      "name": "tsconfig 🔧"
+    },
+    {
+      "path": "packages/eslint-config-custom",
+      "name": "eslint 🔧"
+    },
+    {
+      "path": "packages/dependency-cruiser-config-custom",
+      "name": "dependency cruiser 🔧"
     },
     {
       "path": ".",
