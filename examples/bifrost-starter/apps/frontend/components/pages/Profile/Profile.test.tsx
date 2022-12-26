@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+
 import { Profile } from './Profile';
 
 describe('<Profile />', () => {

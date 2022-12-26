@@ -1,12 +1,13 @@
 import 'styles/global.css';
 import 'styles/stylesheet.css';
-import { SWRConfig } from 'swr';
 import { AppProps } from 'next/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { apiClient } from 'services/api/client';
+import { SWRConfig } from 'swr';
+
 import { AppCrashFallback, ErrorBoundary } from 'components';
 import { Intl } from 'providers';
+import { apiClient } from 'services/api/client';
 
 if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
   void import('@axe-core/react').then(({ default: reactAxe }) => {
@@ -16,7 +17,7 @@ if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
   });
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <ErrorBoundary FallbackComponent={AppCrashFallback}>
       <Intl defaultLocale="en">
@@ -34,6 +35,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Intl>
     </ErrorBoundary>
   );
-}
+};
 
 export default MyApp;

@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
+
 import { useGetMe } from 'services/api/user/useUser';
+
 import style from './Home.module.css';
 
 export const Home = (): JSX.Element => {

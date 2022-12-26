@@ -1,10 +1,12 @@
-import { FormattedMessage, useIntl } from 'react-intl';
-import { useForm } from 'react-hook-form';
-import router from 'next/router';
 import { GetUserDto } from '@bifrost-starter/interfaces';
+import router from 'next/router';
+import { useForm } from 'react-hook-form';
+import { FormattedMessage, useIntl } from 'react-intl';
+
 import { Input } from 'components/atoms';
-import { updateMe } from 'services/api/user/useUser';
 import { Pages } from 'constant';
+import { updateMe } from 'services/api/user/useUser';
+
 import style from './ProfileForm.module.css';
 
 type ProfileProps = {
@@ -15,7 +17,7 @@ export type UserData = {
   name: string;
 };
 
-export const ProfileForm = ({ user }: ProfileProps) => {
+export const ProfileForm = ({ user }: ProfileProps): JSX.Element => {
   const intl = useIntl();
   const { register, handleSubmit } = useForm<UserData>({
     defaultValues: {

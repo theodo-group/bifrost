@@ -1,11 +1,13 @@
-import { NextPage } from 'next/types';
 import Head from 'next/head';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { login, LoginData } from 'services/api/auth/login';
-import { Pages } from 'constant';
+import { NextPage } from 'next/types';
+import { useForm } from 'react-hook-form';
+import { FormattedMessage, useIntl } from 'react-intl';
+
 import { Input, PasswordInput } from 'components/atoms';
+import { Pages } from 'constant';
+import { login, LoginData } from 'services/api/auth/login';
+
 import style from './Login.module.css';
 
 export const Login: NextPage = () => {

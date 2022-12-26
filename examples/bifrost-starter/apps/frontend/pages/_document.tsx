@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
-export default function Document() {
+const Document = (): JSX.Element => {
   return (
     // Accessibility and SEO: change the lang attribute if other languages are present
     <Html lang="en">
@@ -14,4 +14,6 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+
+export default Document;

@@ -1,4 +1,4 @@
-export const EyeOpen = ({ className }: { className?: string }) => (
+export const EyeOpen = ({ className }: { className?: string }): JSX.Element => (
   <svg
     width="24"
     height="24"

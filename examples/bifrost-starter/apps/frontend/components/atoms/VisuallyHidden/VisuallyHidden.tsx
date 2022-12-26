@@ -4,6 +4,8 @@ type VisuallyHiddenProps = {
   children: React.ReactNode;
 };
 
-export const VisuallyHidden = ({ children }: VisuallyHiddenProps) => (
+export const VisuallyHidden = ({
+  children,
+}: VisuallyHiddenProps): JSX.Element => (
   <span className={style.visuallyHidden}>{children}</span>
 );
