@@ -14,18 +14,6 @@
       // (and not the monorepo root)
       "outputs": []
     },
-    "lint:fix": {
-      "outputs": [],
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "lint:style:fix": {
-      "outputs": [],
-      "dependsOn": [
-        "^build"
-      ]
-    },
     "test": {
       "outputs": [
         "coverage/**"
@@ -41,16 +29,42 @@
         "**/*.ts",
         "**/*.js",
         "package.json",
-        "../dependency-cruiser-config-custom/**"
+        "../../packages/dependency-cruiser-config-custom/**"
       ]
     },
     "lint": {
       "outputs": [],
+      "inputs": [
+        "**/*.tsx",
+        "**/*.ts",
+        "**/*.js",
+        "package.json",
+        "../../packages/eslint-config-custom/**"
+      ],
       "dependsOn": [
         "^build"
       ]
     },
     "lint:style": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint:fix": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "**/*.tsx",
+        "**/*.ts",
+        "**/*.js",
+        "package.json",
+        "../../packages/eslint-config-custom/**"
+      ]
+    },
+    "lint:style:fix": {
       "outputs": [],
       "dependsOn": [
         "^build"
