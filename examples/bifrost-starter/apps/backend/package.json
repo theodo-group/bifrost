@@ -14,7 +14,7 @@
     "migration:revert": ". ./.env.rc && typeorm -d datasource.js migration:revert",
     "migration:run": ". ./.env.rc && typeorm -d datasource.js migration:run",
     "migration:run:prod": "typeorm -d datasource.js migration:run",
-    "postinstall": "test -f .env.rc || cp .env.example.rc .env.rc",
+    "postinstall": "test -f .env.rc || (test -f .env.example.rc && cp .env.example.rc .env.rc || echo -e \"\\e[33mNo env file initialized\\e[0m\")",
     "premigration:generate": "pnpm build:entities",
     "reset": "rm -rf node_modules && pnpm install",
     "schema:drop": ". ./.env.rc && typeorm -d datasource.js schema:drop",

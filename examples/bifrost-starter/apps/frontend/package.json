@@ -8,7 +8,7 @@
     "lint:fix": "pnpm lint --fix",
     "lint:style": "stylelint './**/*.module.css'",
     "lint:style:fix": "stylelint --fix './**/*.module.css'",
-    "postinstall": "test -f .env.local || cp .env.sample .env.local",
+    "postinstall": "test -f .env.local || (test -f .env.sample && cp .env.sample .env.local || echo -e \"\\e[33mNo env file initialized\\e[0m\")",
     "start": "./gen_env.sh production && next start",
     "test": "jest",
     "test:circular": "pnpm depcruise --validate .dependency-cruiser.js pages --ignore-known",
