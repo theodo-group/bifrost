@@ -11,7 +11,7 @@ name: ⛷ PR tests
 
 env:
   CI: true
-  NODE_VERSION: 16
+  NODE_VERSION: 18
   HUSKY: 0
 
 defaults:
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
@@ -69,7 +69,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
@@ -97,7 +97,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
