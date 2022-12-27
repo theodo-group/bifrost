@@ -41,7 +41,8 @@
       "dependency cruiser 🔧",
       "eslint 🔧",
       "bifrost starter root 🌈"
-    ]
+    ],
+    "jest.autoRun": "off",
   },
   "extensions": {
     "recommendations": [
