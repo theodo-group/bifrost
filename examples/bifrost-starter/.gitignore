@@ -1,7 +1,6 @@
 /.env
 .idea
 node_modules
-.dockerignore
 
 # turbo caching
 .turbo

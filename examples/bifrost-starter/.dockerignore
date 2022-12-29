@@ -1,0 +1,16 @@
+**/**
+
+!package.json
+!.gitignore
+!turbo.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!**/package.json
+!apps/**
+!packages/**
+**/dist
+**/.next
+**/.turbo
+**/.swc
+**/node_modules
+**/coverage
