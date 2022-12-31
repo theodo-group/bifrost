@@ -1,6 +1,7 @@
 {
   "name": "@bifrost-starter/frontend",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "build": "next build",
     "dev": "./gen_env.sh local && next dev -p 3000",
