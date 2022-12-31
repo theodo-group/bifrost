@@ -2,11 +2,11 @@
 // eslint-disable-next-line no-restricted-imports
 import { applyDecorators, Controller as NestJsCoreController } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 
 const formatApiRouteName = (route: string) => route.split('-').map(capitalize).join(' ');
 
-export const Controller = (route?: string) => {
+export const Controller = (route?: string): ReturnType<typeof NestJsCoreController> => {
   if (route === undefined) {
     return applyDecorators(NestJsCoreController());
   }

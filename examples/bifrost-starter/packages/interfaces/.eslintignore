@@ -1,3 +1,4 @@
 dist
 node_modules
 !.lintstagedrc.js
+!.dependency-cruiser.js

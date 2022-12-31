@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+
 import { VisuallyHidden } from '../../VisuallyHidden';
 import { EyeClosed, EyeOpen } from '../../icons';
 import { Input, InputProps } from '../Input';

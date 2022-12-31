@@ -7,15 +7,15 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "lint": "turbo lint lint:style",
     "lint:fix": "eslint --cache --ext=js,ts --fix",
     "lint:fix:all": "turbo lint:fix lint:style:fix",
-    "postinstall": "husky install && syncpack format",
+    "postinstall": "(command -v husky && husky install && syncpack format) || echo 'husky is not installed, skipping'",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
+    "prepare": "(command -v husky && husky install ) || echo 'husky is not installed, skipping'",
     "security": "audit-ci --config ./audit-ci.json",
     "test": "turbo test",
     "test:circular": "turbo test:circular",
-    "test:lint": "turbo lint lint:style",
     "test:type": "turbo test:type",
     "test:unit": "turbo test:unit"
   },
@@ -40,5 +40,10 @@
     "turbo": "1.6.3",
     "typescript": "4.7.4"
   },
-  "packageManager": "pnpm@7.14.0"
+  "packageManager": "pnpm@7.14.0",
+  "pnpm": {
+    "overrides": {
+      "@babel/core>json5": "2.2.2"
+    }
+  }
 }

@@ -1,18 +1,18 @@
-import { MiddlewareConsumer, Module, RequestMethod, ValidationPipe } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigModule } from '@nestjs/config';
-
 import { AuthModule } from '@auth/auth.module';
+import { MiddlewareConsumer, Module, RequestMethod, ValidationPipe } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './modules/user/user.module';
-import { LoggerModule } from './modules/logger/logger.module';
-import { LoggerMiddleware } from './modules/logger/logger.middleware';
-import { QueryFailedFilter } from './exception/query-failed.filter';
-import { EntityNotFoundFilter } from './exception/entity-not-found.filter';
-import { validate } from './env.validation';
 import { dataSourceOptions } from './datasource.options';
+import { validate } from './env.validation';
+import { EntityNotFoundFilter } from './exception/entity-not-found.filter';
+import { QueryFailedFilter } from './exception/query-failed.filter';
+import { LoggerMiddleware } from './modules/logger/logger.middleware';
+import { LoggerModule } from './modules/logger/logger.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [

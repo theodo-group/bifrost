@@ -1,3 +1,4 @@
+import { Public } from '@auth/public.decorator';
 import {
   applyDecorators,
   // This is where we define the custom decorators, we want to import the real ones here
@@ -10,7 +11,6 @@ import {
   /* eslint-enable no-restricted-imports */
 } from '@nestjs/common';
 import { ApiBearerAuth } from '@nestjs/swagger';
-import { Public } from '@auth/public.decorator';
 
 interface Config {
   isPublic: boolean;
@@ -21,12 +21,8 @@ type ParamsWithoutPath = [Config | undefined];
 
 type Params = ParamsWithPath | ParamsWithoutPath;
 
-const paramsHavePath = (params: Params): params is ParamsWithPath => {
-  return (
-    params.length === 0 ||
-    params.length === 2 ||
-    (params.length === 1 && typeof params[0] === 'string')
-  );
+export const paramsHavePath = (params: Params): params is ParamsWithPath => {
+  return params.length === 0 || params.length === 2 || typeof params[0] === 'string';
 };
 
 const generateConfigFromParam = (config?: Config) => ({
@@ -50,7 +46,7 @@ const getPathAndConfigFromParams = (...params: Params) => {
 const generateCustomHttpDecorator = (
   originalDecorator: (path?: string | string[] | undefined) => MethodDecorator,
   ...params: Params
-) => {
+): MethodDecorator => {
   const { path, config } = getPathAndConfigFromParams(...params);
 
   const decoratorsToApply = [originalDecorator(path)];
@@ -64,13 +60,17 @@ const generateCustomHttpDecorator = (
   return applyDecorators(...decoratorsToApply);
 };
 
-export const Get = (...params: Params) => generateCustomHttpDecorator(NestJsCoreGet, ...params);
+export const Get = (...params: Params): MethodDecorator =>
+  generateCustomHttpDecorator(NestJsCoreGet, ...params);
 
-export const Post = (...params: Params) => generateCustomHttpDecorator(NestJsCorePost, ...params);
+export const Post = (...params: Params): MethodDecorator =>
+  generateCustomHttpDecorator(NestJsCorePost, ...params);
 
-export const Put = (...params: Params) => generateCustomHttpDecorator(NestJsCorePut, ...params);
+export const Put = (...params: Params): MethodDecorator =>
+  generateCustomHttpDecorator(NestJsCorePut, ...params);
 
-export const Patch = (...params: Params) => generateCustomHttpDecorator(NestJsCorePatch, ...params);
+export const Patch = (...params: Params): MethodDecorator =>
+  generateCustomHttpDecorator(NestJsCorePatch, ...params);
 
-export const Delete = (...params: Params) =>
+export const Delete = (...params: Params): MethodDecorator =>
   generateCustomHttpDecorator(NestJsCoreDelete, ...params);

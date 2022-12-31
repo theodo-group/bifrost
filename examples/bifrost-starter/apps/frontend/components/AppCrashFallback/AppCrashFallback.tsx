@@ -1,6 +1,6 @@
 import style from './AppCrashFallback.module.css';
 
-export const AppCrashFallback = () => (
+export const AppCrashFallback = (): JSX.Element => (
   <main className={style.container}>
     <div className={style.pageContent}>
       <h1>Sorry, this is not working properly.</h1>

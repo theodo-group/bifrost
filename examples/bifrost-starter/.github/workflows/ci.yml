@@ -2,7 +2,7 @@ name: ⛷ PR tests
 
 env:
   CI: true
-  NODE_VERSION: 16
+  NODE_VERSION: 18
 
 defaults:
   run:
@@ -42,14 +42,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
       - name: build
         run: pnpm build
       - name: linters
-        run: pnpm test:lint
+        run: pnpm lint
       - name: Tests
         run: pnpm test
       - name: Dependency Cruiser
@@ -66,7 +66,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install

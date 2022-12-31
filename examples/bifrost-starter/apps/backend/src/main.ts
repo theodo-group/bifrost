@@ -1,11 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import * as cookieParser from 'cookie-parser';
-import { AppModule } from './app.module';
-import { CustomLogger } from './modules/logger/custom-logger.service';
-import { Environment } from './env.validation';
+import cookieParser from 'cookie-parser';
 
-async function bootstrap() {
+import { AppModule } from './app.module';
+import { Environment } from './env.validation';
+import { CustomLogger } from './modules/logger/custom-logger.service';
+
+const bootstrap = async () => {
   const logger = new CustomLogger();
   const app = await NestFactory.create(AppModule, { logger });
 
@@ -28,6 +29,6 @@ async function bootstrap() {
   }
 
   await app.listen(process.env.SERVER_PORT ?? 8000);
-}
+};
 
 void bootstrap();

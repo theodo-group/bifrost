@@ -1,16 +1,17 @@
-import * as request from 'supertest';
-import * as faker from 'faker';
+import { User } from '@modules/user/user.entity';
+import { UserFactory } from '@modules/user/user.factory';
+import { UserService } from '@modules/user/user.service';
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppModule } from '@root/app.module';
-import { UserService } from '@modules/user/user.service';
-import { UserFactory } from '@modules/user/user.factory';
-import { Repository } from 'typeorm';
-import { User } from '@modules/user/user.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import * as cookieParser from 'cookie-parser';
-import { AuthService } from '../auth.service';
+import { AppModule } from '@root/app.module';
+import cookieParser from 'cookie-parser';
+import faker from 'faker';
+import request from 'supertest';
+import { Repository } from 'typeorm';
+
 import { REFRESH_TOKEN } from '../auth.controller';
+import { AuthService } from '../auth.service';
 
 describe('AppController', () => {
   let app: INestApplication;

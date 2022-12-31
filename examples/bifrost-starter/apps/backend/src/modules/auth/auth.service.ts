@@ -1,16 +1,16 @@
+import { TokenType } from '@auth/interfaces/token-type.enum';
+import { CustomLogger } from '@modules/logger/custom-logger.service';
 import { BadRequestException, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
-
-import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
 import { compare } from 'bcrypt';
-import { CustomLogger } from '@modules/logger/custom-logger.service';
-import { TokenType } from '@auth/interfaces/token-type.enum';
+import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
+import { Repository } from 'typeorm';
+import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
+
+import { User } from '../user/user.entity';
 import { Credentials } from './interfaces/credentials.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
-import { User } from '../user/user.entity';
 import { JwtToken } from './interfaces/jwt-token.interface';
 
 const ACCESS_TOKEN_MINUTES_TO_LIVE = 10;
@@ -81,11 +81,11 @@ export class AuthService {
     }
   }
 
-  createAccessToken(user: User, minutesToLive: number) {
+  createAccessToken(user: User, minutesToLive: number): string {
     return this.createJwt(user, minutesToLive, TokenType.ACCESS);
   }
 
-  createRefreshToken(user: User, minutesToLive: number) {
+  createRefreshToken(user: User, minutesToLive: number): string {
     return this.createJwt(user, minutesToLive, TokenType.REFRESH);
   }
 

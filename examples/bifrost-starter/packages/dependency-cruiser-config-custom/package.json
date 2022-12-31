@@ -1,0 +1,5 @@
+{
+  "name": "dependency-cruiser-config-custom",
+  "main": "index.js",
+  "devDependencies": {}
+}

@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import * as request from 'supertest';
 import { AppModule } from '@root/app.module';
+import request from 'supertest';
 
 describe('AppController', () => {
   let app: INestApplication;
@@ -20,8 +20,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      request(app.getHttpServer()).get('/').expect(200).expect('Hello World!');
+    it('should return "Hello World!"', async () => {
+      await request(app.getHttpServer()).get('/').expect(200).expect('Hello World!');
     });
   });
 });

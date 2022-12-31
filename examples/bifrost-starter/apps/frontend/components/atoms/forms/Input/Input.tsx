@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
+
 import style from './Input.module.css';
 
 export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'id'> & {

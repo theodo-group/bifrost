@@ -1,7 +1,8 @@
 import { useGetMe } from 'services/api/user/useUser';
+
 import { ProfileForm } from './ProfileForm';
 
-export const Profile = () => {
+export const Profile = (): JSX.Element => {
   const user = useGetMe();
 
   return (

@@ -1,18 +1,8 @@
 {
+  "extends": "tsconfig/tsconfig.nest.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./src",
-    "allowJs": true,
     "rootDir": "./src",
     "paths": {
       "@helpers/*": [
@@ -38,4 +28,8 @@
   "include": [
     "src"
   ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

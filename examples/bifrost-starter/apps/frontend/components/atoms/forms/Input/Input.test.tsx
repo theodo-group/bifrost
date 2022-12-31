@@ -1,6 +1,8 @@
-import { axe } from 'jest-axe';
 import { act, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+
 import { EyeClosed } from 'components/atoms/icons';
+
 import { Input } from './Input';
 
 it.each([

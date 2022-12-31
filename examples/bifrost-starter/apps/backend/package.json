@@ -14,17 +14,18 @@
     "migration:revert": ". ./.env.rc && typeorm -d datasource.js migration:revert",
     "migration:run": ". ./.env.rc && typeorm -d datasource.js migration:run",
     "migration:run:prod": "typeorm -d datasource.js migration:run",
-    "postinstall": "test -f .env.rc || cp .env.example.rc .env.rc",
+    "postinstall": "test -f .env.rc || (test -f .env.example.rc && cp .env.example.rc .env.rc || echo -e \"\\e[33mNo env file initialized\\e[0m\")",
     "premigration:generate": "pnpm build:entities",
     "reset": "rm -rf node_modules && pnpm install",
     "schema:drop": ". ./.env.rc && typeorm -d datasource.js schema:drop",
     "start:debug": "pnpm start --debug",
     "start:prod": "node dist/main.js",
     "test": ". ./.env.test.rc && jest * --maxWorkers=2",
-    "test:circular": "depcruise --validate .dependency-cruiser.js .",
+    "test:circular": "depcruise --validate .dependency-cruiser.js src",
     "test:coverage": "docker-compose up -d db-test && pnpm test -- --coverage",
     "test:debug": "NODE_OPTIONS='--inspect-brk' pnpm test",
     "test:schema:drop": ". ./.env.test.rc && TYPEORM_ENTITIES='' typeorm -d datasource.js schema:drop",
+    "test:type": "pnpm build",
     "test:watch": "pnpm test --watch"
   },
   "dependencies": {
@@ -32,7 +33,7 @@
     "@nestjs/common": "9.0.11",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.0.11",
-    "@nestjs/jwt": "9.0.0",
+    "@nestjs/jwt": "10.0.1",
     "@nestjs/mapped-types": "1.1.0",
     "@nestjs/passport": "9.0.0",
     "@nestjs/platform-express": "9.0.11",
@@ -44,10 +45,10 @@
     "cli-color": "2.0.3",
     "cookie-parser": "1.4.6",
     "express": "4.18.1",
-    "jsonwebtoken": "8.5.1",
+    "jsonwebtoken": "9.0.0",
     "lodash": "4.17.21",
     "passport": "0.6.0",
-    "passport-jwt": "4.0.0",
+    "passport-jwt": "4.0.1",
     "pg": "8.8.0",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.5.6",
@@ -64,69 +65,26 @@
     "@types/express": "4.17.14",
     "@types/faker": "5.5.9",
     "@types/jest": "29.0.3",
-    "@types/jsonwebtoken": "8.5.9",
+    "@types/jsonwebtoken": "9.0.0",
     "@types/lodash": "4.14.185",
     "@types/node": "16.11.59",
     "@types/passport-jwt": "3.0.6",
     "@types/supertest": "2.0.12",
     "@types/validator": "13.7.6",
-    "@typescript-eslint/eslint-plugin": "5.37.0",
-    "@typescript-eslint/parser": "5.37.0",
     "dependency-cruiser": "11.15.0",
-    "eslint": "8.23.1",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "27.0.4",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-unused-imports": "2.0.0",
+    "dependency-cruiser-config-custom": "workspace:*",
+    "eslint-config-custom": "workspace:*",
     "faker": "5.5.3",
     "jest": "29.0.3",
     "prettier": "2.7.1",
     "supertest": "6.2.4",
     "ts-jest": "28.0.8",
     "ts-loader": "9.3.1",
+    "tsconfig": "workspace:*",
     "typescript": "4.7.4",
     "webpack": "5.74.0"
   },
   "engines": {
-    "node": "^16.13.0"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "moduleNameMapper": {
-      "^@helpers/(.*)": "<rootDir>/helpers/$1",
-      "^@auth/(.*)": "<rootDir>/modules/auth/$1",
-      "^@modules/(.*)": "<rootDir>/modules/$1",
-      "^@testUtils/(.*)": "<rootDir>/testUtils/$1",
-      "^@decorators/(.*)": "<rootDir>/decorators/$1",
-      "^@root/(.*)": "<rootDir>/$1"
-    },
-    "setupFiles": [
-      "<rootDir>/testUtils/setup.ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "coverageDirectory": "./coverage",
-    "testEnvironment": "node",
-    "testTimeout": 10000,
-    "coverageThreshold": {
-      "global": {
-        "statements": 90,
-        "branches": 75
-      }
-    },
-    "collectCoverageFrom": [
-      "<rootDir>/**/*.ts",
-      "!<rootDir>/testUtils/**",
-      "!<rootDir>/main.ts",
-      "!<rootDir>/modules/logger/**"
-    ]
+    "node": "^18.12.1"
   }
 }

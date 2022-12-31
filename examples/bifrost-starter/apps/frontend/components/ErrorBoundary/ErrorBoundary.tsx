@@ -1,8 +1,8 @@
-import { Component, ErrorInfo, FunctionComponent, ReactNode } from 'react';
+import { Component, ErrorInfo } from 'react';
 
 type ErrorBoundaryProps = {
-  FallbackComponent: FunctionComponent<Record<never, unknown>>;
-  children: ReactNode;
+  FallbackComponent: () => JSX.Element;
+  children: JSX.Element;
 };
 
 type ErrorBoundaryState = {
@@ -17,14 +17,14 @@ export class ErrorBoundary extends Component<
     hasError: false,
   };
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): { hasError: boolean } {
     return { hasError: true };
   }
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     // You can use your own error logging service here like sentry
     console.error({ error, errorInfo });
   }
-  render() {
+  render(): JSX.Element {
     const { hasError } = this.state;
     const { FallbackComponent, children } = this.props;
 

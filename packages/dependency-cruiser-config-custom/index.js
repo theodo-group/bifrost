@@ -1,5 +1,5 @@
 /** @type {import('dependency-cruiser').IConfiguration} */
-module.exports = ({ pathNot, path } = { pathNot: [], path: [] }) => ({
+module.exports = {
   forbidden: [
     {
       name: 'no-circular',
@@ -7,7 +7,7 @@ module.exports = ({ pathNot, path } = { pathNot: [], path: [] }) => ({
       comment:
         'This dependency is part of a circular relationship. You might want to revise ' +
         'your solution (i.e. use dependency inversion, make sure the modules have a single responsibility) ',
-      from: { pathNot, path },
+      from: {},
       to: {
         circular: true,
       },
@@ -49,4 +49,4 @@ module.exports = ({ pathNot, path } = { pathNot: [], path: [] }) => ({
       },
     },
   },
-});
+};
