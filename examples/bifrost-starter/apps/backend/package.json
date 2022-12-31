@@ -2,6 +2,7 @@
   "name": "@bifrost-starter/backend",
   "description": "This a project doing cool stuff",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "build": "nest build -p tsconfig.build.json",
     "build:entities": "nest build -p tsconfig.typeorm.json",
