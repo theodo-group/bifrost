@@ -54,7 +54,7 @@
     "dependency-cruiser": "11.16.1",
     "dependency-cruiser-config-custom": "workspace:*",
     "eslint-config-custom": "workspace:*",
-    "got": "12.5.1",
+    "got": "12.5.3",
     "prettier": "2.7.1",
     "prompts": "2.4.2",
     "rimraf": "3.0.2",
