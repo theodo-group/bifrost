@@ -6,7 +6,7 @@
   "repository": "git@github.com:theodo-group/bifrost.git",
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "turbo dev --filter=./apps/*",
     "lint": "turbo lint lint:style",
     "lint:fix": "eslint --cache --ext=js,ts --fix",
     "lint:fix:all": "turbo lint:fix lint:style:fix",
