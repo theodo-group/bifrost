@@ -1,0 +1,59 @@
+name: Build starter docker images
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ['main']
+    paths:
+      - 'examples/bifrost-starter/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  CI: true
+  NODE_VERSION: 18
+  HUSKY: 0
+
+# Allow one concurrent deployment
+concurrency:
+  group: 'starter-build'
+  cancel-in-progress: true
+
+jobs:
+  build-starter-example:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        app: [frontend, backend]
+    defaults:
+      run:
+        working-directory: ./examples/bifrost-starter
+    env:
+      IMAGE_NAME: bifrost-starter
+      REGISTRY: ghcr.io/theodo-group/bifrost
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Buildah Action
+        id: build-image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ env.IMAGE_NAME }}-${{ matrix.app }}
+          tags: latest ${{ github.sha }}
+          containerfiles: |
+            ./apps/${{ matrix.app }}/Dockerfile
+      # - name: Log in to the GitHub Container registry
+      #   uses: redhat-actions/podman-login@v1
+      #   with:
+      #     registry: ${{ env.REGISTRY }}
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Push to GitHub Container Repository
+      #   id: push-to-ghcr
+      #   uses: redhat-actions/push-to-registry@v2
+      #   with:
+      #     image: ${{ steps.build-image.outputs.image }}
+      #     tags: ${{ steps.build-image.outputs.tags }}
+      #     registry: ${{ env.REGISTRY }}
