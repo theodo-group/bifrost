@@ -4,7 +4,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "next build",
-    "dev": "./gen_env.sh local && next dev -p 3000",
+    "dev": "./gen_env.sh local && next dev -p 4242",
     "lint": "eslint --cache --cache-location .next/cache/eslint/",
     "lint:fix": "pnpm lint --fix",
     "lint:style": "stylelint './**/*.module.css'",
