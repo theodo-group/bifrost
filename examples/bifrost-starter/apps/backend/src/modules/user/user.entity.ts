@@ -12,6 +12,6 @@ export class User extends BaseEntity {
   @Column({ length: 100 })
   email!: string;
 
-  @Column('simple-array')
+  @Column({ type: 'varchar', array: true })
   roles!: string[];
 }
