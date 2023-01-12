@@ -1,18 +1,20 @@
 import axios from 'axios';
-import {
-  getAccessToken,
-  getAccessFromResponse,
-  setAccessToken,
-  isTokenExpired,
-} from './auth/utils';
-import { ApiRoutes } from './apiRoutes';
-import createAuthRefreshInterceptor, {
-  AxiosAuthRefreshRequestConfig,
-} from 'axios-auth-refresh';
-import Router from 'next/router';
-import { Pages } from 'constant';
+import { AxiosAuthRefreshRequestConfig } from 'axios-auth-refresh';
 import jwtDecode from 'jwt-decode';
+import Router from 'next/router';
+
+import { Pages } from 'constant';
 import { env } from 'services/env';
+
+import { ApiRoutes } from './apiRoutes';
+import {
+  getAccessFromResponse,
+  getAccessToken,
+  isTokenExpired,
+  setAccessToken,
+} from './auth/utils';
+
+let refreshTokenPromise: null | Promise<void | null>;
 
 export const apiClient = axios.create({
   baseURL: env('NEXT_PUBLIC_API_BASE_URL'),
@@ -27,10 +29,16 @@ apiClient.interceptors.request.use(
     const access = getAccessToken();
     if (!access) {
       await Router.push(Pages.Login);
+
       return config;
     }
     if (isTokenExpired(jwtDecode(access))) {
-      await refreshToken();
+      if (!refreshTokenPromise) {
+        refreshTokenPromise = refreshToken().then(() => {
+          refreshTokenPromise = null;
+        });
+      }
+      await refreshTokenPromise;
     }
 
     return {
@@ -62,11 +70,3 @@ const refreshToken = async (): Promise<void> => {
     return Promise.reject(error);
   }
 };
-
-createAuthRefreshInterceptor(
-  apiClient,
-  async failedRequest => await refreshToken(),
-  {
-    statusCodes: [401],
-  },
-);
