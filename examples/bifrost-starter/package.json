@@ -43,7 +43,8 @@
   "packageManager": "pnpm@7.14.0",
   "pnpm": {
     "overrides": {
-      "@babel/core>json5": "2.2.2"
+      "@babel/core>json5": "2.2.2",
+      "adminjs>flat": "5.0.2"
     }
   }
 }

@@ -1,8 +1,11 @@
+import { AdminModule } from '@adminjs/nestjs';
+import { Database, Resource } from '@adminjs/typeorm';
 import { AuthModule } from '@auth/auth.module';
 import { MiddlewareConsumer, Module, RequestMethod, ValidationPipe } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import AdminJS from 'adminjs';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -14,10 +17,18 @@ import { LoggerMiddleware } from './modules/logger/logger.middleware';
 import { LoggerModule } from './modules/logger/logger.module';
 import { UserModule } from './modules/user/user.module';
 
+AdminJS.registerAdapter({ Database, Resource });
+
 @Module({
   imports: [
     ConfigModule.forRoot({ validate, isGlobal: true, ignoreEnvFile: true }),
     TypeOrmModule.forRoot(dataSourceOptions),
+    AdminModule.createAdmin({
+      adminJsOptions: {
+        rootPath: '/admin',
+      },
+    }),
+
     UserModule,
     AuthModule,
     LoggerModule,
