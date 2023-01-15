@@ -28,7 +28,7 @@
         "**/*.tsx",
         "**/*.ts",
         "**/*.js",
-        "package.json",
+        "**/package.json",
         "../../packages/dependency-cruiser-config-custom/**"
       ]
     },
@@ -38,7 +38,7 @@
         "**/*.tsx",
         "**/*.ts",
         "**/*.js",
-        "package.json",
+        "**/package.json",
         "../../packages/eslint-config-custom/**"
       ],
       "dependsOn": [
@@ -60,7 +60,7 @@
         "**/*.tsx",
         "**/*.ts",
         "**/*.js",
-        "package.json",
+        "**/package.json",
         "../../packages/eslint-config-custom/**"
       ]
     },
