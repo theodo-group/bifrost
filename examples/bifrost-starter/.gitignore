@@ -2,8 +2,27 @@
 .idea
 node_modules
 
+# package directories
+node_modules
+.npm
+
+# Webpack directories
+.webpack
+
+# Esbuild directories
+.esbuild
+.eslintcache
+
 # turbo caching
 .turbo
-.eslintcache
-# build
-dist
+
+# production
+/build
+**/dist
+
+# misc
+.DS_Store
+npm-debug.log*
+pnpm-debug.log*
+pnpm-error.log*
+lerna-debug.log*
