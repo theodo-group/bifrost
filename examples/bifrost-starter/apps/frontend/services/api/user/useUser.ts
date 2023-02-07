@@ -1,6 +1,8 @@
-import useSWR from 'swr';
 import { GetUserDto, UpdateUserDto } from '@bifrost-starter/interfaces';
+import useSWR from 'swr';
+
 import { logger } from 'services/logger';
+
 import { ApiRoutes } from '../apiRoutes';
 import { apiClient } from '../client';
 

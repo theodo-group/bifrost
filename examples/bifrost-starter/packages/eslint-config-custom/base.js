@@ -152,7 +152,7 @@ module.exports = {
         '@typescript-eslint/explicit-member-accessibility': 0,
         '@typescript-eslint/camelcase': 0,
         '@typescript-eslint/interface-name-prefix': 0,
-        '@typescript-eslint/explicit-module-boundary-types': 'error',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-explicit-any': 'error',
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',

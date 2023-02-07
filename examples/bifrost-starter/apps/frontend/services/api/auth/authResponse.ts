@@ -9,6 +9,6 @@ type LoginResponse =
     };
 
 export const isLoginResponse = (response: unknown): response is LoginResponse =>
-  !!response &&
   typeof response === 'object' &&
+  !!response &&
   ('access' in response || 'token' in response);
