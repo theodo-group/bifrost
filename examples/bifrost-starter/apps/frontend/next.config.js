@@ -1,3 +1,4 @@
+const nextBundleAnalyzer = require('@next/bundle-analyzer');
 const path = require('path');
 
 const securityHeaders = [
@@ -45,15 +46,17 @@ const nextConfig = {
     // this includes files from the monorepo base two directories up, required for docker build
     outputFileTracingRoot: path.join(__dirname, '../../'),
   },
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ];
-  },
+  headers: async () => [
+    {
+      // Apply these headers to all routes in your application.
+      source: '/:path*',
+      headers: securityHeaders,
+    },
+  ],
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = nextBundleAnalyzer({
+  enabled: process.env.DEV_ANALYZE_BUNDLE === 'true',
+});
+
+module.exports = withBundleAnalyzer(nextConfig);
