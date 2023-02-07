@@ -1,5 +1,6 @@
 import 'styles/global.css';
 import 'styles/stylesheet.css';
+import { Inter } from '@next/font/google';
 import { AppProps } from 'next/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -17,23 +18,35 @@ if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
   });
 }
 
+// https://nextjs.org/docs/basic-features/font-optimization
+const inter = Inter({ subsets: ['latin'] });
+
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
-    <ErrorBoundary FallbackComponent={AppCrashFallback}>
-      <Intl defaultLocale="en">
-        <SWRConfig
-          value={{
-            refreshInterval: 0, // disable auto refresh by interval by default
-            fetcher: (resource: string) =>
-              apiClient.get<unknown>(resource).then(response => response.data),
-          }}
-        >
-          <div>
-            <Component {...pageProps} />
-          </div>
-        </SWRConfig>
-      </Intl>
-    </ErrorBoundary>
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${inter.style.fontFamily};
+        }
+      `}</style>
+      <ErrorBoundary FallbackComponent={AppCrashFallback}>
+        <Intl defaultLocale="en">
+          <SWRConfig
+            value={{
+              refreshInterval: 0, // disable auto refresh by interval by default
+              fetcher: (resource: string) =>
+                apiClient
+                  .get<unknown>(resource)
+                  .then(response => response.data),
+            }}
+          >
+            <div>
+              <Component {...pageProps} />
+            </div>
+          </SWRConfig>
+        </Intl>
+      </ErrorBoundary>
+    </>
   );
 };
 

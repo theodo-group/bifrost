@@ -46,9 +46,7 @@ export const Home = (): JSX.Element => {
               </a>
             </div>
             <Link href="/profile">
-              <a>
-                <h2>Update your profile</h2>
-              </a>
+              <h2>Update your profile</h2>
             </Link>
           </>
         )}
