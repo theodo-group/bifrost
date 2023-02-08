@@ -1,4 +1,5 @@
 import { IntlProvider } from 'react-intl';
+
 import { flattenMessages } from 'services/intl';
 import en from 'translations/en.json';
 
@@ -14,7 +15,7 @@ type IntlProps = {
   children: React.ReactNode;
 };
 
-export const Intl = ({ children, defaultLocale }: IntlProps) => {
+export const Intl = ({ children, defaultLocale }: IntlProps): JSX.Element => {
   const messages = loadLocaleData(defaultLocale);
 
   return (

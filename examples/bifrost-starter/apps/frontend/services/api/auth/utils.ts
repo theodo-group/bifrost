@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { JwtPayload } from 'jwt-decode';
+
 import { isLoginResponse } from './authResponse';
 
 export class AuthenticationError extends Error {}
@@ -20,7 +21,7 @@ export const removeAccessToken = () =>
 export const isTokenExpired = (token: JwtPayload): boolean => {
   // Less than 10 seconds remaining => token has expired
   const now = new Date().getTime() / 1000;
-  if (!token.exp) {
+  if (token.exp === undefined) {
     return true;
   }
 

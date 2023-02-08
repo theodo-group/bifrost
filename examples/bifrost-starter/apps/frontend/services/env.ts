@@ -1,16 +1,18 @@
 declare global {
-  interface Window {
+  interface WindowWithEnv extends Window {
     __ENV: Record<string, string>;
   }
 }
 
-const isServer = () => typeof window === 'undefined' || !window.__ENV;
+const isClientWithEnv = (window: Window): window is WindowWithEnv =>
+  '__ENV' in window;
 
 export const env = (key: string) => {
-  if (!key) {
+  if (key === '') {
     throw new Error('You must provide a key to get an environment variable');
   }
-  if (isServer()) {
+
+  if (typeof window === 'undefined' || !isClientWithEnv(window)) {
     return process.env[key];
   }
 
