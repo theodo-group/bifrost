@@ -5,7 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "nest build -p tsconfig.build.json",
-    "build:entities": "nest build -p tsconfig.typeorm.json",
+    "build:entities": "nest build -p tsconfig.entities.json",
     "dev": ". ./.env.rc && docker-compose up -d && nest start -p ./tsconfig.json src/main.ts --watch --preserveWatchOutput",
     "explore": "pnpm start --entryFile repl",
     "format": "prettier --write \"src/**/*.ts\"",
