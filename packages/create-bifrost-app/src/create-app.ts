@@ -1,7 +1,7 @@
 import retry from 'async-retry';
-import chalk from 'chalk';
 import { execSync } from 'child_process';
 import path from 'path';
+import pico from 'picocolors';
 
 import {
   downloadAndExtractRepo,
@@ -36,7 +36,7 @@ export const createApp = async ({
 
   if (!found) {
     console.error(
-      `Could not locate the repository for ${chalk.red(
+      `Could not locate the repository for ${pico.red(
         `"${example}"`,
       )}. Please check that the repository exists and try again.`,
     );
@@ -62,7 +62,7 @@ export const createApp = async ({
     process.exit(1);
   }
 
-  console.log(`Creating a new Bifrost app in ${chalk.green(root)}.`);
+  console.log(pico.bold(`Creating a new Bifrost app in ${pico.green(root)}.`));
   console.log();
 
   const originalDirectory = process.cwd();
@@ -73,9 +73,8 @@ export const createApp = async ({
    */
   try {
     console.log(
-      `Downloading files from repo ${chalk.cyan(
-        example,
-      )}. This might take a moment.`,
+      pico.bold(`Downloading files from repo ${pico.cyan(example)}.`) +
+        '\n  This might take a moment...',
     );
     console.log();
     await retry(() => downloadAndExtractRepo(root, repoInfo), {
@@ -96,33 +95,41 @@ export const createApp = async ({
     );
   }
 
-  console.log('Initializing a git repository...');
+  console.log(pico.bold('Initializing a git repository...'));
   if (tryGitInit(root)) {
     console.log();
   }
 
-  console.log('Installing packages. This might take a couple of minutes.');
+  console.log(
+    `${pico.bold(
+      'Installing packages.',
+    )}\n  This might take a couple of minutes...`,
+  );
   console.log();
 
   await install(root);
 
   console.log();
   console.log();
-  console.log('Linting your project...');
+  console.log(
+    pico.bold('Linting your project.') + '\n  This might take a moment...',
+  );
   console.log();
   execSync(`pnpm lint:fix:all`, { stdio: 'ignore', cwd: root });
 
   console.log();
 
-  console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
+  console.log(
+    `${pico.bold(pico.green('Success 🎉'))} Created ${appName} at ${appPath}`,
+  );
   console.log();
   console.log();
-  console.log('Inside that directory, you can run several commands:');
 
+  console.log('change directory and launch the development server:');
+  console.log();
   const cdpath =
     path.join(originalDirectory, appName) === appPath ? appName : appPath;
-
-  console.log(chalk.cyan('  cd'), cdpath);
-  console.log(`  ${chalk.cyan(`pnpm dev`)}`);
+  console.log(pico.cyan('  cd'), cdpath);
+  console.log(`  ${pico.cyan(`pnpm dev`)}`);
   console.log('    Starts the development servers for backend and frontend.');
 };
