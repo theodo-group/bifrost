@@ -63,7 +63,6 @@
         "type": "node",
         "request": "attach",
         "name": "Debug: nest",
-        "protocol": "inspector",
         "port": 9229,
         "restart": true,
         "skipFiles": [
