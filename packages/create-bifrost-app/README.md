@@ -12,9 +12,25 @@ Run the following command
 pnpx create bifrost-app
 ```
 
-TODO
 Check out [the docs](https://theodo-group.github.io/bifrost/) for more info.
 
 ## Acknowledge
 
 Thank you to [swarmion](https://github.com/swarmion/swarmion) that inspired our work on this create package
+
+## Contributing
+
+Install the packages as usual with `pnpm i`. Then run:
+
+```sh
+pnpm dev
+```
+
+create a random directory to test the CLI in:
+
+```sh
+mkdir ../../sandbox
+cd ../../sandbox
+```
+
+Then run the app locally, you should disable the telem
