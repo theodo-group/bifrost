@@ -1,6 +1,6 @@
-import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
+import pico from 'picocolors';
 
 export const isFolderEmpty = (root: string, name: string): boolean => {
   const validFiles = [
@@ -32,14 +32,14 @@ export const isFolderEmpty = (root: string, name: string): boolean => {
 
   if (conflicts.length > 0) {
     console.log(
-      `The directory ${chalk.green(name)} contains files that could conflict:`,
+      `The directory ${pico.green(name)} contains files that could conflict:`,
     );
     console.log();
     conflicts.map(file => {
       try {
         const stats = fs.lstatSync(path.join(root, file));
         if (stats.isDirectory()) {
-          console.log(`  ${chalk.blue(file)}/`);
+          console.log(`  ${pico.blue(file)}/`);
         } else {
           console.log(`  ${file}`);
         }

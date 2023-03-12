@@ -7,3 +7,4 @@ export * from './is-writeable';
 export * from './make-dir';
 export * from './renameProject';
 export * from './validate-pkg';
+export * from './telemetry';
