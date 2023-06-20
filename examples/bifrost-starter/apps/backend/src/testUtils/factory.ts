@@ -1,6 +1,6 @@
-import { Repository } from 'typeorm';
+import { ObjectLiteral, Repository } from 'typeorm';
 
-export abstract class Factory<T> {
+export abstract class Factory<T extends ObjectLiteral> {
   private readonly repository?: Repository<T>;
   constructor(repository?: Repository<T>) {
     this.repository = repository;

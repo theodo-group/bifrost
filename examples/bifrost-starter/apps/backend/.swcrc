@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "sourceMaps": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "baseUrl": "src",
+    "paths": {
+      "@helpers/*": [
+        "helpers/*"
+      ],
+      "@auth/*": [
+        "modules/auth/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@decorators/*": [
+        "decorators/*"
+      ],
+      "@testUtils/*": [
+        "testUtils/*"
+      ],
+      "@root/*": [
+        "./*"
+      ]
+    }
+  },
+  "minify": false
+}
