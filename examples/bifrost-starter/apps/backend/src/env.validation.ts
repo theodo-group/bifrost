@@ -32,6 +32,12 @@ class EnvironmentVariables {
 
   @IsString()
   ALLOWED_HOST!: string;
+
+  @IsString()
+  ADMINJS_COOKIE_SECRET!: string;
+
+  @IsString()
+  ADMINJS_SESSION_SECRET!: string;
 }
 
 export const validate = (config: Record<string, unknown>): EnvironmentVariables => {
