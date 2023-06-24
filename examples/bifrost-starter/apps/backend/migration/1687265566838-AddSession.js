@@ -1,5 +1,3 @@
-const { MigrationInterface, QueryRunner } = require('typeorm');
-
 module.exports = class AddSession1687265566838 {
   name = 'AddSession1687265566838';
 
