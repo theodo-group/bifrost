@@ -15,5 +15,8 @@
 # misc
 .DS_Store
 
+# adminjs
+.adminjs
+
 npm-debug.log*
 .eslintcache

@@ -37,10 +37,10 @@
     "npm-audit-resolver": "3.0.0-7",
     "prettier": "2.7.1",
     "syncpack": "8.2.4",
-    "turbo": "1.6.3",
+    "turbo": "1.10.6",
     "typescript": "4.7.4"
   },
-  "packageManager": "pnpm@7.14.0",
+  "packageManager": "pnpm@8.6.4",
   "pnpm": {
     "overrides": {
       "@babel/core>json5": "2.2.2",

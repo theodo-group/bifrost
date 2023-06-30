@@ -1,0 +1,9 @@
+{
+  "language": "ts",
+  "collection": "@nestjs/schematics",
+  "type": "library",
+  "entryFile": "index",
+  "compilerOptions": {
+    "plugins": ["@nestjs/swagger/plugin"]
+  }
+}

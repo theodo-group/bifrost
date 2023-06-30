@@ -1,6 +1,12 @@
 import { TokenType } from '@auth/interfaces/token-type.enum';
 import { CustomLogger } from '@modules/logger/custom-logger.service';
-import { BadRequestException, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Inject,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { compare } from 'bcrypt';
@@ -26,7 +32,10 @@ export class AuthService {
     this.logger.setContext('AuthService');
   }
 
-  async checkCredentials(credentials: Credentials): Promise<JwtToken> {
+  async getUserFromCredentialsAndRoles(
+    credentials: Credentials,
+    roles: string[] = [],
+  ): Promise<User> {
     // We need to use a query builder to bypass hidden password
     const user = await this.userRepository
       .createQueryBuilder('user')
@@ -44,6 +53,17 @@ export class AuthService {
     if (!areCredentialsValid) {
       throw new UnauthorizedException();
     }
+
+    const hasCorrectRole = roles.every((role) => user.roles.includes(role));
+    if (!hasCorrectRole) {
+      throw new ForbiddenException();
+    }
+
+    return user;
+  }
+
+  async checkCredentials(credentials: Credentials, roles: string[] = []): Promise<JwtToken> {
+    const user = await this.getUserFromCredentialsAndRoles(credentials, roles);
 
     return {
       access: this.createAccessToken(user, ACCESS_TOKEN_MINUTES_TO_LIVE),

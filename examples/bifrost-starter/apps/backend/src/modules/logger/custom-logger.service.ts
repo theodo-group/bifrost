@@ -55,7 +55,7 @@ const handleObjectMessage = {
 const formatter = [Environment.Development, Environment.Test].includes(
   process.env.NODE_ENV as Environment,
 )
-  ? winston.format.printf((info) => {
+  ? winston.format.printf((info: TransformableInfo) => {
       const colorizer = LOG_LEVEL_TO_COLOR[info.level];
 
       return (
