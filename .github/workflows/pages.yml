@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@7.13.4 --activate
+        run: corepack enable && corepack prepare pnpm@8.6.4 --activate
       - name: Install dependencies
         run: pnpm install --filter documentation
       - name: Build Docusaurus App
