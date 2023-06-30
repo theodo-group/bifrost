@@ -37,7 +37,7 @@
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
     "eslint-config-custom": "workspace:*",
-    "husky": "8.0.1",
+    "husky": "8.0.3",
     "lint-staged": "13.0.3",
     "lodash": "4.17.21",
     "prettier": "2.7.1",
