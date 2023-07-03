@@ -57,7 +57,6 @@ module.exports = {
           '^(node-inspect/lib/_inspect)$',
           '^(node-inspect/lib/internal/inspect_client)$',
           '^(node-inspect/lib/internal/inspect_repl)$',
-          '^(async_hooks)$',
           '^(punycode)$',
           '^(domain)$',
           '^(constants)$',
@@ -138,8 +137,10 @@ module.exports = {
         'from.pathNot re of the not-to-dev-dep rule in the dependency-cruiser configuration',
       from: {
         path: '^(pages)',
-        pathNot:
+        pathNot: [
           '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$',
+          '^pages/_app.tsx$',
+        ],
       },
       to: {
         dependencyTypes: ['npm-dev'],
