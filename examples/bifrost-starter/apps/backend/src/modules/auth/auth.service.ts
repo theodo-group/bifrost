@@ -14,10 +14,10 @@ import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 import { Repository } from 'typeorm';
 import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
 
-import { User } from '../user/user.entity';
 import { Credentials } from './interfaces/credentials.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { JwtToken } from './interfaces/jwt-token.interface';
+import { User } from '../user/user.entity';
 
 const ACCESS_TOKEN_MINUTES_TO_LIVE = 10;
 const REFRESH_TOKEN_MINUTES_TO_LIVE = 525600; // 1 year

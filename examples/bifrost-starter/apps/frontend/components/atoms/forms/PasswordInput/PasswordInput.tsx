@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import style from './PasswordInput.module.css';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import { EyeClosed, EyeOpen } from '../../icons';
 import { Input, InputProps } from '../Input';
-import style from './PasswordInput.module.css';
 
 export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ ...props }, ref) => {

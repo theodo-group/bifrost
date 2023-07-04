@@ -1,6 +1,6 @@
+import { getAccessFromResponse, setAccessToken } from './utils';
 import { ApiRoutes } from '../apiRoutes';
 import { apiClient } from '../client';
-import { getAccessFromResponse, setAccessToken } from './utils';
 
 export type LoginData = {
   email: string;

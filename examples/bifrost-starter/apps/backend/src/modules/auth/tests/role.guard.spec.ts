@@ -1,5 +1,5 @@
-import { RolesGuard } from '../role.guard';
 import { getExecutionContextFromRequest } from './testUtils';
+import { RolesGuard } from '../role.guard';
 
 describe('RolesGuard', () => {
   let guard: RolesGuard;
