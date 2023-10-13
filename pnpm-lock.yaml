@@ -91,8 +91,8 @@ importers:
         specifier: 1.4.6
         version: 1.4.6
       '@types/cross-spawn':
-        specifier: 6.0.2
-        version: 6.0.2
+        specifier: 6.0.3
+        version: 6.0.3
       '@types/node':
         specifier: 18.8.3
         version: 18.8.3
@@ -3070,8 +3070,8 @@ packages:
       '@types/node': 18.8.3
     dev: false
 
-  /@types/cross-spawn@6.0.2:
-    resolution: {integrity: sha512-KuwNhp3eza+Rhu8IFI5HUXRP0LIhqH5cAjubUvGXXthh4YYBuP2ntwEX+Cz8GJoZUHlKo247wPWOfA9LYEq4cw==}
+  /@types/cross-spawn@6.0.3:
+    resolution: {integrity: sha512-BDAkU7WHHRHnvBf5z89lcvACsvkz/n7Tv+HyD/uW76O29HoH1Tk/W6iQrepaZVbisvlEek4ygwT8IW7ow9XLAA==}
     dependencies:
       '@types/node': 18.8.3
     dev: true
