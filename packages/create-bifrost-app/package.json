@@ -38,7 +38,7 @@
   "bin": "./dist/index.js",
   "devDependencies": {
     "@clack/prompts": "0.6.3",
-    "@types/async-retry": "1.4.5",
+    "@types/async-retry": "1.4.6",
     "@types/cross-spawn": "6.0.2",
     "@types/node": "18.8.3",
     "@types/rimraf": "3.0.2",
