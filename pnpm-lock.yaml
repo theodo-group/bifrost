@@ -106,8 +106,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0
       '@vercel/ncc':
-        specifier: 0.34.0
-        version: 0.34.0
+        specifier: 0.38.0
+        version: 0.38.0
       '@vitest/coverage-c8':
         specifier: 0.24.0
         version: 0.24.0
@@ -3415,8 +3415,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vercel/ncc@0.34.0:
-    resolution: {integrity: sha512-G9h5ZLBJ/V57Ou9vz5hI8pda/YQX5HQszCs3AmIus3XzsmRn/0Ptic5otD3xVST8QLKk7AMk7AqpsyQGN7MZ9A==}
+  /@vercel/ncc@0.38.0:
+    resolution: {integrity: sha512-B4YKZMm/EqMptKSFyAq4q2SlgJe+VCmEH6Y8gf/E1pTlWbsUJpuH1ymik2Ex3aYO5mCWwV1kaSYHSQOT8+4vHA==}
     hasBin: true
     dev: true
 
