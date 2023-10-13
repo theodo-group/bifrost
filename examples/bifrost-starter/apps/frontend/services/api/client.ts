@@ -51,7 +51,10 @@ apiClient.interceptors.request.use(
 );
 
 const refreshToken = async (): Promise<void> => {
-  const options: AxiosAuthRefreshRequestConfig = { skipAuthRefresh: true };
+  const options: AxiosAuthRefreshRequestConfig = {
+    skipAuthRefresh: true,
+    withCredentials: true,
+  };
 
   try {
     setAccessToken(
