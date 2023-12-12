@@ -4,20 +4,23 @@ import useSWR from 'swr';
 import { logger } from 'services/logger';
 
 import { ApiRoutes } from '../apiRoutes';
-import { apiClient } from '../client';
+import { apiClientType } from '../client';
 
 export const useGetMe = () => {
-  const { data, error } = useSWR<GetUserDto, unknown>(ApiRoutes.me);
+  const { data, error, isLoading } = useSWR<GetUserDto, unknown>(ApiRoutes.me);
 
   if (error !== undefined) {
     logger.error(error);
 
-    return;
+    return { user: undefined, isLoading: false };
   }
 
-  return data;
+  return { user: data, isLoading };
 };
 
-export const updateMe = async (data: UpdateUserDto): Promise<void> => {
+export const updateMe = async (
+  apiClient: apiClientType,
+  data: UpdateUserDto,
+): Promise<void> => {
   await apiClient.patch<unknown>(ApiRoutes.users, data);
 };

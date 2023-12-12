@@ -1,4 +1,4 @@
 export const Pages = {
-  Home: '/',
-  Login: '/login',
+  Home: '/en',
+  Login: '/en/login',
 } as const;

@@ -1,14 +1,16 @@
+import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
 
 import style from './PasswordInput.module.css';
-import { VisuallyHidden } from '../../VisuallyHidden';
-import { EyeClosed, EyeOpen } from '../../icons';
-import { Input, InputProps } from '../Input';
+import { VisuallyHidden } from '../../VisuallyHidden/VisuallyHidden';
+import { EyeClosed } from '../../icons/EyeClosed';
+import { EyeOpen } from '../../icons/EyeOpen';
+import { Input, InputProps } from '../Input/Input';
 
 export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ ...props }, ref) => {
     const [isPasswordReveled, setIsPasswordReveled] = useState(false);
+    const t = useTranslations('generic.password_input');
 
     return (
       <Input
@@ -27,17 +29,7 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
             type="button"
           >
             <VisuallyHidden>
-              {isPasswordReveled ? (
-                <FormattedMessage
-                  id="generic.password_input.hide_password"
-                  defaultMessage="Hide password"
-                />
-              ) : (
-                <FormattedMessage
-                  id="generic.password_input.show_password"
-                  defaultMessage="Show password"
-                />
-              )}
+              {isPasswordReveled ? t('hide') : t('show')}
             </VisuallyHidden>
             {isPasswordReveled ? <EyeClosed /> : <EyeOpen />}
           </button>

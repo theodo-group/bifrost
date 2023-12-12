@@ -1,4 +1,5 @@
 const nextBundleAnalyzer = require('@next/bundle-analyzer');
+const withNextIntl = require('next-intl/plugin')('./locales/i18n.ts');
 const path = require('path');
 
 const securityHeaders = [
@@ -32,19 +33,30 @@ const nextConfig = {
   /**
    * environment variables that will be shared for the client and server-side
    */
-  env: {
-    ENVIRONMENT: process.env.NODE_ENV,
-    VERSION: process.env.VERSION,
-  },
+  env: {},
   reactStrictMode: true,
   // allow for 80% smaller docker images
   output: 'standalone',
-  // experimental, however will be released the default in Nextjs 12.2.0
-  swcMinify: true,
+  // hide the x-powered-by header
+  poweredByHeader: false,
 
   experimental: {
     // this includes files from the monorepo base two directories up, required for docker build
     outputFileTracingRoot: path.join(__dirname, '../../'),
+    // experimental feature that allows for faster builds
+    turbotrace: {},
+    // type routes is not yet compatible with turbopack
+    // typedRoutes: true,
+  },
+  // if you need to transpile packages, add them here (like lodash-es)
+  transpilePackages: [],
+  eslint: {
+    // we test eslint separately in CI
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // we test ts separately in CI
+    ignoreBuildErrors: true,
   },
   headers: async () => [
     {
@@ -59,4 +71,4 @@ const withBundleAnalyzer = nextBundleAnalyzer({
   enabled: process.env.DEV_ANALYZE_BUNDLE === 'true',
 });
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withNextIntl(withBundleAnalyzer(nextConfig));

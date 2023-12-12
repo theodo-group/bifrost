@@ -1,11 +1,15 @@
-import { GetUserDto } from '@bifrost-starter/interfaces';
-import router from 'next/router';
-import { useForm } from 'react-hook-form';
-import { FormattedMessage, useIntl } from 'react-intl';
+'use client';
 
-import { Input } from 'components/atoms';
+import { GetUserDto } from '@bifrost-starter/interfaces';
+import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { FC } from 'react';
+import { useForm } from 'react-hook-form';
+
+import { Input } from 'components/atoms/forms/Input/Input';
 import { Pages } from 'constant';
-import { updateMe } from 'services/api/user/useUser';
+import { useApiClient } from 'providers/swr-provider';
+import { updateMe, useGetMe } from 'services/api/user/useUser';
 
 import style from './ProfileForm.module.css';
 
@@ -17,15 +21,30 @@ export type UserData = {
   name: string;
 };
 
-export const ProfileForm = ({ user }: ProfileProps): JSX.Element => {
-  const intl = useIntl();
+export const ProfileForm: FC = () => {
+  const { user, isLoading } = useGetMe();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (!user) {
+    return <div>Seems you are not logged in</div>;
+  }
+
+  return <ProfileFormWithUser user={user} />;
+};
+
+const ProfileFormWithUser: FC<ProfileProps> = ({ user }) => {
+  const t = useTranslations('profile');
+
+  const router = useRouter();
   const { register, handleSubmit } = useForm<UserData>({
     defaultValues: {
       name: user.name,
     },
   });
+  const apiClient = useApiClient();
   const onSubmit = (data: UserData) => {
-    return updateMe(data)
+    return updateMe(apiClient, data)
       .then(() => router.push(Pages.Home))
       .catch((e: Response) => {
         console.log(e);
@@ -41,18 +60,14 @@ export const ProfileForm = ({ user }: ProfileProps): JSX.Element => {
       <Input
         id="user.name"
         type="text"
-        label={intl.formatMessage({
-          id: 'profile.name.label',
-        })}
+        label={t('name.label')}
         {...register('name', {
-          required: intl.formatMessage({
-            id: 'profile.name.error.required',
-          }),
+          required: t('name.error.required'),
         })}
       />
 
       <button type="submit" className={style.submit}>
-        <FormattedMessage id="profile.submit" />
+        {t('submit')}
       </button>
     </form>
   );

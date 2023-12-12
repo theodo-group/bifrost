@@ -1,14 +1,17 @@
-import { useGetMe } from 'services/api/user/useUser';
+'use client';
+import { FC } from 'react';
 
-import { ProfileForm } from './ProfileForm';
+import { CrashFallback } from 'components/CrashFallback/CrashFallback';
+import { ErrorBoundary } from 'components/ErrorBoundary/ErrorBoundary';
 
-export const Profile = (): JSX.Element => {
-  const user = useGetMe();
+import { ProfileForm } from './ProfileForm/ProfileForm';
 
-  return (
-    <>
-      <h2>Here you can update your profile !</h2>
-      {user && <ProfileForm user={user} />}
-    </>
-  );
-};
+export const Profile: FC = () => (
+  <>
+    <h2>Here you can update your profile!</h2>
+    {/* Example of a client side Error Boundary */}
+    <ErrorBoundary FallbackComponent={CrashFallback}>
+      <ProfileForm />
+    </ErrorBoundary>
+  </>
+);

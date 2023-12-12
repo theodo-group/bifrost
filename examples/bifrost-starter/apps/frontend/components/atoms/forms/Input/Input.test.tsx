@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { EyeClosed } from 'components/atoms/icons';
+import { EyeClosed } from 'components/atoms/icons/EyeClosed';
 
 import { Input } from './Input';
 

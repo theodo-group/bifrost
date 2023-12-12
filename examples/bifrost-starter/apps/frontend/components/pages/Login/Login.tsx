@@ -1,22 +1,27 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { NextPage } from 'next/types';
+'use client';
+import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { FormattedMessage, useIntl } from 'react-intl';
 
-import { Input, PasswordInput } from 'components/atoms';
+import { Input } from 'components/atoms/forms/Input/Input';
+import { PasswordInput } from 'components/atoms/forms/PasswordInput/PasswordInput';
 import { Pages } from 'constant';
+import { useApiClient } from 'providers/swr-provider';
 import { login, LoginData } from 'services/api/auth/login';
 
 import style from './Login.module.css';
 
-export const Login: NextPage = () => {
-  const intl = useIntl();
+export const Login: FC = () => {
+  const t = useTranslations('login');
+
   const router = useRouter();
 
   const { register, handleSubmit } = useForm<LoginData>();
+  const apiClient = useApiClient();
+
   const onSubmit = (data: LoginData) => {
-    return login(data)
+    return login(apiClient, data)
       .then(() => router.push(Pages.Home))
       .catch((e: Response) => {
         console.log(e);
@@ -25,14 +30,8 @@ export const Login: NextPage = () => {
 
   return (
     <main>
-      <Head>
-        <meta name="description" content="login" />
-        <title>Login | Bifrost</title>
-      </Head>
       <div className={style.container}>
-        <h1>
-          <FormattedMessage id="login.title" />
-        </h1>
+        <h1>{t('title')}</h1>
         <form
           className={style.form}
           method="post"
@@ -43,21 +42,13 @@ export const Login: NextPage = () => {
               id="login.email"
               type="email"
               autoComplete="email"
-              label={intl.formatMessage({
-                id: 'login.email.label',
-              })}
-              placeholder={intl.formatMessage({
-                id: 'login.email.placeholder',
-              })}
+              label={t('email.label')}
+              placeholder={t('email.placeholder')}
               {...register('email', {
-                required: intl.formatMessage({
-                  id: 'login.email.error.required',
-                }),
+                required: t('email.error.required'),
                 pattern: {
                   value: /^\S+@\S+\.\S+$/, // basic email regex
-                  message: intl.formatMessage({
-                    id: 'login.email.error.invalid',
-                  }),
+                  message: t('email.error.invalid'),
                 },
               })}
             />
@@ -66,21 +57,15 @@ export const Login: NextPage = () => {
             <PasswordInput
               id="login.password"
               autoComplete="current-password"
-              label={intl.formatMessage({
-                id: 'login.password.label',
-              })}
-              placeholder={intl.formatMessage({
-                id: 'login.password.placeholder',
-              })}
+              label={t('password.label')}
+              placeholder={t('password.placeholder')}
               {...register('password', {
-                required: intl.formatMessage({
-                  id: 'login.password.error.required',
-                }),
+                required: t('password.error.required'),
               })}
             />
           </div>
           <button type="submit" className={style.submit}>
-            <FormattedMessage id="login.submit" />
+            {t('submit')}
           </button>
         </form>
       </div>

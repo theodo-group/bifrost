@@ -1,8 +1,8 @@
-export const EyeClosed = ({
-  className,
-}: {
+import { FC } from 'react';
+
+export const EyeClosed: FC<{
   className?: string;
-}): JSX.Element => (
+}> = ({ className }) => (
   <svg
     width="24"
     height="24"
