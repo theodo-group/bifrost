@@ -44,6 +44,7 @@
   "pnpm": {
     "overrides": {
       "@babel/core>json5": "2.2.2",
+      "@babel/core>@babel/traverse": "7.23.6",
       "adminjs>flat": "5.0.2"
     }
   }
