@@ -10,7 +10,7 @@ These instructions will get you a copy of the latest version of bifrost on your 
 ### Prerequisites
 
 - [Install fnm](https://github.com/Schniz/fnm#installation) (node version manager)
-- [Node 18+](https://nodejs.org/en/) `fnm install lts/hydrogen && fnm use lts/hydrogen`
+- [Node 20+](https://nodejs.org/en/) `fnm install lts/hydrogen && fnm use lts/hydrogen`
 - [Pnpm](https://pnpm.io/installation) (`corepack enable && corepack prepare pnpm@7.13.4 --activate`)
 
 ### Installing

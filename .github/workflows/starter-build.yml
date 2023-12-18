@@ -12,7 +12,7 @@ on:
 
 env:
   CI: true
-  NODE_VERSION: 18
+  NODE_VERSION: 20
   HUSKY: 0
 
 # Allow one concurrent deployment

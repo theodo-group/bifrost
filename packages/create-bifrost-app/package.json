@@ -40,7 +40,7 @@
     "@clack/prompts": "0.6.3",
     "@types/async-retry": "1.4.6",
     "@types/cross-spawn": "6.0.3",
-    "@types/node": "18.8.3",
+    "@types/node": "20.10.0",
     "@types/rimraf": "3.0.2",
     "@types/tar": "6.1.6",
     "@types/validate-npm-package-name": "4.0.0",
