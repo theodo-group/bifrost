@@ -2,7 +2,7 @@ name: ⛷ PR tests
 
 env:
   CI: true
-  NODE_VERSION: 18
+  NODE_VERSION: 20
 
 defaults:
   run:

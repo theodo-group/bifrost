@@ -1,8 +1,10 @@
-import { Component, ErrorInfo } from 'react';
+'use client';
+
+import { Component, ErrorInfo, FC, ReactElement } from 'react';
 
 type ErrorBoundaryProps = {
-  FallbackComponent: () => JSX.Element;
-  children: JSX.Element;
+  FallbackComponent: FC;
+  children: ReactElement;
 };
 
 type ErrorBoundaryState = {
@@ -24,7 +26,7 @@ export class ErrorBoundary extends Component<
     // You can use your own error logging service here like sentry
     console.error({ error, errorInfo });
   }
-  render(): JSX.Element {
+  render(): ReactElement {
     const { hasError } = this.state;
     const { FallbackComponent, children } = this.props;
 

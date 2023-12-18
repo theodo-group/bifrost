@@ -29,5 +29,11 @@
       }
     },
     "submit": "Update"
+  },
+  "generic": {
+    "password_input": {
+      "hide": "Hide password",
+      "show": "Show password"
+    }
   }
 }
