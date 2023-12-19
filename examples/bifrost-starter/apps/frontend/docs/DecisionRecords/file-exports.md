@@ -6,7 +6,10 @@ TLDR:
 2. no index files
 3. no paths aliases
 4. rely on vscode auto imports
-5. (optional) Import order: library services `<br>` project services `<br>` all components
+5. (optional) Import order:
+    - library services
+    - project services
+    - all components
 
 ## 1. No default exports
 
@@ -22,20 +25,13 @@ import { Comp } from './aComponent';
 import { Comp as Component } from './aComponent';
 ```
 
--   When you have **named exports**, a global search for the `Comp` will ALWAYS tell you 100% of the files that import the component.
+- When you have **named exports**, a global search for the `Comp` will ALWAYS tell you 100% of the files that import the component.
 
--   Named exports also play nicer with auto imports
+- Named exports also play nicer with auto imports
 
 ## 2. Index files
 
-Barrel export index.ts files allows for nicer imports:
-
-```tsx
-// avoiding:
-import { MyComponent } from 'MyComponent/MyComponent.tsx';
-// with index.ts exporting MyComponent:
-import { MyComponent } from 'MyComponent';
-```
+Barrel export index.ts files allows for nicer imports but are quite detrimental to  tooling performance, avoid using them everywhere.
 
 ## 4. Rely on vscode auto imports
 
