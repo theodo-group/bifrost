@@ -51,7 +51,7 @@
     "commander": "9.5.0",
     "concurrently": "7.4.0",
     "cross-spawn": "7.0.3",
-    "dependency-cruiser": "11.16.1",
+    "dependency-cruiser": "15.5.0",
     "dependency-cruiser-config-custom": "workspace:*",
     "eslint-config-custom": "workspace:*",
     "got": "12.6.1",

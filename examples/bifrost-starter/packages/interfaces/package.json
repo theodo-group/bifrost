@@ -23,7 +23,7 @@
   "devDependencies": {
     "@nestjs/cli": "10.2.1",
     "@types/jest": "29.5.9",
-    "dependency-cruiser": "11.15.0",
+    "dependency-cruiser": "15.5.0",
     "dependency-cruiser-config-custom": "workspace:*",
     "eslint-config-custom": "workspace:*",
     "jest": "29.7.0",

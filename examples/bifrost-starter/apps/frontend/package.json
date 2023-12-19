@@ -44,7 +44,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "bundlesize2": "0.0.31",
-    "dependency-cruiser": "11.15.0",
+    "dependency-cruiser": "15.5.0",
     "dependency-cruiser-config-custom": "workspace:*",
     "eslint-config-custom": "workspace:*",
     "jest": "29.5.0",
