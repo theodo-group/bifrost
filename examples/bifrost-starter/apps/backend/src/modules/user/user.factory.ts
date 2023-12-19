@@ -11,5 +11,5 @@ export class UserFactory extends Factory<User> {
       password: faker.random.word(),
       roles: faker.random.arrayElement([['admin'], []]),
       ...user,
-    } as User);
+    }) as User;
 }
