@@ -32,6 +32,7 @@
   "dependencies": {
     "@docusaurus/core": "3.0.1",
     "@docusaurus/preset-classic": "3.0.1",
+    "@docusaurus/theme-classic": "3.0.1",
     "@mdx-js/react": "3.0.0",
     "clsx": "2.0.0",
     "prettier": "3.1.1",
@@ -42,7 +43,9 @@
   "devDependencies": {
     "@algolia/client-search": "4.22.0",
     "@docusaurus/module-type-aliases": "3.0.1",
-    "@tsconfig/docusaurus": "2.0.2",
+    "@docusaurus/tsconfig": "3.0.1",
+    "@docusaurus/types": "3.0.1",
+    "@types/node": "20.10.5",
     "@types/react": "18.2.45",
     "typescript": "5.3.3"
   },

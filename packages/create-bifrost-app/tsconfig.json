@@ -5,8 +5,13 @@
     "emitDeclarationOnly": false,
     "composite": true,
     "resolveJsonModule": true,
-    "target": "ES3"
+    "target": "ES6"
   },
-  "exclude": ["./dist"],
-  "include": ["./**/*.ts", "./package.json"]
+  "exclude": [
+    "./dist"
+  ],
+  "include": [
+    "./**/*.ts",
+    "./package.json"
+  ]
 }

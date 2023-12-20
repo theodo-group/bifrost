@@ -12,9 +12,9 @@ _[Reference documentation by React](https://reactjs.org/docs/error-boundaries.ht
 
 ### ✅ What to do if you want to use it on your project
 
-The ErrorBoundary is wrapped by default around the main [`App`](../../../../examples/bifrost-starter/apps/frontend/pages/_app.tsx) and renders the [`AppCrashFallback`](../../../../examples/bifrost-starter/apps/frontend/components/AppCrashFallback/AppCrashFallback.tsx) for generic errors.
+An example of ErrorBoundary usage in client component can be found on the profile page [`Profile`](../../../../examples/bifrost-starter/apps/frontend/components/pages/Profile/Profile.tsx) and renders the [`CrashFallback`](../../../../examples/bifrost-starter/apps/frontend/components/CrashFallback/CrashFallback.tsx) for generic errors.
 
-- Edit the [`AppCrashFallback`](../../../../examples/bifrost-starter/apps/frontend/components/AppCrashFallback/AppCrashFallback.tsx) to fit your design guidelines.
+- Edit the [`CrashFallback`](../../../../examples/bifrost-starter/apps/frontend/components/CrashFallback/CrashFallback.tsx) to fit your design guidelines.
 - Send error to your monitoring system using the `componentDidCatch` from the [`ErrorBoundary`](../../../../examples/bifrost-starter/apps/frontend/components/ErrorBoundary/ErrorBoundary.tsx).
 
 ### 💡 Where to use
