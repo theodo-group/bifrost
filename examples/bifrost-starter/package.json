@@ -37,8 +37,8 @@
     "npm-audit-resolver": "3.0.0-7",
     "prettier": "3.1.1",
     "syncpack": "8.2.4",
-    "turbo": "1.10.6",
-    "typescript": "5.1.3"
+    "turbo": "1.11.2",
+    "typescript": "5.3.3"
   },
   "packageManager": "pnpm@8.6.4",
   "pnpm": {
