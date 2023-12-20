@@ -1,11 +1,12 @@
 {
   "name": "create-bifrost-app",
   "description": "Create an app based on the Bifrost template.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "contributors": [],
   "license": "MIT",
   "homepage": "https://theodo-group.github.io/bifrost/",
   "bugs": "https://github.com/theodo-group/bifrost/issues",
+  "type": "module",
   "keywords": [
     "Monorepo",
     "Nest",
@@ -28,7 +29,7 @@
     "lint": "eslint",
     "lint:fix": "pnpm lint --fix",
     "test": "pnpm test:lint && pnpm test:type && pnpm test:unit && pnpm test:circular",
-    "test:circular": "pnpm depcruise --validate .dependency-cruiser.js .",
+    "test:circular": "pnpm depcruise --validate .dependency-cruiser.cjs .",
     "test:lint": "pnpm lint",
     "test:type": "tsc --noEmit --emitDeclarationOnly false",
     "test:unit": "vitest run --coverage --passWithNoTests",
