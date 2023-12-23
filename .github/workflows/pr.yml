@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.4
         with:
@@ -61,7 +61,7 @@ jobs:
         working-directory: ./examples/bifrost-starter
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.4
         with:
@@ -106,7 +106,7 @@ jobs:
         working-directory: ./packages/create-bifrost-app
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.4
         with:
@@ -130,7 +130,7 @@ jobs:
         working-directory: ./examples/bifrost-starter
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.4
         with:
@@ -151,7 +151,7 @@ jobs:
         working-directory: ./examples/bifrost-starter
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.4
         with:
