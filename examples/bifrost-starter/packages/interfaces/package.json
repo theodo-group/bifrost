@@ -13,7 +13,7 @@
     "lint:fix": "pnpm lint --fix",
     "test": "jest src --passWithNoTests",
     "test:circular": "depcruise --validate .dependency-cruiser.js src",
-    "test:type": "nest build -p tsconfig.json --noEmit"
+    "test:type": "nest build -p tsconfig.json"
   },
   "dependencies": {
     "@nestjs/common": "10.2.10",
