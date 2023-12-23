@@ -24,10 +24,12 @@
   ],
   "scripts": {
     "build": "ncc build ./src/index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
+    "build:no-interractive": "ncc build ./src/indexNoInterractive.ts -o ./dist/ --minify --no-cache --no-source-map-register",
     "dev": "ncc build ./src/indexNoTelemetry.ts -w -o dist/",
     "dev:enable:telemetry": "ncc build ./src/index.ts -w -o dist/",
     "lint": "eslint",
     "lint:fix": "pnpm lint --fix",
+    "format": "prettier --write .",
     "test": "pnpm test:lint && pnpm test:type && pnpm test:unit && pnpm test:circular",
     "test:circular": "pnpm depcruise --validate .dependency-cruiser.cjs .",
     "test:lint": "pnpm lint",

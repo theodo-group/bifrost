@@ -1,0 +1,9 @@
+pnpm-lock.yaml
+.npm
+.webpack
+.esbuild
+**/coverage
+**/dist
+**/build
+**/public
+sandbox

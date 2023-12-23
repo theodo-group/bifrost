@@ -1,6 +1,6 @@
 import { telemetryConfig } from 'helpers';
-import { interractiveMain } from 'main';
+import { main } from 'main';
 
 telemetryConfig.forceDisableTelemetry = true;
 
-interractiveMain();
+main('app');

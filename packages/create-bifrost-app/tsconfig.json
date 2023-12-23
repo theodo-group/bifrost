@@ -7,11 +7,6 @@
     "resolveJsonModule": true,
     "target": "ES6"
   },
-  "exclude": [
-    "./dist"
-  ],
-  "include": [
-    "./**/*.ts",
-    "./package.json"
-  ]
+  "exclude": ["./dist", "./sandbox"],
+  "include": ["./**/*.ts", "./package.json"]
 }
