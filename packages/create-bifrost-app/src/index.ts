@@ -1,3 +1,3 @@
-import { main } from 'main';
+import { interractiveMain } from 'main';
 
-main();
+interractiveMain();

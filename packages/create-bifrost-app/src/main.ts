@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import * as p from '@clack/prompts';
-import { Command } from 'commander';
 import { createApp } from 'create-app';
 import { getPkgManager, logCreateApp, validateNpmName } from 'helpers';
 import path from 'path';
@@ -9,9 +8,7 @@ import pico from 'picocolors';
 
 import packageJson from '../package.json';
 
-export const main = (): void => {
-  new Command(packageJson.name).allowUnknownOption().parse();
-
+export const interractiveMain = (): void => {
   const run = async (): Promise<void> => {
     const res = await p.group({
       projectName: () =>
@@ -31,14 +28,36 @@ export const main = (): void => {
         }),
     });
 
-    const resolvedProjectPath = path.resolve(res.projectName.trim());
-    const projectName = path.basename(resolvedProjectPath);
+    main(res.projectName);
+  };
 
-    const { valid, problems } = validateNpmName(projectName);
+  run().catch(reason => {
+    console.log();
+    console.log('Aborting installation.');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if (reason.command as boolean) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.log(`  ${pico.cyan(reason.command as string)} has failed.`);
+    } else {
+      console.log(pico.red('Unexpected error. Please report it as a bug:'));
+      console.log(reason);
+    }
+    console.log();
+
+    process.exit(1);
+  });
+};
+
+export const main = (projectName: string): void => {
+  const asyncWrapper = async () => {
+    const resolvedProjectPath = path.resolve(projectName.trim());
+    const baseProjectName = path.basename(resolvedProjectPath);
+
+    const { valid, problems } = validateNpmName(baseProjectName);
     if (!valid) {
       console.error(
         `Could not create a project called ${pico.red(
-          `"${projectName}"`,
+          `"${baseProjectName}"`,
         )} because of npm naming restrictions:`,
       );
 
@@ -59,10 +78,10 @@ export const main = (): void => {
       appPath: resolvedProjectPath,
       packageVersion,
     });
-    await logCreateApp(projectName);
+    await logCreateApp(baseProjectName);
   };
 
-  run().catch(reason => {
+  asyncWrapper().catch(reason => {
     console.log();
     console.log('Aborting installation.');
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
