@@ -140,6 +140,8 @@ module.exports = {
             minimumDescriptionLength: 10,
           },
         ],
+        // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
+        '@typescript-eslint/method-signature-style': ['error', 'property'],
         '@typescript-eslint/no-misused-promises': [
           'error',
           {
