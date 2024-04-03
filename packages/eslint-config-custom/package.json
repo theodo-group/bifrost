@@ -6,7 +6,7 @@
     "@typescript-eslint/parser": "6.15.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-unused-imports": "2.0.0"
