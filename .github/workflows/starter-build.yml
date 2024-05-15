@@ -35,7 +35,7 @@ jobs:
       REGISTRY: ghcr.io/theodo-group/bifrost
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Buildah Action
         id: build-image
         uses: redhat-actions/buildah-build@v2
