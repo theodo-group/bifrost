@@ -97,8 +97,8 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
       '@types/async-retry':
-        specifier: 1.4.8
-        version: 1.4.8
+        specifier: 1.4.9
+        version: 1.4.9
       '@types/cross-spawn':
         specifier: 6.0.6
         version: 6.0.6
@@ -3457,8 +3457,8 @@ packages:
       '@types/estree': 1.0.5
     dev: false
 
-  /@types/async-retry@1.4.8:
-    resolution: {integrity: sha512-Qup/B5PWLe86yI5I3av6ePGaeQrIHNKCwbsQotD6aHQ6YkHsMUxVZkZsmx/Ry3VZQ6uysHwTjQ7666+k6UjVJA==}
+  /@types/async-retry@1.4.9:
+    resolution: {integrity: sha512-s1ciZQJzRh3708X/m3vPExr5KJlzlZJvXsKpbtE2luqNcbROr64qU+3KpJsYHqWMeaxI839OvXf9PrUSw1Xtyg==}
     dependencies:
       '@types/retry': 0.12.5
     dev: true
