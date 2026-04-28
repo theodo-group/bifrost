@@ -52,7 +52,7 @@
     "babel-plugin-module-resolver": "5.0.0",
     "commander": "11.1.0",
     "concurrently": "8.2.2",
-    "cross-spawn": "7.0.3",
+    "cross-spawn": "7.0.5",
     "dependency-cruiser": "15.5.0",
     "dependency-cruiser-config-custom": "workspace:*",
     "eslint-config-custom": "workspace:*",
