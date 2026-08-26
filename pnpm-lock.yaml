@@ -24,8 +24,8 @@ importers:
         specifier: 13.3.0
         version: 13.3.0
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       prettier:
         specifier: 3.1.1
         version: 3.1.1
@@ -2113,7 +2113,7 @@ packages:
       cheerio: 1.0.0-rc.12
       feed: 4.2.2
       fs-extra: 11.2.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       reading-time: 1.5.0
@@ -2158,7 +2158,7 @@ packages:
       combine-promises: 1.2.0
       fs-extra: 11.2.0
       js-yaml: 4.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tslib: 2.6.2
@@ -2548,7 +2548,7 @@ packages:
       clsx: 2.0.0
       eta: 2.2.0
       fs-extra: 11.2.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tslib: 2.6.2
@@ -2660,7 +2660,7 @@ packages:
       gray-matter: 4.0.3
       jiti: 1.21.0
       js-yaml: 4.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       micromatch: 4.0.5
       resolve-pathname: 3.0.0
       shelljs: 0.8.5
@@ -6710,7 +6710,7 @@ packages:
     hasBin: true
     dependencies:
       dargs: 7.0.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       meow: 8.1.2
       split2: 3.2.2
       through2: 4.0.2
@@ -7174,7 +7174,7 @@ packages:
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       pretty-error: 4.0.0
       tapable: 2.2.1
       webpack: 5.89.0
@@ -8078,6 +8078,9 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
+  /lodash@4.18.1:
+    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
   /log-update@5.0.1:
     resolution: {integrity: sha512-5UtUDQ/6edw4ofyljDNcOVJQ4c7OjDro4h3y8e1GQL5iYElYclVHJ3zeWchylvMaKnDbDilC8irOVyexnA/Slw==}
@@ -9940,7 +9943,7 @@ packages:
   /pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.18.1
       renderkid: 3.0.0
     dev: false
 
@@ -10513,7 +10516,7 @@ packages:
       css-select: 4.3.0
       dom-converter: 0.2.0
       htmlparser2: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       strip-ansi: 6.0.1
     dev: false
 
