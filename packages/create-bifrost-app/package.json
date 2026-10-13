@@ -68,6 +68,6 @@
     "validate-npm-package-name": "5.0.0",
     "vite": "5.0.10",
     "vite-tsconfig-paths": "4.2.2",
-    "vitest": "1.1.0"
+    "vitest": "3.2.6"
   }
 }
